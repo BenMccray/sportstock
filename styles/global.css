@@ -1,0 +1,13 @@
+.custom-nav {
+  @apply bg-blue-500 text-white py-4 px-6 flex justify-between items-center;
+}
+
+/* Custom navigation links */
+.custom-nav-link {
+  @apply text-lg font-medium hover:text-gray-300;
+}
+
+/* Custom active state for navigation links */
+.custom-nav-link-active {
+  @apply text-yellow-400;
+}
