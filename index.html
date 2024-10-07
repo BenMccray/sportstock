@@ -3,50 +3,111 @@
 <html>
   <head lang="en">
     <meta charset="UTF-8" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="./styles/global.css" /> -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- <link rel="stylesheet" href="./styles/nav.css" /> -->
 
     <title>Home</title>
   </head>
 
-  <body>
-    <header>
-      <nav class="navbar navbar-expand-lg bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active text-bg-primary" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Trending</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Saved</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Leagues
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-            </ul>
+  <body class="font-mono">
+    <header class="sticky top-0">
+      <nav class="bg-black p-4 border-b-2 border-b-gray-600">
+        <div class="container mx-auto flex justify-between items-center">
+          <!-- Left side - Nav links -->
+          <div class="flex space-x-4">
+            <a
+              href="./index.html"
+              class="text-blue-300 px-3 py-2 rounded-sm text-m font-medium"
+              >Home</a
+            >
+            <a
+              href="./pages/leagues/index.html"
+              class="text-white px-3 py-2 rounded-sm text-m font-medium hover:text-gray-300"
+              >Leagues</a
+            >
+            <a
+              href="./pages/trending/index.html"
+              class="text-white hover:text-gray-300 px-3 py-2 rounded-sm text-m font-medium"
+              >Trending</a
+            >
+            <a
+              href="./pages/saved/index.html"
+              class="text-white hover:text-gray-300 px-3 py-2 rounded-sm text-m font-medium"
+              >Saved</a
+            >
+          </div>
+
+          <div class="relative">
+            <input
+              type="text"
+              placeholder="Search..."
+              class="px-3 py-2 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-gray-500"
+            />
+            <button
+              class="absolute right-1 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white"
+            >
+              <svg
+                class="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1116.65 4.65a7.5 7.5 0 010 10.6z"
+                ></path>
+              </svg>
+            </button>
           </div>
         </div>
       </nav>
-      </nav>
     </header>
-    <main>
-      <p class="text-4xl">project</p>
+    <main class="bg-black flex flex-col" style="height: 100vh">
+      <div
+        id="graph-description"
+        class="grid grid-cols-2 gap-x-10 mx-40 mb-60 mt-40"
+      >
+        <img
+          src="./images/line_graph_homepage.jpg!w700wp"
+          alt="Line graph"
+          class="mb-0"
+          style="width: 700px; height: 375px"
+        />
+        <div class="flex justify-start row-start-2 grid-cols-1 mt-3">
+          <img
+            src="./images/patrick_mahomes_homepage.webp"
+            style="width: 50px; height: 50px"
+            class=""
+          />
+          <p class="flex flex-col text-white">
+            <span class="mx-3"> Patrick Mahomes</span>
+            <span class="mx-3"> Current Season Passing Yards</span>
+          </p>
+        </div>
+        <p
+          class="flex flex-col justify-center text-white content-center text-center font-sans font-bold"
+        >
+          <span class="text-3xl">Real time stat trackers</span> <br />
+          <span class="text-lg"
+            >Track player and team stats throughout the season.</span
+          ><br />
+          <span class="text-lg"
+            >Make informed fantasy or betting decisions based on stat
+            trends.</span
+          >
+        </p>
+      </div>
+      <div id="leagues-description"></div>
+      <div id="trending-description"></div>
+      <div id="saved-description"></div>
     </main>
+    <footer>Footer</footer>
   </body>
 </html>
