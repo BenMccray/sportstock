@@ -3,19 +3,18 @@
 <html>
   <head lang="en">
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
-
-    <!-- <link rel="stylesheet" href="./styles/nav.css" /> -->
-
     <title>Home</title>
+
   </head>
 
-  <body class="font-mono">
-    <header class="sticky top-0">
-      <nav class="bg-black p-4 border-b-2 border-b-gray-600">
+  <body class="min-h-screen flex flex-col font-mono">
+    <header class="sticky top-0 border-b border-b-indigo-500 bg-gray-900">
+      <nav class=" p-4">
         <div class="container mx-auto flex justify-between items-center">
           <!-- Left side - Nav links -->
           <div class="flex space-x-4">
@@ -42,6 +41,7 @@
           </div>
 
           <div class="relative">
+            <button class="text-white" id="darkmode">DarkMode</button>
             <input
               type="text"
               placeholder="Search..."
@@ -69,7 +69,7 @@
         </div>
       </nav>
     </header>
-    <main class="bg-black flex flex-col" style="height: 100vh">
+    <main class="bg-gray-800 flex flex-col" >
       <div
         id="graph-description"
         class="grid grid-cols-2 gap-x-10 mx-40 mb-60 mt-40"
@@ -104,10 +104,49 @@
           >
         </p>
       </div>
-      <div id="leagues-description"></div>
+      <div class="grid grid-cols-2 gap-x-10 mx-40 mb-60 mt-20" id="leagues-description">
+        <p
+          class="flex flex-col justify-center text-white content-center text-center font-sans font-bold"
+        >
+          <span class="text-3xl">Leagues</span> <br />
+          <span class="text-lg"
+            >Choose from leagues and see teams and their players.</span
+          ><br />
+          <span class="text-lg"
+            >Access to teams and players from sports around the world</span
+          >
+        <div class="relative text-center text-white">
+          <div class="absolute inset-0 grid">
+            <div class="text-4xl font-bold">NBA</div>
+            <div class="text-4xl font-bold">NFL</div>
+            <div class="text-4xl font-bold">MLB</div>
+            <div class="text-4xl font-bold">NCAA</div>
+            <div class="text-4xl font-bold">FIFA</div>
+            <div class="text-4xl font-bold">UFC</div>
+          </div>
+        </div>
+      </div>
       <div id="trending-description"></div>
       <div id="saved-description"></div>
     </main>
-    <footer>Footer</footer>
+    <!-- <footer class="bg-gray-900 flex border-t border-t-indigo-500 lg:visible sm:invisible" style="height:30vh;">
+      <div class="h-fit" id="nav-bottom">
+        <ul class="text-gray-200">
+          <li>Home</li>
+          <li>Leagues</li>
+          <li>Trending</li>
+          <li>Saved</li>
+        </ul>
+      </div>
+      <div class="h-fit" id="nav-external">
+        <ul class="text-gray-200">
+          <li>PrizePicks</li>
+          <li>FanDuel</li>
+          <li>Sleeper</li>
+          <li>DraftKings</li>
+          <li>Fliff</li>
+        </ul>
+      </div>
+    </footer> -->
   </body>
 </html>
