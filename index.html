@@ -3,73 +3,76 @@
 <html>
   <head lang="en">
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
     <title>Home</title>
-
   </head>
 
   <body class="min-h-screen flex flex-col font-mono">
-    <header class="sticky top-0 border-b border-b-indigo-500 bg-gray-900">
-      <nav class=" p-4">
+    <header
+      class="sticky top-0 border-b bg-gray-900"
+      style="border-color: #484abb"
+    >
+      <nav class="p-4">
         <div class="container mx-auto flex justify-between items-center">
           <!-- Left side - Nav links -->
           <div class="flex space-x-4">
+            <!--.nav-links-->
+
             <a
-              href="./index.html"
+              href="#"
               class="text-blue-300 px-3 py-2 rounded-sm text-m font-medium"
               >Home</a
             >
             <a
-              href="./pages/leagues/index.html"
+              href="./leagues/index.html"
               class="text-white px-3 py-2 rounded-sm text-m font-medium hover:text-gray-300"
               >Leagues</a
             >
             <a
-              href="./pages/trending/index.html"
+              href="./trending/index.html"
               class="text-white hover:text-gray-300 px-3 py-2 rounded-sm text-m font-medium"
               >Trending</a
             >
             <a
-              href="./pages/saved/index.html"
+              href="./saved/index.html"
               class="text-white hover:text-gray-300 px-3 py-2 rounded-sm text-m font-medium"
               >Saved</a
             >
           </div>
 
-          <div class="relative">
-            <button class="text-white" id="darkmode">DarkMode</button>
+          <div class="relative flex justify-evenly">
             <input
               type="text"
               placeholder="Search..."
               class="px-3 py-2 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-gray-500"
             />
-            <button
-              class="absolute right-1 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white"
-            >
+            <button class="h-7 w-7" id="darkmode">
               <svg
-                class="h-5 w-5"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
+                class="fill-indigo-500"
                 viewBox="0 0 24 24"
+                version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1116.65 4.65a7.5 7.5 0 010 10.6z"
-                ></path>
+                <g id="🔍-Product-Icons" stroke="none" stroke-width="1">
+                  <g id="ic_fluent_dark_theme_24_regular" fill="#6366f1">
+                    <path
+                      d="M12,22 C17.5228475,22 22,17.5228475 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 Z M12,20.5 L12,3.5 C16.6944204,3.5 20.5,7.30557963 20.5,12 C20.5,16.6944204 16.6944204,20.5 12,20.5 Z"
+                      id="🎨-Color"
+                    ></path>
+                  </g>
+                </g>
               </svg>
             </button>
           </div>
         </div>
       </nav>
     </header>
-    <main class="bg-gray-800 flex flex-col" >
+    <main class="bg-gray-800 flex flex-col">
       <div
         id="graph-description"
         class="grid grid-cols-2 gap-x-10 mx-40 mb-60 mt-40"
@@ -104,7 +107,10 @@
           >
         </p>
       </div>
-      <div class="grid grid-cols-2 gap-x-10 mx-40 mb-60 mt-20" id="leagues-description">
+      <div
+        class="grid grid-cols-2 gap-x-10 mx-40 mb-60 mt-20"
+        id="leagues-description"
+      >
         <p
           class="flex flex-col justify-center text-white content-center text-center font-sans font-bold"
         >
@@ -115,6 +121,8 @@
           <span class="text-lg"
             >Access to teams and players from sports around the world</span
           >
+        </p>
+
         <div class="relative text-center text-white">
           <div class="absolute inset-0 grid">
             <div class="text-4xl font-bold">NBA</div>
@@ -129,24 +137,27 @@
       <div id="trending-description"></div>
       <div id="saved-description"></div>
     </main>
-    <!-- <footer class="bg-gray-900 flex border-t border-t-indigo-500 lg:visible sm:invisible" style="height:30vh;">
-      <div class="h-fit" id="nav-bottom">
-        <ul class="text-gray-200">
-          <li>Home</li>
-          <li>Leagues</li>
-          <li>Trending</li>
-          <li>Saved</li>
-        </ul>
-      </div>
-      <div class="h-fit" id="nav-external">
-        <ul class="text-gray-200">
-          <li>PrizePicks</li>
-          <li>FanDuel</li>
-          <li>Sleeper</li>
-          <li>DraftKings</li>
-          <li>Fliff</li>
-        </ul>
-      </div>
-    </footer> -->
+    <footer
+      class="bg-gray-900 flex justify-around align-center border-t border-t-indigo-500 lg:visible sm:invisible"
+      style="height: 30vh; border-color: #484abb"
+    >
+      <ul class="text-gray-200">
+        <li>Home</li>
+        <li>Leagues</li>
+        <li>Trending</li>
+        <li>Saved</li>
+      </ul>
+      <ul class="text-gray-200">
+        <li>
+          <a href="https://www.prizepicks.com" target="_blank">PrizePicks</a>
+        </li>
+        <li><a href="https://www.fanduel.com" target="_blank">FanDuel</a></li>
+        <li>
+          <a href="https://www.draftkings.com" target="_blank">DraftKings</a>
+        </li>
+        <li><a href="https://www.sleeper.com" target="_blank">Sleeper</a></li>
+        <li><a href="https://www.getfliff.com" target="_blank">Fliff</a></li>
+      </ul>
+    </footer>
   </body>
 </html>

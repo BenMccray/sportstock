@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+  <head lang="en">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <title>Home</title>
+  </head>
+
+  <body class="min-h-screen flex flex-col font-mono">
+    <header
+      class="sticky top-0 border-b border-b-indigo-500 bg-gray-900 h-fit z-10"
+    >
+      <nav class="p-4">
+        <div class="container mx-auto flex justify-between items-center">
+          <!-- Left side - Nav links -->
+          <div class="flex space-x-4">
+            <a
+              href="../index.html"
+              class="text-white hover:text-gray-300 px-3 py-2 rounded-sm text-m font-medium"
+              >Home</a
+            >
+            <a
+              href="../leagues/index.html"
+              class="text-white px-3 py-2 rounded-sm text-m font-medium hover:text-gray-300"
+              >Leagues</a
+            >
+            <a
+              href="../trending/index.html"
+              class="text-white hover:text-gray-300 px-3 py-2 rounded-sm text-m font-medium"
+              >Trending</a
+            >
+            <a
+              href="#"
+              class="text-blue-300 px-3 py-2 rounded-sm text-m font-medium"
+              >Saved</a
+            >
+          </div>
+
+          <div class="relative">
+            <button class="text-white" id="darkmode">DarkMode</button>
+            <input
+              type="text"
+              placeholder="Search..."
+              class="px-3 py-2 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-gray-500"
+            />
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="bg-gray-800 flex flex-col relative z-0 min-h-screen">
+      <p
+        class="text-white text-center font-bold drop-shadow text-7xl absolute align-middle top-44 inset-0"
+        style="font-family: Verdana"
+      >
+        Nothing Saved<br />
+        <span class="text-4xl">Save teams or players to look back later</span>
+      </p>
+      <div id="saved-list "></div>
+    </main>
+    <footer
+      class="bg-gray-900 flex justify-around align-center border-t border-t-indigo-500 lg:visible sm:invisible"
+      style="height: 30vh"
+    >
+      <ul class="text-gray-200">
+        <li>Home</li>
+        <li>Leagues</li>
+        <li>Trending</li>
+        <li>Saved</li>
+      </ul>
+      <ul class="text-gray-200">
+        <li>
+          <a href="https://www.prizepicks.com" target="_blank">PrizePicks</a>
+        </li>
+        <li><a href="https://www.fanduel.com" target="_blank">FanDuel</a></li>
+        <li>
+          <a href="https://www.draftkings.com" target="_blank">DraftKings</a>
+        </li>
+        <li><a href="https://www.sleeper.com" target="_blank">Sleeper</a></li>
+        <li><a href="https://www.getfliff.com" target="_blank">Fliff</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>

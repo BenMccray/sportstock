@@ -1,0 +1,70 @@
+:root {
+  --dark-nav: #111827;
+  --dark-main: #1f2937;
+}
+body {
+  min-height: 100vh; /* min-h-screen */
+  display: flex; /* flex */
+  flex-direction: column; /* flex-col */
+  font-family: monospace; /* font-mono */
+}
+header {
+  position: sticky; /* sticky */
+  top: 0; /* top-0 */
+  border-bottom: 1px solid #6366f1; /* border-b and border-b-indigo-500 */
+  background-color: var(--dark-nav); /* bg-gray-900 */
+}
+nav {
+  padding: 1rem; /* p-4 */
+}
+
+nav > div {
+  width: 100%; /* container */
+  margin-left: auto; /* mx-auto */
+  margin-right: auto; /* mx-auto */
+  display: flex; /* flex */
+  justify-content: space-between; /* justify-between */
+  align-items: center; /* items-center */
+  padding-left: 1rem; /* Add container padding if needed */
+  padding-right: 1rem; /* Add container padding if needed */
+}
+
+.nav-links {
+  display: flex; /* flex */
+}
+
+.nav-links > *:not(:last-child) {
+  margin-right: 1rem; /* space-x-4 (adds space between flex items) */
+}
+
+.nav-link.active {
+  color: #93c5fd; /* text-blue-300 */
+  padding-left: 0.75rem; /* px-3 */
+  padding-right: 0.75rem; /* px-3 */
+  padding-top: 0.5rem; /* py-2 */
+  padding-bottom: 0.5rem; /* py-2 */
+  border-radius: 0.125rem; /* rounded-sm */
+  font-size: 1rem; /* text-m */
+  font-weight: 500; /* font-medium */
+}
+
+.nav-link {
+  color: #ffffff; /* text-white */
+  padding-left: 0.75rem; /* px-3 */
+  padding-right: 0.75rem; /* px-3 */
+  padding-top: 0.5rem; /* py-2 */
+  padding-bottom: 0.5rem; /* py-2 */
+  border-radius: 0.125rem; /* rounded-sm */
+  font-size: 1rem; /* text-m */
+  font-weight: 500; /* font-medium */
+}
+
+.nav-link:hover {
+  color: #d1d5db; /* hover:text-gray-300 */
+}
+
+main {
+  background-color: #1f2937; /* bg-gray-800 */
+  display: flex; /* flex */
+  flex-direction: column; /* flex-col */
+}
