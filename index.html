@@ -11,46 +11,43 @@
     <title>Home</title>
   </head>
 
-  <body class="min-h-screen flex flex-col font-mono">
-    <header
-      class="sticky top-0 border-b bg-gray-900"
-      style="border-color: #484abb"
-    >
+  <body class="min-h-screen flex flex-col font-mono bg-gray-800">
+    <header class="sticky top-0 bg-gray-900" style="border-color: #484abb">
       <nav class="p-4">
         <div class="container mx-auto flex justify-between items-center">
           <!-- Left side - Nav links -->
-          <div class="flex space-x-4">
+          <div class="flex space-x-12 justify-between">
             <!--.nav-links-->
 
             <a
               href="#"
-              class="text-blue-300 px-3 py-2 rounded-sm text-m font-medium"
+              class="text-blue-300 px-3 py-2 text-m font-medium bg-[#484abb]"
               >Home</a
             >
             <a
               href="./leagues/index.html"
-              class="text-white px-3 py-2 rounded-sm text-m font-medium hover:text-gray-300"
+              class="text-white px-3 py-2 text-m font-medium hover:text-gray-300"
               >Leagues</a
             >
             <a
               href="./trending/index.html"
-              class="text-white hover:text-gray-300 px-3 py-2 rounded-sm text-m font-medium"
+              class="text-white hover:text-gray-300 px-3 py-2 text-m font-medium"
               >Trending</a
             >
             <a
               href="./saved/index.html"
-              class="text-white hover:text-gray-300 px-3 py-2 rounded-sm text-m font-medium"
+              class="text-white hover:text-gray-300 px-3 py-2 text-m font-medium"
               >Saved</a
             >
           </div>
 
-          <div class="relative flex justify-evenly">
+          <div class="relative flex justify-between">
             <input
               type="text"
               placeholder="Search..."
               class="px-3 py-2 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-gray-500"
             />
-            <button class="h-7 w-7" id="darkmode">
+            <button class="h-8 w-8 mx-6 mt-1" id="dark-mode">
               <svg
                 class="fill-indigo-500"
                 viewBox="0 0 24 24"
@@ -58,7 +55,7 @@
                 xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
               >
-                <g id="🔍-Product-Icons" stroke="none" stroke-width="1">
+                <g id="dark-icon" stroke="none" stroke-width="1">
                   <g id="ic_fluent_dark_theme_24_regular" fill="#6366f1">
                     <path
                       d="M12,22 C17.5228475,22 22,17.5228475 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 Z M12,20.5 L12,3.5 C16.6944204,3.5 20.5,7.30557963 20.5,12 C20.5,16.6944204 16.6944204,20.5 12,20.5 Z"
@@ -80,14 +77,14 @@
         <img
           src="./images/line_graph_homepage.jpg!w700wp"
           alt="Line graph"
-          class="mb-0"
+          class="mb-0 border-transparent rounded-3xl"
           style="width: 700px; height: 375px"
         />
         <div class="flex justify-start row-start-2 grid-cols-1 mt-3">
           <img
             src="./images/patrick_mahomes_homepage.webp"
             style="width: 50px; height: 50px"
-            class=""
+            class="rounded-md border-transparent"
           />
           <p class="flex flex-col text-white">
             <span class="mx-3"> Patrick Mahomes</span>

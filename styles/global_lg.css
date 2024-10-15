@@ -1,19 +1,27 @@
 :root {
-  --dark-nav: #111827;
-  --dark-main: #1f2937;
+  --main-light: white;
+  --main-dark: #484abb;
 }
+
 body {
   min-height: 100vh; /* min-h-screen */
-  display: flex; /* flex */
-  flex-direction: column; /* flex-col */
+  display: grid; /* flex */
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "content"
+    "footer";
   font-family: monospace; /* font-mono */
 }
+
 header {
   position: sticky; /* sticky */
   top: 0; /* top-0 */
   border-bottom: 1px solid #6366f1; /* border-b and border-b-indigo-500 */
   background-color: var(--dark-nav); /* bg-gray-900 */
+  grid-area: "header";
 }
+
 nav {
   padding: 1rem; /* p-4 */
 }
@@ -67,4 +75,10 @@ main {
   background-color: #1f2937; /* bg-gray-800 */
   display: flex; /* flex */
   flex-direction: column; /* flex-col */
+
+  grid-area: "content";
+}
+
+footer {
+  grid-area: "footer";
 }
