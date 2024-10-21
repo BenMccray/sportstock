@@ -8,11 +8,17 @@
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+    </style>
     <title>Home</title>
   </head>
 
   <body class="min-h-screen flex flex-col font-mono bg-gray-800">
-    <header class="sticky top-0 bg-gray-900" style="border-color: #484abb">
+    <header
+      class="sticky top-0 bg-gray-900"
+      style="border-color: #484abb; font-family: Roboto; font-weight: 700"
+    >
       <nav class="p-4">
         <div class="container mx-auto flex justify-between items-center">
           <!-- Left side - Nav links -->
@@ -21,7 +27,8 @@
 
             <a
               href="#"
-              class="text-blue-300 px-3 py-2 text-m font-medium bg-[#484abb]"
+              class="px-3 py-2 text-m font-medium bg-[#484abb]"
+              style="color: #8f91f8"
               >Home</a
             >
             <a
@@ -69,10 +76,10 @@
         </div>
       </nav>
     </header>
-    <main class="bg-gray-800 flex flex-col">
+    <main class="bg-white flex flex-col">
       <div
         id="graph-description"
-        class="grid grid-cols-2 gap-x-10 mx-40 mb-60 mt-40"
+        class="grid grid-cols-2 gap-x-10 mx-40 mb-20 mt-40"
       >
         <img
           src="./images/line_graph_homepage.jpg!w700wp"
@@ -80,7 +87,7 @@
           class="mb-0 border-transparent rounded-3xl"
           style="width: 700px; height: 375px"
         />
-        <div class="flex justify-start row-start-2 grid-cols-1 mt-3">
+        <div class="flex justify-start row-start-2 mt-3">
           <img
             src="./images/patrick_mahomes_homepage.webp"
             style="width: 50px; height: 50px"
@@ -105,55 +112,66 @@
         </p>
       </div>
       <div
-        class="grid grid-cols-2 gap-x-10 mx-40 mb-60 mt-20"
-        id="leagues-description"
+        class="flex flex-row justify-center content-center mb-20"
+        style="font-family: Roboto; font-weight: 700"
       >
-        <p
-          class="flex flex-col justify-center text-white content-center text-center font-sans font-bold"
+        <div
+          id="card-leagues"
+          class="flex flex-col basis-1/4 w-1/4 bg-[#a9a9a8] mx-4 rounded-xl shadow-2xl"
         >
-          <span class="text-3xl">Leagues</span> <br />
-          <span class="text-lg"
-            >Choose from leagues and see teams and their players.</span
-          ><br />
-          <span class="text-lg"
-            >Access to teams and players from sports around the world</span
+          <img
+            class="self-center w-3/4 h-fit m-4"
+            src="images/National_Football_League_logo.webp"
+          />
+          <span
+            class="text-white text-3xl inline text-center mb-4 cursor-default"
+            >Leagues</span
           >
-        </p>
-
-        <div class="relative text-center text-white">
-          <div class="absolute inset-0 grid">
-            <div class="text-4xl font-bold">NBA</div>
-            <div class="text-4xl font-bold">NFL</div>
-            <div class="text-4xl font-bold">MLB</div>
-            <div class="text-4xl font-bold">NCAA</div>
-            <div class="text-4xl font-bold">FIFA</div>
-            <div class="text-4xl font-bold">UFC</div>
-          </div>
+        </div>
+        <div
+          id="card-trending"
+          class="flex flex-col basis-1/4 w-1/4 bg-black mx-4 rounded-xl"
+        >
+          2
+        </div>
+        <div
+          id="card-saved"
+          class="flex flex-col basis-1/4 w-1/4 bg-black mx-4 rounded-xl"
+        >
+          3
         </div>
       </div>
-      <div id="trending-description"></div>
-      <div id="saved-description"></div>
     </main>
     <footer
       class="bg-gray-900 flex justify-around align-center border-t border-t-indigo-500 lg:visible sm:invisible"
-      style="height: 30vh; border-color: #484abb"
+      style="height: 25vh; border-color: #484abb"
     >
-      <ul class="text-gray-200">
-        <li>Home</li>
-        <li>Leagues</li>
-        <li>Trending</li>
-        <li>Saved</li>
+      <ul class="text-gray-200 mt-10">
+        <li class="hover:underline"><a href="#">Home</a></li>
+        <li class="hover:underline">
+          <a href="./leagues/index.html">Leagues</a>
+        </li>
+        <li class="hover:underline">
+          <a href="./trending/index.html">Trending</a>
+        </li>
+        <li class="hover:underline"><a href="./saved/index.html">Saved</a></li>
       </ul>
-      <ul class="text-gray-200">
-        <li>
+      <ul class="text-gray-200 mt-10">
+        <li class="hover:underline">
           <a href="https://www.prizepicks.com" target="_blank">PrizePicks</a>
         </li>
-        <li><a href="https://www.fanduel.com" target="_blank">FanDuel</a></li>
-        <li>
+        <li class="hover:underline">
+          <a href="https://www.fanduel.com" target="_blank">FanDuel</a>
+        </li>
+        <li class="hover:underline">
           <a href="https://www.draftkings.com" target="_blank">DraftKings</a>
         </li>
-        <li><a href="https://www.sleeper.com" target="_blank">Sleeper</a></li>
-        <li><a href="https://www.getfliff.com" target="_blank">Fliff</a></li>
+        <li class="hover:underline">
+          <a href="https://www.sleeper.com" target="_blank">Sleeper</a>
+        </li>
+        <li class="hover:underline">
+          <a href="https://www.getfliff.com" target="_blank">Fliff</a>
+        </li>
       </ul>
     </footer>
   </body>
