@@ -8,51 +8,56 @@
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
+    <!-- <link href="styles/global_lg.css" rel="stylesheet" /> -->
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
     </style>
     <title>Home</title>
   </head>
 
-  <body class="min-h-screen flex flex-col font-mono bg-gray-800">
+  <body class="min-h-screen flex flex-col">
     <header
-      class="sticky top-0 bg-gray-900"
-      style="border-color: #484abb; font-family: Roboto; font-weight: 700"
+      class="sticky top-0 bg-gray-100 shadow-md"
+      style="
+        border-bottom: 1 solid #484abb;
+        font-family: Roboto;
+        font-weight: 700;
+      "
     >
-      <nav class="p-4">
+      <nav class="p-4 text-black">
         <div class="container mx-auto flex justify-between items-center">
           <!-- Left side - Nav links -->
-          <div class="flex space-x-12 justify-between">
+          <div class="nav-links flex space-x-12 justify-between">
             <!--.nav-links-->
 
             <a
               href="#"
               class="px-3 py-2 text-m font-medium bg-[#484abb]"
-              style="color: #8f91f8"
+              style="color: #5a5cf1"
               >Home</a
             >
             <a
               href="./leagues/index.html"
-              class="text-white px-3 py-2 text-m font-medium hover:text-gray-300"
+              class="px-3 py-2 text-m font-medium hover:text-gray-600"
               >Leagues</a
             >
             <a
               href="./trending/index.html"
-              class="text-white hover:text-gray-300 px-3 py-2 text-m font-medium"
+              class="px-3 py-2 text-m font-medium hover:text-gray-600"
               >Trending</a
             >
             <a
               href="./saved/index.html"
-              class="text-white hover:text-gray-300 px-3 py-2 text-m font-medium"
+              class="px-3 py-2 text-m font-medium hover:text-gray-600"
               >Saved</a
             >
           </div>
 
-          <div class="relative flex justify-between">
+          <div class="qol-div relative flex justify-between">
             <input
               type="text"
               placeholder="Search..."
-              class="px-3 py-2 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-gray-500"
+              class="px-3 py-2 rounded-lg bg-gray-400 placeholder-black focus:outline-none focus:ring-2 focus:ring-gray-500"
             />
             <button class="h-8 w-8 mx-6 mt-1" id="dark-mode">
               <svg
@@ -79,74 +84,111 @@
     <main class="bg-white flex flex-col">
       <div
         id="graph-description"
-        class="grid grid-cols-2 gap-x-10 mx-40 mb-20 mt-40"
+        class="main-desc grid grid-cols-2 gap-x-10 mx-40 mb-20 mt-40"
       >
         <img
           src="./images/line_graph_homepage.jpg!w700wp"
           alt="Line graph"
-          class="mb-0 border-transparent rounded-3xl"
+          class="mb-0 border-transparent rounded-3xl shadow-xl"
           style="width: 700px; height: 375px"
         />
-        <div class="flex justify-start row-start-2 mt-3">
-          <img
-            src="./images/patrick_mahomes_homepage.webp"
-            style="width: 50px; height: 50px"
-            class="rounded-md border-transparent"
-          />
-          <p class="flex flex-col text-white">
-            <span class="mx-3"> Patrick Mahomes</span>
-            <span class="mx-3"> Current Season Passing Yards</span>
-          </p>
-        </div>
-        <p
-          class="flex flex-col justify-center text-white content-center text-center font-sans font-bold"
+
+        <article
+          class="main-desc-text flex flex-col justify-center text-black content-center text-center font-sans font-bold"
         >
-          <span class="text-3xl">Real time stat trackers</span> <br />
+          <span class="text-3xl">Real time stat trackers</span>
+          <br />
           <span class="text-lg"
             >Track player and team stats throughout the season.</span
           ><br />
-          <span class="text-lg"
+          <span
             >Make informed fantasy or betting decisions based on stat
             trends.</span
           >
-        </p>
+        </article>
       </div>
       <div
-        class="flex flex-row justify-center content-center mb-20"
+        class="flex flex-row justify-center content-center my-20"
         style="font-family: Roboto; font-weight: 700"
       >
         <div
           id="card-leagues"
-          class="flex flex-col basis-1/4 w-1/4 bg-[#a9a9a8] mx-4 rounded-xl shadow-2xl"
+          class="flex flex-col basis-1/4 w-1/4 bg-gradient-to-b from-blue-400 to-red-600 mx-6 rounded-xl shadow-2xl group"
         >
           <img
-            class="self-center w-3/4 h-fit m-4"
+            class="self-center w-3/4 h-fit m-4 object-cover"
             src="images/National_Football_League_logo.webp"
+            alt="Lebron James stat photo credit: Jordan Fortin Belanger at behance.net"
           />
-          <span
-            class="text-white text-3xl inline text-center mb-4 cursor-default"
-            >Leagues</span
+          <div
+            class="absolute h-3/5 w-1/4 bg-gray-800 bg-opacity-70 flex justify-center items-center rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
+            <span class="text-white text-2xl font-semibold">Leagues</span>
+          </div>
         </div>
         <div
           id="card-trending"
-          class="flex flex-col basis-1/4 w-1/4 bg-black mx-4 rounded-xl"
+          class="flex flex-col basis-1/4 w-1/4 bg-[#a9a9a8] mx-6 rounded-xl shadow-2xl group"
         >
-          2
+          <img
+            class="self-center w-fit h-fit rounded-xl object-cover"
+            src="images/trending_card_img.png"
+          />
+          <div
+            class="absolute h-3/5 w-1/4 bg-gray-800 bg-opacity-70 flex justify-center items-center rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            <span class="text-white text-2xl font-semibold">Trending</span>
+          </div>
         </div>
         <div
           id="card-saved"
-          class="flex flex-col basis-1/4 w-1/4 bg-black mx-4 rounded-xl"
+          class="flex flex-col justify-center content-center basis-1/5 w-1/4 bg-gradient-to-br from-green-200 to-green-900 mx-6 rounded-xl shadow-2xl group"
         >
-          3
+          <ul class="mx-5 object-cover">
+            <li class="px-5 mx-5 py-2 rounded-lg">
+              <div class="animate-pulse flex content-center space-x-4">
+                <div class="rounded-full bg-gray-200 h-10 w-10"></div>
+                <div class="h-2 flex-1 bg-gray-200 mt-4 rounded"></div>
+              </div>
+            </li>
+            <li class="px-5 mx-5 py-2 rounded-lg">
+              <div class="animate-pulse flex content-center space-x-4">
+                <div class="rounded-full bg-gray-200 h-10 w-10"></div>
+                <div class="h-2 flex-1 bg-gray-200 mt-4 rounded"></div>
+              </div>
+            </li>
+            <li class="px-5 mx-5 py-2 rounded-lg">
+              <div class="animate-pulse flex content-center space-x-4">
+                <div class="rounded-full bg-gray-200 h-10 w-10"></div>
+                <div class="h-2 flex-1 bg-gray-200 mt-4 rounded"></div>
+              </div>
+            </li>
+            <li class="px-5 mx-5 py-2 rounded-lg">
+              <div class="animate-pulse flex content-center space-x-4">
+                <div class="rounded-full bg-gray-200 h-10 w-10"></div>
+                <div class="h-2 flex-1 bg-gray-200 mt-4 rounded"></div>
+              </div>
+            </li>
+            <li class="px-5 mx-5 py-2 rounded-lg">
+              <div class="animate-pulse flex content-center space-x-4">
+                <div class="rounded-full bg-gray-200 h-10 w-10"></div>
+                <div class="h-2 flex-1 bg-gray-200 mt-4 rounded"></div>
+              </div>
+            </li>
+          </ul>
+          <div
+            class="absolute h-3/5 w-1/4 bg-gray-800 bg-opacity-70 flex justify-center items-center rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            <span class="text-white text-2xl font-semibold">Saved</span>
+          </div>
         </div>
       </div>
     </main>
     <footer
-      class="bg-gray-900 flex justify-around align-center border-t border-t-indigo-500 lg:visible sm:invisible"
+      class="bg-gray-400 flex justify-around align-center border-t border-t-indigo-500 lg:visible sm:invisible"
       style="height: 25vh; border-color: #484abb"
     >
-      <ul class="text-gray-200 mt-10">
+      <ul class="text-black mt-10">
         <li class="hover:underline"><a href="#">Home</a></li>
         <li class="hover:underline">
           <a href="./leagues/index.html">Leagues</a>
@@ -156,7 +198,7 @@
         </li>
         <li class="hover:underline"><a href="./saved/index.html">Saved</a></li>
       </ul>
-      <ul class="text-gray-200 mt-10">
+      <ul class="text-black mt-10">
         <li class="hover:underline">
           <a href="https://www.prizepicks.com" target="_blank">PrizePicks</a>
         </li>

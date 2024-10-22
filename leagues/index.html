@@ -8,88 +8,211 @@
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
+    <!-- <link href="styles/global_lg.css" rel="stylesheet" /> -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+    </style>
     <title>Home</title>
   </head>
 
-  <body class="min-h-screen flex flex-col font-mono">
-    <header class="sticky top-0 border-b border-b-indigo-500 bg-gray-900">
-      <nav class="p-4">
+  <body class="min-h-screen flex flex-col">
+    <header
+      class="sticky top-0 bg-gray-100 shadow-md"
+      style="
+        border-bottom: 1 solid #484abb;
+        font-family: Roboto;
+        font-weight: 700;
+      "
+    >
+      <nav class="p-4 text-black">
         <div class="container mx-auto flex justify-between items-center">
           <!-- Left side - Nav links -->
-          <div class="flex space-x-4">
+          <div class="nav-links flex space-x-12 justify-between">
+            <!--.nav-links-->
+
             <a
               href="../index.html"
-              class="text-white hover:text-gray-300 px-3 py-2 rounded-sm text-m font-medium"
+              class="px-3 py-2 text-m font-medium hover:text-gray-600"
               >Home</a
             >
             <a
               href="#"
-              class="text-blue-300 px-3 py-2 rounded-sm text-m font-medium"
+              class="px-3 py-2 text-m font-medium hover:text-gray-600"
+              style="color: #5a5cf1"
               >Leagues</a
             >
             <a
               href="../trending/index.html"
-              class="text-white hover:text-gray-300 px-3 py-2 rounded-sm text-m font-medium"
+              class="px-3 py-2 text-m font-medium hover:text-gray-600"
               >Trending</a
             >
             <a
               href="../saved/index.html"
-              class="text-white hover:text-gray-300 px-3 py-2 rounded-sm text-m font-medium"
+              class="px-3 py-2 text-m font-medium hover:text-gray-600"
               >Saved</a
             >
           </div>
 
-          <div class="relative">
-            <button class="text-white" id="darkmode">DarkMode</button>
+          <div class="qol-div relative flex justify-between">
             <input
               type="text"
               placeholder="Search..."
-              class="px-3 py-2 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-gray-500"
+              class="px-3 py-2 rounded-lg bg-gray-400 placeholder-black focus:outline-none focus:ring-2 focus:ring-gray-500"
             />
-            <button
-              class="absolute right-1 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white"
-            >
+            <button class="h-8 w-8 mx-6 mt-1" id="dark-mode">
               <svg
-                class="h-5 w-5"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
+                class="fill-indigo-500"
                 viewBox="0 0 24 24"
+                version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1116.65 4.65a7.5 7.5 0 010 10.6z"
-                ></path>
+                <g id="dark-icon" stroke="none" stroke-width="1">
+                  <g id="ic_fluent_dark_theme_24_regular" fill="#6366f1">
+                    <path
+                      d="M12,22 C17.5228475,22 22,17.5228475 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 Z M12,20.5 L12,3.5 C16.6944204,3.5 20.5,7.30557963 20.5,12 C20.5,16.6944204 16.6944204,20.5 12,20.5 Z"
+                      id="🎨-Color"
+                    ></path>
+                  </g>
+                </g>
               </svg>
             </button>
           </div>
         </div>
       </nav>
     </header>
-    <main class="bg-gray-800 flex flex-col min-h-screen"></main>
-    <footer
-      class="bg-gray-900 flex justify-around align-center border-t border-t-indigo-500 lg:visible sm:invisible"
-      style="height: 30vh"
-    >
-      <ul class="text-gray-200">
-        <li>Home</li>
-        <li>Leagues</li>
-        <li>Trending</li>
-        <li>Saved</li>
+    <main class="bg-white flex flex-col">
+      <ul
+        class="flex flex-row justify-around mt-10 font-semibold"
+        style="color: Roboto"
+      >
+        <li
+          class="hover:text-white hover:bg-indigo-600 border-2 rounded-3xl py-2 px-8 border-indigo-400 cursor-pointer"
+        >
+          NFL
+        </li>
+        <li
+          class="hover:text-white hover:bg-indigo-600 border-2 rounded-3xl py-2 px-8 border-indigo-400 cursor-pointer"
+        >
+          NBA
+        </li>
+        <li
+          class="hover:text-white hover:bg-indigo-600 border-2 rounded-3xl py-2 px-8 border-indigo-400 cursor-pointer"
+        >
+          NCAAF
+        </li>
+        <li
+          class="hover:text-white hover:bg-indigo-600 border-2 rounded-3xl py-2 px-8 border-indigo-400 cursor-pointer"
+        >
+          MLB
+        </li>
+        <li
+          class="hover:text-white hover:bg-indigo-600 border-2 rounded-3xl py-2 px-8 border-indigo-400 cursor-pointer"
+        >
+          NHL
+        </li>
+        <li
+          class="hover:text-white hover:bg-indigo-600 border-2 rounded-3xl py-2 px-8 border-indigo-400 cursor-pointer"
+        >
+          Soccer
+        </li>
+        <li
+          class="hover:text-white hover:bg-indigo-600 border-2 rounded-3xl py-2 px-8 border-indigo-400 cursor-pointer"
+        >
+          UFC
+        </li>
       </ul>
-      <ul class="text-gray-200">
-        <li>
+      <ul id="leagues-list" class="grid grid-cols-8 gap-6 mx-auto my-8"></ul>
+    </main>
+    <footer
+      class="bg-gray-400 flex justify-around align-center border-t border-t-indigo-500 lg:visible sm:invisible"
+      style="height: 25vh; border-color: #484abb"
+    >
+      <ul class="text-black mt-10">
+        <li class="hover:underline"><a href="#">Home</a></li>
+        <li class="hover:underline">
+          <a href="./leagues/index.html">Leagues</a>
+        </li>
+        <li class="hover:underline">
+          <a href="./trending/index.html">Trending</a>
+        </li>
+        <li class="hover:underline"><a href="./saved/index.html">Saved</a></li>
+      </ul>
+      <ul class="text-black mt-10">
+        <li class="hover:underline">
           <a href="https://www.prizepicks.com" target="_blank">PrizePicks</a>
         </li>
-        <li><a href="https://www.fanduel.com" target="_blank">FanDuel</a></li>
-        <li>
+        <li class="hover:underline">
+          <a href="https://www.fanduel.com" target="_blank">FanDuel</a>
+        </li>
+        <li class="hover:underline">
           <a href="https://www.draftkings.com" target="_blank">DraftKings</a>
         </li>
-        <li><a href="https://www.sleeper.com" target="_blank">Sleeper</a></li>
-        <li><a href="https://www.getfliff.com" target="_blank">Fliff</a></li>
+        <li class="hover:underline">
+          <a href="https://www.sleeper.com" target="_blank">Sleeper</a>
+        </li>
+        <li class="hover:underline">
+          <a href="https://www.getfliff.com" target="_blank">Fliff</a>
+        </li>
       </ul>
     </footer>
   </body>
+  <script>
+    {
+      let leagues = fetch("../data/nfl.json")
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json(); // Parse the response body as JSON
+        })
+        .then((data) => {
+          const filtered = [];
+          for (e of data) {
+            filtered.push({
+              key: e.Key,
+              name: e.FullName,
+              url: e.WikipediaLogoURL,
+            });
+          }
+
+          let leaguesList = document.querySelector("#leagues-list");
+
+          for (let element of filtered) {
+            let li = document.createElement("li");
+            const li_classes = [
+              "flex",
+              "flex-col",
+              "content-center",
+              "justify-center",
+              "w-40",
+              "h-40",
+              "border",
+              "rounded-xl",
+              "cursor-pointer",
+              "hover:bg-gray-200",
+              ,
+            ];
+
+            for (let li_cls of li_classes) {
+              li.classList.add(li_cls);
+            }
+
+            let img = document.createElement("img");
+            img.classList.add("w-28");
+            img.classList.add("h-28");
+            img.classList.add("mx-auto");
+            img.src = element.url;
+
+            let span = document.createElement("span");
+            span.textContent = element.name;
+            span.classList.add("text-center");
+
+            li.appendChild(img);
+            li.appendChild(span);
+            leaguesList.appendChild(li);
+          }
+        });
+    }
+  </script>
 </html>
