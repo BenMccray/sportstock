@@ -12,6 +12,12 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
     </style>
+    <style>
+      #chart_div text {
+        font-size: larger;
+        font-family: "Roboto";
+      }
+    </style>
     <title>Home</title>
   </head>
 
@@ -36,7 +42,7 @@
               >Home</a
             >
             <a
-              href="../leagues/index.html"
+              href="../league/index.html"
               class="px-3 py-2 text-m font-medium hover:text-gray-600"
               >Leagues</a
             >
@@ -81,6 +87,9 @@
         </div>
       </nav>
     </header>
+    <main class="bg-white flex flex-col">
+      <div class="flex justify-center" id="chart_div"></div>
+    </main>
     <footer
       class="bg-gray-400 flex justify-around align-center border-t border-t-indigo-500 lg:visible sm:invisible"
       style="height: 25vh; border-color: #484abb"
@@ -114,4 +123,71 @@
       </ul>
     </footer>
   </body>
+  <script
+    type="text/javascript"
+    src="https://www.gstatic.com/charts/loader.js"
+  ></script>
+  <script type="text/javascript">
+    // Load the Visualization API and the corechart package.
+    google.charts.load("current", { packages: ["corechart"] });
+
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.charts.setOnLoadCallback(drawChart);
+
+    // Callback that creates and populates a data table,
+    // instantiates the pie chart, passes in the data and
+    // draws it.
+    let KEY = "8f5454aa84b6d4cc5968d292ac0cda25";
+    let myHeaders = new Headers();
+    myHeaders.append("x-rapidapi-key", KEY);
+    myHeaders.append("x-rapidapi-host", "v1.american-football.api-sports.io");
+
+    var requestOptions = {
+      method: "GET",
+      headers: myHeaders,
+      redirect: "follow",
+    };
+
+    fetch("https://v1.american-football.api-sports.io/leagues", requestOptions)
+      .then((response) => response.text())
+      .then((result) => console.log(result))
+      .catch((error) => console.log("error", error));
+
+    let filtered = [["Week", "Yards"]];
+    let leagues = fetch("../data/mahomes.json")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json(); // Parse the response body as JSON
+      })
+      .then((data) => {
+        for (e of data) {
+          filtered.push([e.Week, e.PassingYards]);
+        }
+
+        filtered.sort((a, b) => a[0] - b[0]);
+      });
+
+    function drawChart() {
+      // Create the data table.
+
+      let data = new google.visualization.arrayToDataTable(filtered);
+
+      // Set chart options
+      let options = {
+        title: "Patrick Mahomes",
+        width: 800,
+        height: 600,
+      };
+
+      // Instantiate and draw our chart, passing in some options.
+      let chart = new google.visualization.LineChart(
+        document.getElementById("chart_div")
+      );
+      chart.draw(data, options);
+    }
+
+    /******  dc05cad9-672e-4dee-85b0-1f8e9c2e35eb  *******/
+  </script>
 </html>
