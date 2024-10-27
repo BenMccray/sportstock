@@ -206,10 +206,13 @@
 
             let span = document.createElement("span");
             span.textContent = element.name;
-            span.classList.add("text-center");
 
-            li.appendChild(img);
-            li.appendChild(span);
+            let link = document.createElement("a");
+            link.href = "../team/index.html";
+            link.classList.add("text-center");
+            link.appendChild(img);
+            link.appendChild(span);
+            li.appendChild(link);
             leaguesList.appendChild(li);
           }
         });

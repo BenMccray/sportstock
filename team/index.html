@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 
-<!DOCTYPE html>
-
 <html>
   <head lang="en">
     <meta charset="UTF-8" />
@@ -19,12 +17,11 @@
 
   <body class="min-h-screen flex flex-col">
     <header
-      class="sticky top-0 bg-gray-100 shadow-md"
+      class="sticky top-0 bg-gray-100 shadow-md z-10"
       style="
         border-bottom: 1 solid #484abb;
         font-family: Roboto;
         font-weight: 700;
-        z-index: 1;
       "
     >
       <nav class="p-4 text-black">
@@ -49,9 +46,8 @@
               >Trending</a
             >
             <a
-              href="#"
-              class="px-3 py-2 text-m font-medium"
-              style="color: #5a5cf1"
+              href="../saved/index.html"
+              class="px-3 py-2 text-m font-medium hover:text-gray-600"
               >Saved</a
             >
           </div>
@@ -84,17 +80,7 @@
         </div>
       </nav>
     </header>
-    <main class="bg-white flex flex-col min-h-screen" style="z-index: 0">
-      <article
-        class="text-black text-center font-bold drop-shadow text-7xl absolute align-middle top-44 inset-0"
-        style="font-family: Verdana"
-      >
-        <h1>Nothing Saved</h1>
-        <br />
-        <span class="text-4xl">Save teams or players to look back later</span>
-      </article>
-      <div id="saved-list "></div>
-    </main>
+    <main></main>
     <footer
       class="bg-gray-400 flex justify-around align-center border-t border-t-indigo-500 lg:visible sm:invisible"
       style="height: 25vh; border-color: #484abb"
