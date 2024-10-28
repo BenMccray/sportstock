@@ -14,11 +14,39 @@
     <title>Home</title>
   </head>
 
-  <body class="min-h-screen flex flex-col">
+  <body>
     <header>
       <nav>
         <div id="menu-lg">
-          <button id="menu-btn">
+          <div class="nav-links">
+            <a class="nav-link" href="../index.html">Home</a>
+            <a class="nav-link" href="../league/index.html">Leagues</a>
+            <a class="nav-link" href="../trending/index.html">Trending</a>
+            <a class="nav-link active" href="#">Saved</a>
+          </div>
+
+          <div class="qol-div">
+            <input class="search-bar" type="text" placeholder="Search..." />
+            <button class="color-scheme-btn" id="dark-mode">
+              <svg
+                viewBox="0 0 24 24"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g stroke="none" stroke-width="1">
+                  <g>
+                    <path
+                      d="M12,22 C17.5228475,22 22,17.5228475 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 Z M12,20.5 L12,3.5 C16.6944204,3.5 20.5,7.30557963 20.5,12 C20.5,16.6944204 16.6944204,20.5 12,20.5 Z"
+                    ></path>
+                  </g>
+                </g>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="nav-sm">
+          <button id="menu-btn" aria-expanded="false" aria-controls="menu-sm">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -33,15 +61,7 @@
               />
             </svg>
           </button>
-
-          <div class="nav-links">
-            <a class="nav-link" href="../index.html">Home</a>
-            <a class="nav-link" href="../league/index.html">Leagues</a>
-            <a class="nav-link" href="../trending/index.html">Trending</a>
-            <a class="nav-link active" href="#">Saved</a>
-          </div>
-
-          <div class="qol-div">
+          <div class="qol-div-sm">
             <input class="search-bar" type="text" placeholder="Search..." />
             <button class="color-scheme-btn" id="dark-mode">
               <svg
@@ -70,45 +90,39 @@
       </nav>
       <script src="../scripts/nav-sm.js"></script>
     </header>
-    <main class="bg-white flex flex-col min-h-screen" style="z-index: 0">
-      <article
-        class="text-black text-center font-bold drop-shadow text-7xl absolute align-middle top-44 inset-0"
-        style="font-family: Verdana"
-      >
+    <main>
+      <article>
         <h1>Nothing Saved</h1>
         <br />
-        <span class="text-4xl">Save teams or players to look back later</span>
+        <span>Save teams or players to look back later</span>
       </article>
       <div id="saved-list "></div>
     </main>
-    <footer
-      class="bg-gray-400 flex justify-around align-center border-t border-t-indigo-500 lg:visible sm:invisible"
-      style="height: 25vh; border-color: #484abb"
-    >
-      <ul class="text-black mt-10">
-        <li class="hover:underline"><a href="#">Home</a></li>
-        <li class="hover:underline">
-          <a href="./leagues/index.html">Leagues</a>
+    <footer>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li>
+          <a href="../leagues/index.html">Leagues</a>
         </li>
-        <li class="hover:underline">
-          <a href="./trending/index.html">Trending</a>
+        <li>
+          <a href="../trending/index.html">Trending</a>
         </li>
-        <li class="hover:underline"><a href="./saved/index.html">Saved</a></li>
+        <li><a href="#">Saved</a></li>
       </ul>
-      <ul class="text-black mt-10">
-        <li class="hover:underline">
+      <ul>
+        <li>
           <a href="https://www.prizepicks.com" target="_blank">PrizePicks</a>
         </li>
-        <li class="hover:underline">
+        <li>
           <a href="https://www.fanduel.com" target="_blank">FanDuel</a>
         </li>
-        <li class="hover:underline">
+        <li>
           <a href="https://www.draftkings.com" target="_blank">DraftKings</a>
         </li>
-        <li class="hover:underline">
+        <li>
           <a href="https://www.sleeper.com" target="_blank">Sleeper</a>
         </li>
-        <li class="hover:underline">
+        <li>
           <a href="https://www.getfliff.com" target="_blank">Fliff</a>
         </li>
       </ul>
