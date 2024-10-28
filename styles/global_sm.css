@@ -1,0 +1,115 @@
+:root {
+    --main-light-mode: white;
+    --nav-light-mode: #f3f4f6;
+    --footer-light-mode: #9ca3af;
+    --main-dark-mode: rgb(48, 47, 47);
+    --nav-dark-mode: black;
+    --footer-dark-mode: rgb(42, 42, 42);
+  }
+
+  @media (min-width: 399px) and (max-width: 640px) {
+
+    body {
+        height: 100vh;
+        margin:0;
+        background: rgb(134,134,134);
+        background: radial-gradient(circle, rgba(134,134,134,1) 0%, rgba(255,255,255,1) 100%);
+    }
+
+    #menu-lg {
+        display: none;
+    }
+    #menu-btn {
+        position: sticky;
+        visibility: visible;
+        color: black;
+        height: 45px;
+        width: 45px;
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        border: none;
+        background-color: inherit;
+    }
+
+    #menu-sm {
+        width: 100vw;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        background: rgb(134,134,134);
+        background: radial-gradient(circle, rgba(134,134,134,1) 0%, rgba(255,255,255,1) 100%);
+        z-index: 10;
+    }
+    #menu-sm.show {
+        max-height: 100vh;
+    }
+
+    #menu-sm a {
+        text-decoration: none;
+        color: black;
+        font-family: "Roboto";
+        font-weight: 600;
+        padding: 15% 100%;
+        font-size: x-large;
+    }
+    #menu-sm a:nth-child(2n+1) {
+        border: 1px solid gray;
+    }
+    #menu-sm a:last-child {
+        border-bottom: 1px solid gray;
+    }
+    .nav-sm {
+        display:flex;
+        justify-content: space-between;
+    }
+    .search-bar {
+        padding: .25rem 3rem 0 1rem;
+        border-radius: 0.5rem;
+        background-color: #b0b4bb;
+        border: 2px solid transparent;
+        margin:auto;
+        height: 2rem
+      }
+    
+      .search-bar:focus {
+        outline: 2px solid transparent;
+        outline-offset: 2px;
+        border: 2px solid rgb(93, 92, 92);
+      }
+      .search-bar::placeholder {
+        color: rgb(60, 59, 59);
+        font-size: large;
+      }
+    
+      .color-scheme-btn {
+        height: 2.25rem;
+        width: 2.25rem;
+        margin: auto 1.5rem auto 3rem;
+        border: none;
+        background-color: inherit;
+        size: 1.5rem;
+        padding: 0;
+      }
+    
+      .color-scheme-btn:hover {
+        cursor: pointer;
+      }
+    
+      .color-scheme-btn > svg {
+        fill: #6366f1;
+      }
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+    footer {
+        display: none;
+    }
+  }

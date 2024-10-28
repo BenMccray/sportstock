@@ -1,77 +1,38 @@
 <!DOCTYPE html>
-
 <html>
   <head lang="en">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-    <!-- <link href="styles/global_lg.css" rel="stylesheet" /> -->
+    <link href="styles/global_lg.css" rel="stylesheet" />
+    <link href="styles/home_lg.css" rel="stylesheet" />
+    <link href="styles/global_sm.css" rel="stylesheet" />
+    <link href="styles/home_sm.css" rel="stylesheet"/>
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap");
     </style>
     <title>Home</title>
   </head>
 
-  <body class="min-h-screen flex flex-col">
-    <header
-      class="sticky top-0 bg-gray-100 shadow-md z-10"
-      style="
-        border-bottom: 1 solid #484abb;
-        font-family: Roboto;
-        font-weight: 700;
-      "
-    >
-      <nav class="p-4 text-black">
-        <div class="container mx-auto flex justify-between items-center">
-          <!-- Left side - Nav links -->
-          <div class="nav-links flex space-x-12 justify-between">
-            <!--.nav-links-->
-
-            <a
-              href="#"
-              class="px-3 py-2 text-m font-medium bg-[#484abb]"
-              style="color: #5a5cf1"
-              >Home</a
-            >
-            <a
-              href="./league/index.html"
-              class="px-3 py-2 text-m font-medium hover:text-gray-600"
-              >Leagues</a
-            >
-            <a
-              href="./trending/index.html"
-              class="px-3 py-2 text-m font-medium hover:text-gray-600"
-              >Trending</a
-            >
-            <a
-              href="./saved/index.html"
-              class="px-3 py-2 text-m font-medium hover:text-gray-600"
-              >Saved</a
-            >
+  <body>
+    <header>
+      <nav>
+        
+        <div id="menu-lg">
+          <div class="nav-links">
+            <a class="nav-link active" href="#">Home</a>
+            <a class="nav-link" href="./league/index.html">Leagues</a>
+            <a class="nav-link" href="./trending/index.html">Trending</a>
+            <a class="nav-link" href="./saved/index.html">Saved</a>
           </div>
 
-          <div class="qol-div relative flex justify-between">
-            <input
-              type="text"
-              placeholder="Search..."
-              class="px-3 py-2 rounded-lg bg-gray-400 placeholder-black focus:outline-none focus:ring-2 focus:ring-gray-500"
-            />
-            <button class="h-8 w-8 mx-6 mt-1" id="dark-mode">
-              <svg
-                class="fill-indigo-500"
-                viewBox="0 0 24 24"
-                version="1.1"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-              >
-                <g id="dark-icon" stroke="none" stroke-width="1">
-                  <g id="ic_fluent_dark_theme_24_regular" fill="#6366f1">
+          <div class="qol-div">
+            <input class="search-bar" type="text" placeholder="Search..." />
+            <button class="color-scheme-btn" id="dark-mode">
+              <svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <g stroke="none" stroke-width="1">
+                  <g>
                     <path
                       d="M12,22 C17.5228475,22 22,17.5228475 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 Z M12,20.5 L12,3.5 C16.6944204,3.5 20.5,7.30557963 20.5,12 C20.5,16.6944204 16.6944204,20.5 12,20.5 Z"
-                      id="🎨-Color"
                     ></path>
                   </g>
                 </g>
@@ -79,144 +40,133 @@
             </button>
           </div>
         </div>
+
+        <div class="nav-sm">
+          <button id="menu-btn" aria-expanded="false" aria-controls="menu-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+          <div class="qol-div-sm">
+            <input class="search-bar" type="text" placeholder="Search..." />
+            <button class="color-scheme-btn" id="dark-mode">
+              <svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <g stroke="none" stroke-width="1">
+                  <g>
+                    <path
+                      d="M12,22 C17.5228475,22 22,17.5228475 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 Z M12,20.5 L12,3.5 C16.6944204,3.5 20.5,7.30557963 20.5,12 C20.5,16.6944204 16.6944204,20.5 12,20.5 Z"
+                    ></path>
+                  </g>
+                </g>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div id="menu-sm" aria-hidden="true" role="region">
+          <a href="#">Home</a>
+          <a href="./league/index.html">Leagues</a>
+          <a href="./trending/index.html">Trending</a>
+          <a href="./saved/index.html">Saved</a>
+        </div>
       </nav>
     </header>
-    <main class="bg-white flex flex-col">
-      <div
-        id="graph-description"
-        class="main-desc grid grid-cols-2 gap-x-10 mx-40 mb-20 mt-40"
-      >
-        <img
-          src="./images/line_graph_homepage.jpg!w700wp"
-          alt="Line graph"
-          class="mb-0 border-transparent rounded-3xl shadow-xl"
-          style="width: 700px; height: 375px"
-        />
 
-        <article
-          class="main-desc-text flex flex-col justify-center text-black content-center text-center font-sans font-bold"
-        >
-          <span class="text-3xl">Real time stat trackers</span>
+    <main>
+      <div class="main-desc" id="graph-description">
+        <img class="main-desc-graph" src="./images/line_graph_homepage.jpg!w700wp" alt="Line graph" />
+
+        <article class="main-desc-text">
+          <h1>Real-time stat trackers</h1>
           <br />
-          <span class="text-lg"
-            >Track player and team stats throughout the season.</span
-          ><br />
-          <span
-            >Make informed fantasy or betting decisions based on stat
-            trends.</span
-          >
+          <span>Track player and team stats throughout the season.</span>
+          <br />
+          <span>Make informed fantasy or betting decisions based on stat trends.</span>
         </article>
       </div>
-      <div
-        class="flex flex-row justify-center content-center my-20"
-        style="font-family: Roboto; font-weight: 700"
-      >
-        <div
-          id="card-leagues"
-          class="flex flex-col basis-1/4 w-1/4 justify-center bg-gradient-to-b from-blue-400 to-red-600 mx-6 rounded-xl shadow-2xl group"
-        >
-          <img
-            class="self-center w-3/4 m-4 object-fill"
-            src="images/National_Football_League_logo.webp"
-            alt="Lebron James stat photo credit: Jordan Fortin Belanger at behance.net"
-          />
-          <div
-            class="absolute bg-gray-800 bg-opacity-70 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-          >
-            <span class="text-white text-2xl font-semibold">Leagues</span>
+
+      <div class="card-container">
+        <section class="shadow-drop-center " id="card-leagues">
+          <img src="images/National_Football_League_logo.webp" alt="NFL logo" />
+          <div class="magic-cover">
+            <span>Leagues</span>
           </div>
-        </div>
-        <div
-          id="card-trending"
-          class="flex flex-col basis-1/4 w-1/4 mx-6 rounded-xl shadow-2xl group"
-        >
-          <img
-            class="self-center w-fit h-fit rounded-xl object-cover"
-            src="images/trending_card_img.png"
-          />
-          <!-- <div
-            class="absolute h-3/5 w-1/4 bg-gray-800 bg-opacity-70 flex justify-center items-center rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-          >
-            <span class="absolute text-white text-2xl font-semibold"
-              >Trending</span
-            >
-          </div>
-        </div>
-        <div
-          id="card-saved"
-          class="flex flex-col justify-center content-center basis-1/5 w-1/4 bg-gradient-to-br from-green-200 to-green-900 mx-6 rounded-xl shadow-2xl group"
-        >
-          <ul class="mx-5 object-cover">
-            <li class="px-5 mx-5 py-2 rounded-lg">
-              <div class="animate-pulse flex content-center space-x-4">
-                <div class="rounded-full bg-gray-200 h-10 w-10"></div>
-                <div class="h-2 flex-1 bg-gray-200 mt-4 rounded"></div>
-              </div>
-            </li>
-            <li class="px-5 mx-5 py-2 rounded-lg">
-              <div class="animate-pulse flex content-center space-x-4">
-                <div class="rounded-full bg-gray-200 h-10 w-10"></div>
-                <div class="h-2 flex-1 bg-gray-200 mt-4 rounded"></div>
-              </div>
-            </li>
-            <li class="px-5 mx-5 py-2 rounded-lg">
-              <div class="animate-pulse flex content-center space-x-4">
-                <div class="rounded-full bg-gray-200 h-10 w-10"></div>
-                <div class="h-2 flex-1 bg-gray-200 mt-4 rounded"></div>
-              </div>
-            </li>
-            <li class="px-5 mx-5 py-2 rounded-lg">
-              <div class="animate-pulse flex content-center space-x-4">
-                <div class="rounded-full bg-gray-200 h-10 w-10"></div>
-                <div class="h-2 flex-1 bg-gray-200 mt-4 rounded"></div>
-              </div>
-            </li>
-            <li class="px-5 mx-5 py-2 rounded-lg">
-              <div class="animate-pulse flex content-center space-x-4">
-                <div class="rounded-full bg-gray-200 h-10 w-10"></div>
-                <div class="h-2 flex-1 bg-gray-200 mt-4 rounded"></div>
-              </div>
-            </li>
+        </section>
+        <section class="shadow-drop-center" id="card-trending">
+          <img src="images/trending_card_img.png"  alt="Trending stat photo credit: Jordan Fortin Belanger at behance.net" />
+          <div class="magic-cover"><span>Trending</span></div>
+        </section>
+        <section class="shadow-drop-center" id="card-saved">
+          <ul class="pulsate-fwd">
+            <li><div class="line"></div></li>
+            <li><div class="line"></div></li>
+            <li><div class="line"></div></li>
+            <li><div class="line"></div></li>
+            <li><div class="line"></div></li>
           </ul>
-          <!-- <div
-            class="absolute h-3/5 w-1/4 bg-gray-800 bg-opacity-70 flex justify-center items-center rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-          >
-            <span class="text-white text-2xl font-semibold">Saved</span>
-          </div> -->
-        </div>
+          <div class="magic-cover"><span>Saved</span></div>
+        </section>
       </div>
     </main>
-    <footer
-      class="bg-gray-400 flex justify-around align-center border-t border-t-indigo-500 lg:visible sm:invisible"
-      style="height: 25vh; border-color: #484abb"
-    >
-      <ul class="text-black mt-10">
-        <li class="hover:underline"><a href="#">Home</a></li>
-        <li class="hover:underline">
-          <a href="./leagues/index.html">Leagues</a>
-        </li>
-        <li class="hover:underline">
-          <a href="./trending/index.html">Trending</a>
-        </li>
-        <li class="hover:underline"><a href="./saved/index.html">Saved</a></li>
+
+    <footer>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="./leagues/index.html">Leagues</a></li>
+        <li><a href="./trending/index.html">Trending</a></li>
+        <li><a href="./saved/index.html">Saved</a></li>
       </ul>
-      <ul class="text-black mt-10">
-        <li class="hover:underline">
-          <a href="https://www.prizepicks.com" target="_blank">PrizePicks</a>
-        </li>
-        <li class="hover:underline">
-          <a href="https://www.fanduel.com" target="_blank">FanDuel</a>
-        </li>
-        <li class="hover:underline">
-          <a href="https://www.draftkings.com" target="_blank">DraftKings</a>
-        </li>
-        <li class="hover:underline">
-          <a href="https://www.sleeper.com" target="_blank">Sleeper</a>
-        </li>
-        <li class="hover:underline">
-          <a href="https://www.getfliff.com" target="_blank">Fliff</a>
-        </li>
+      <ul>
+        <li><a href="https://www.prizepicks.com" target="_blank">PrizePicks</a></li>
+        <li><a href="https://www.fanduel.com" target="_blank">FanDuel</a></li>
+        <li><a href="https://www.draftkings.com" target="_blank">DraftKings</a></li>
+        <li><a href="https://sleeper.com" target="_blank">Sleeper</a></li>
       </ul>
+
     </footer>
   </body>
+  <script>
+    let cards = document.querySelectorAll(".card-container section");
+    console.log(cards)
+    cards.forEach(element => {
+      element.addEventListener("mouseover", () => {
+        element.querySelector(".magic-cover").classList.add("text-focus-in");
+      },
+      element.addEventListener("mouseleave", () => {
+        element.querySelector(".magic-cover").classList.remove("text-focus-in");
+    }))
+    });
+  </script>
+  <script>
+    // JavaScript to toggle the collapsible content
+    const collapseButton = document.getElementById("menu-btn");
+    const collapseContent = document.getElementById("menu-sm");
+
+    collapseButton.addEventListener("click", () => {
+      const isExpanded = collapseButton.getAttribute("aria-expanded") === "true";
+
+      // Toggle aria-expanded on button
+      collapseButton.setAttribute("aria-expanded", !isExpanded);
+
+      // Toggle aria-hidden on content
+      collapseContent.setAttribute("aria-hidden", isExpanded);
+
+      // Toggle the .show class to reveal or hide content
+      collapseContent.classList.toggle("show");
+    });
+  </script>
+  <script>
+    let screenWidth = window.innerWidth;
+
+    if (screenWidth < 768) {
+      let cards = document.querySelectorAll(".card-container section");
+      cards.forEach(element => {
+        element.addEventListener("click", () => {
+          element.querySelector('.magic-cover').classList.toggle("text-focus-in")
+          
+        })
+    });
+      
+
+    }
+  </script>
 </html>
