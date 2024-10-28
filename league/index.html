@@ -18,8 +18,6 @@
     <header>
       <nav>
         <div id="menu-lg">
-
-
           <div class="nav-links">
             <a class="nav-link" href="../index.html">Home</a>
             <a class="nav-link active" href="#">Leagues</a>
@@ -30,7 +28,11 @@
           <div class="qol-div">
             <input class="search-bar" type="text" placeholder="Search..." />
             <button class="color-scheme-btn" id="dark-mode">
-              <svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+              <svg
+                viewBox="0 0 24 24"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <g stroke="none" stroke-width="1">
                   <g>
                     <path
@@ -45,14 +47,28 @@
 
         <div class="nav-sm">
           <button id="menu-btn" aria-expanded="false" aria-controls="menu-sm">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
             </svg>
           </button>
           <div class="qol-div-sm">
             <input class="search-bar" type="text" placeholder="Search..." />
             <button class="color-scheme-btn" id="dark-mode">
-              <svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+              <svg
+                viewBox="0 0 24 24"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <g stroke="none" stroke-width="1">
                   <g>
                     <path
@@ -71,8 +87,9 @@
           <a href="../saved/index.html">Saved</a>
         </div>
       </nav>
+      <script src="../scripts/nav-sm.js"></script>
     </header>
-    
+
     <main>
       <ul class="league-selector">
         <li class="selector-active">NFL</li>
@@ -86,7 +103,7 @@
       <div class="select-prompt">
         <span class="select-text">Select League</span>
         <button id="selector-btn" aria-expanded="false" aria-controls="menu-sm">
-          <img class="arrow-img" src="../images/arrow_right.png">
+          <img class="arrow-img" src="../images/arrow_right.png" />
         </button>
       </div>
       <ul class="league-selector-sm" aria-hidden="true" role="region">
@@ -100,7 +117,7 @@
       </ul>
       <ul id="leagues-list"></ul>
     </main>
-    
+
     <footer>
       <ul>
         <li><a href="../index.html">Home</a></li>
@@ -109,85 +126,73 @@
         <li><a href="../saved/index.html">Saved</a></li>
       </ul>
       <ul>
-        <li><a href="https://www.prizepicks.com" target="_blank">PrizePicks</a></li>
+        <li>
+          <a href="https://www.prizepicks.com" target="_blank">PrizePicks</a>
+        </li>
         <li><a href="https://www.fanduel.com" target="_blank">FanDuel</a></li>
-        <li><a href="https://www.draftkings.com" target="_blank">DraftKings</a></li>
+        <li>
+          <a href="https://www.draftkings.com" target="_blank">DraftKings</a>
+        </li>
         <li><a href="https://sleeper.com" target="_blank">Sleeper</a></li>
       </ul>
-
     </footer>
   </body>
-  
+
   <script>
     fetch("../data/nfl.json")
-      .then(response => {
+      .then((response) => {
         if (!response.ok) throw new Error("Network response was not ok");
         return response.json();
       })
-      .then(data => {
+      .then((data) => {
         const leaguesList = document.querySelector("#leagues-list");
-        data.forEach(e => {
+        data.forEach((e) => {
           const li = document.createElement("li");
           const img = document.createElement("img");
           img.src = e.WikipediaLogoURL;
-          img.classList.add("team-logo")
-          
+          img.classList.add("team-logo");
+
           const span = document.createElement("span");
           span.textContent = e.FullName;
-          
+
           const link = document.createElement("a");
           link.href = "../team/index.html";
           link.appendChild(img);
           link.appendChild(span);
-          link.classList.add("team-link")
-          
+          link.classList.add("team-link");
+
           li.appendChild(link);
-          li.classList.add("team-card")
+          li.classList.add("team-card");
           leaguesList.appendChild(li);
         });
       });
   </script>
+
   <script>
     // JavaScript to toggle the collapsible content
-    const collapseButton = document.getElementById("menu-btn");
-    const collapseContent = document.getElementById("menu-sm");
-
-    collapseButton.addEventListener("click", () => {
-      const isExpanded = collapseButton.getAttribute("aria-expanded") === "true";
+    const collapseSelector = document.querySelector("#selector-btn");
+    const collapseSelectorContent = document.querySelector(
+      ".league-selector-sm"
+    );
+    let arrow = document.querySelector(".arrow-img");
+    collapseSelector.addEventListener("click", () => {
+      const isExpanded =
+        collapseSelector.getAttribute("aria-expanded") === "true";
 
       // Toggle aria-expanded on button
-      collapseButton.setAttribute("aria-expanded", !isExpanded);
+      collapseSelector.setAttribute("aria-expanded", !isExpanded);
 
       // Toggle aria-hidden on content
-      collapseContent.setAttribute("aria-hidden", isExpanded);
-      
-      // Toggle the .show class to reveal or hide content
-      collapseContent.classList.toggle("show");
-    });
-  </script>
-
-<script>
-  // JavaScript to toggle the collapsible content
-  const collapseSelector = document.querySelector("#selector-btn");
-  const collapseSelectorContent = document.querySelector(".league-selector-sm");
-  let arrow = document.querySelector(".arrow-img")
-  collapseSelector.addEventListener("click", () => {
-    const isExpanded = collapseSelector.getAttribute("aria-expanded") === "true";
-
-    // Toggle aria-expanded on button
-    collapseSelector.setAttribute("aria-expanded", !isExpanded);
-
-    // Toggle aria-hidden on content
-    collapseSelectorContent.setAttribute("aria-hidden", isExpanded);
-    if (arrow.classList.contains("open")) {
+      collapseSelectorContent.setAttribute("aria-hidden", isExpanded);
+      if (arrow.classList.contains("open")) {
         arrow.classList.remove("open");
         arrow.classList.add("close");
       } else {
         arrow.classList.remove("close");
         arrow.classList.add("open");
       }
-    // Toggle the .show class to reveal or hide content
-    collapseSelectorContent.classList.toggle("show");
-  });
-</script>
+      // Toggle the .show class to reveal or hide content
+      collapseSelectorContent.classList.toggle("show");
+    });
+  </script>
 </html>

@@ -10,6 +10,7 @@
       @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap");
     </style>
     <link href="../styles/global_lg.css" rel="stylesheet" />
+    <link href="../styles/global_sm.css" rel="stylesheet" />
     <title>Home</title>
   </head>
 
@@ -18,8 +19,18 @@
       <nav>
         <div id="menu-lg">
           <button id="menu-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
             </svg>
           </button>
 
@@ -33,7 +44,11 @@
           <div class="qol-div">
             <input class="search-bar" type="text" placeholder="Search..." />
             <button class="color-scheme-btn" id="dark-mode">
-              <svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+              <svg
+                viewBox="0 0 24 24"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <g stroke="none" stroke-width="1">
                   <g>
                     <path
@@ -46,13 +61,14 @@
           </div>
         </div>
 
-        <div id="menu-sm">
-          <a href="#">Home</a>
-          <a href="#">About</a>
-          <a href="#">Services</a>
-          <a href="#">Contact</a>
+        <div id="menu-sm" aria-hidden="true" role="region">
+          <a href="../index.html">Home</a>
+          <a href="../league/index.html">Leagues</a>
+          <a href="../trending/index.html">Trending</a>
+          <a href="#">Saved</a>
         </div>
       </nav>
+      <script src="../scripts/nav-sm.js"></script>
     </header>
     <main class="bg-white flex flex-col min-h-screen" style="z-index: 0">
       <article

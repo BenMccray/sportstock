@@ -6,17 +6,17 @@
     <link href="styles/global_lg.css" rel="stylesheet" />
     <link href="styles/home_lg.css" rel="stylesheet" />
     <link href="styles/global_sm.css" rel="stylesheet" />
-    <link href="styles/home_sm.css" rel="stylesheet"/>
+    <link href="styles/home_sm.css" rel="stylesheet" />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap");
     </style>
+
     <title>Home</title>
   </head>
 
   <body>
     <header>
       <nav>
-        
         <div id="menu-lg">
           <div class="nav-links">
             <a class="nav-link active" href="#">Home</a>
@@ -28,7 +28,11 @@
           <div class="qol-div">
             <input class="search-bar" type="text" placeholder="Search..." />
             <button class="color-scheme-btn" id="dark-mode">
-              <svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+              <svg
+                viewBox="0 0 24 24"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <g stroke="none" stroke-width="1">
                   <g>
                     <path
@@ -43,14 +47,28 @@
 
         <div class="nav-sm">
           <button id="menu-btn" aria-expanded="false" aria-controls="menu-sm">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
             </svg>
           </button>
           <div class="qol-div-sm">
             <input class="search-bar" type="text" placeholder="Search..." />
             <button class="color-scheme-btn" id="dark-mode">
-              <svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+              <svg
+                viewBox="0 0 24 24"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <g stroke="none" stroke-width="1">
                   <g>
                     <path
@@ -69,30 +87,41 @@
           <a href="./saved/index.html">Saved</a>
         </div>
       </nav>
+      <script src="./scripts/nav-sm.js"></script>
     </header>
 
     <main>
       <div class="main-desc" id="graph-description">
-        <img class="main-desc-graph" src="./images/line_graph_homepage.jpg!w700wp" alt="Line graph" />
+        <img
+          class="main-desc-graph"
+          src="./images/line_graph_homepage.jpg!w700wp"
+          alt="Line graph"
+        />
 
         <article class="main-desc-text">
           <h1>Real-time stat trackers</h1>
           <br />
           <span>Track player and team stats throughout the season.</span>
           <br />
-          <span>Make informed fantasy or betting decisions based on stat trends.</span>
+          <span
+            >Make informed fantasy or betting decisions based on stat
+            trends.</span
+          >
         </article>
       </div>
 
       <div class="card-container">
-        <section class="shadow-drop-center " id="card-leagues">
+        <section class="shadow-drop-center" id="card-leagues">
           <img src="images/National_Football_League_logo.webp" alt="NFL logo" />
           <div class="magic-cover">
             <span>Leagues</span>
           </div>
         </section>
         <section class="shadow-drop-center" id="card-trending">
-          <img src="images/trending_card_img.png"  alt="Trending stat photo credit: Jordan Fortin Belanger at behance.net" />
+          <img
+            src="images/trending_card_img.png"
+            alt="Trending stat photo credit: Jordan Fortin Belanger at behance.net"
+          />
           <div class="magic-cover"><span>Trending</span></div>
         </section>
         <section class="shadow-drop-center" id="card-saved">
@@ -116,57 +145,47 @@
         <li><a href="./saved/index.html">Saved</a></li>
       </ul>
       <ul>
-        <li><a href="https://www.prizepicks.com" target="_blank">PrizePicks</a></li>
+        <li>
+          <a href="https://www.prizepicks.com" target="_blank">PrizePicks</a>
+        </li>
         <li><a href="https://www.fanduel.com" target="_blank">FanDuel</a></li>
-        <li><a href="https://www.draftkings.com" target="_blank">DraftKings</a></li>
+        <li>
+          <a href="https://www.draftkings.com" target="_blank">DraftKings</a>
+        </li>
         <li><a href="https://sleeper.com" target="_blank">Sleeper</a></li>
       </ul>
-
     </footer>
   </body>
   <script>
     let cards = document.querySelectorAll(".card-container section");
-    console.log(cards)
-    cards.forEach(element => {
-      element.addEventListener("mouseover", () => {
-        element.querySelector(".magic-cover").classList.add("text-focus-in");
-      },
-      element.addEventListener("mouseleave", () => {
-        element.querySelector(".magic-cover").classList.remove("text-focus-in");
-    }))
+    console.log(cards);
+    cards.forEach((element) => {
+      element.addEventListener(
+        "mouseover",
+        () => {
+          element.querySelector(".magic-cover").classList.add("text-focus-in");
+        },
+        element.addEventListener("mouseleave", () => {
+          element
+            .querySelector(".magic-cover")
+            .classList.remove("text-focus-in");
+        })
+      );
     });
   </script>
-  <script>
-    // JavaScript to toggle the collapsible content
-    const collapseButton = document.getElementById("menu-btn");
-    const collapseContent = document.getElementById("menu-sm");
 
-    collapseButton.addEventListener("click", () => {
-      const isExpanded = collapseButton.getAttribute("aria-expanded") === "true";
-
-      // Toggle aria-expanded on button
-      collapseButton.setAttribute("aria-expanded", !isExpanded);
-
-      // Toggle aria-hidden on content
-      collapseContent.setAttribute("aria-hidden", isExpanded);
-
-      // Toggle the .show class to reveal or hide content
-      collapseContent.classList.toggle("show");
-    });
-  </script>
   <script>
     let screenWidth = window.innerWidth;
 
     if (screenWidth < 768) {
       let cards = document.querySelectorAll(".card-container section");
-      cards.forEach(element => {
+      cards.forEach((element) => {
         element.addEventListener("click", () => {
-          element.querySelector('.magic-cover').classList.toggle("text-focus-in")
-          
-        })
-    });
-      
-
+          element
+            .querySelector(".magic-cover")
+            .classList.toggle("text-focus-in");
+        });
+      });
     }
   </script>
 </html>
