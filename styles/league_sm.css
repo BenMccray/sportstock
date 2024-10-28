@@ -1,0 +1,117 @@
+:root {
+    --main-light-mode: rgb(211, 210, 210);
+    --nav-light-mode: #f3f4f6;
+    --footer-light-mode: #9ca3af;
+    --main-dark-mode: rgb(48, 47, 47);
+    --nav-dark-mode: black;
+    --footer-dark-mode: rgb(42, 42, 42);
+}
+
+@media (min-width: 399px) and (max-width: 640px) {
+    /* styles for tablet */
+
+    .league-selector {
+        display: none;
+    }
+
+    .select-prompt {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-weight: 700;
+    }
+    .league-selector-sm {
+        max-height: 0;
+        overflow:hidden;
+        display: flex;
+        position: absolute;
+        flex-wrap: wrap;
+        padding: 0;
+        justify-content: center;
+        transition: max-height 0.1s ease-in;
+        background-color: inherit;
+        margin-top: 3rem;
+    }
+
+    .league-selector-sm.show {
+        max-height: 100px;
+    }
+    #selector-btn {
+        width: 50px;
+        height: 50px;
+        border: none;
+        background-color: inherit;
+    }
+    .arrow-img {
+        max-width: 40px;
+        max-height: 40px;
+        color: black;
+    }
+    .arrow-img.open {
+        transform: rotate(90deg);
+        transition: transform  0.2s ease-in;
+
+    }
+    .arrow-img.close {
+        transform: rotate(1);
+        transition: transform  0.2s ease-out;
+
+    }
+    .league-selector-sm li {
+        list-style: none;
+        padding: .5rem 1rem;
+        background-color: white;
+        border: 1px solid rgb(110, 110, 110);
+        border-radius: 4rem;
+        font-weight: 500;
+        margin: .5rem .5rem
+    }
+
+    .league-selector-sm li.selector-active {
+        background-color: rgb(151, 99, 248);
+        border: #f3f4f6;
+        color: white;
+    }
+
+    #leagues-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 7rem;
+        margin-right: 2%;
+        margin-left: 2%;
+        padding-left: 0
+    }
+
+    .team-card {
+        list-style: none;
+        border: 1px solid rgb(95, 94, 94);
+        border-radius: 10px;
+        width: 1/2;
+        padding: auto;
+        cursor: pointer;
+        margin: 1rem .5rem 1rem;
+        background: rgb(242,11,46);
+        background: linear-gradient(90deg, rgb(240, 119, 137) 0%, rgb(197, 197, 252) 53%, rgb(148, 222, 236) 100%);
+
+    }
+
+    .team-link {
+        text-decoration: none;
+        color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        align-items: center;
+    }
+    .team-link span {
+        text-align: center;
+        font-weight: 500;
+    }
+    .team-logo {
+        height: 10em;
+        width: 10em;
+    }
+}

@@ -1,5 +1,5 @@
 :root {
-  --main-light-mode: white;
+  --main-light-mode: rgb(211, 210, 210);
   --nav-light-mode: #f3f4f6;
   --footer-light-mode: #9ca3af;
   --main-dark-mode: rgb(48, 47, 47);
@@ -13,6 +13,7 @@
     display: flex;
     flex-direction: column;
     margin: 0;
+    font-family: "Roboto";
     background-color: var(--main-light-mode);
 
   }

@@ -1,25 +1,24 @@
 <!DOCTYPE html>
-
 <html>
   <head lang="en">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../styles/global_lg.css" rel="stylesheet" />
+    <link href="../styles/global_sm.css" rel="stylesheet" />
+    <link href="../styles/league_lg.css" rel="stylesheet" />
+    <link href="../styles/league_sm.css" rel="stylesheet" />
+
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
     </style>
     <title>Home</title>
   </head>
 
-  <body class="min-h-screen flex flex-col">
+  <body>
     <header>
       <nav>
         <div id="menu-lg">
-          <button id="menu-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
+
 
           <div class="nav-links">
             <a class="nav-link" href="../index.html">Home</a>
@@ -44,150 +43,151 @@
           </div>
         </div>
 
-        <div id="menu-sm">
-          <a href="#">Home</a>
-          <a href="#">About</a>
-          <a href="#">Services</a>
-          <a href="#">Contact</a>
+        <div class="nav-sm">
+          <button id="menu-btn" aria-expanded="false" aria-controls="menu-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+          <div class="qol-div-sm">
+            <input class="search-bar" type="text" placeholder="Search..." />
+            <button class="color-scheme-btn" id="dark-mode">
+              <svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <g stroke="none" stroke-width="1">
+                  <g>
+                    <path
+                      d="M12,22 C17.5228475,22 22,17.5228475 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 Z M12,20.5 L12,3.5 C16.6944204,3.5 20.5,7.30557963 20.5,12 C20.5,16.6944204 16.6944204,20.5 12,20.5 Z"
+                    ></path>
+                  </g>
+                </g>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div id="menu-sm" aria-hidden="true" role="region">
+          <a href="../index.html">Home</a>
+          <a href="#">Leagues</a>
+          <a href="../trending/index.html">Trending</a>
+          <a href="../saved/index.html">Saved</a>
         </div>
       </nav>
     </header>
     
-    <main class="bg-white flex flex-col">
-      <ul
-        class="flex flex-row justify-around mt-10 font-semibold"
-        style="color: Roboto"
-      >
-        <li
-          class="hover:text-white hover:bg-indigo-600 border-2 rounded-3xl py-2 px-8 border-indigo-400 cursor-pointer"
-        >
-          NFL
-        </li>
-        <li
-          class="hover:text-white hover:bg-indigo-600 border-2 rounded-3xl py-2 px-8 border-indigo-400 cursor-pointer"
-        >
-          NBA
-        </li>
-        <li
-          class="hover:text-white hover:bg-indigo-600 border-2 rounded-3xl py-2 px-8 border-indigo-400 cursor-pointer"
-        >
-          NCAAF
-        </li>
-        <li
-          class="hover:text-white hover:bg-indigo-600 border-2 rounded-3xl py-2 px-8 border-indigo-400 cursor-pointer"
-        >
-          MLB
-        </li>
-        <li
-          class="hover:text-white hover:bg-indigo-600 border-2 rounded-3xl py-2 px-8 border-indigo-400 cursor-pointer"
-        >
-          NHL
-        </li>
-        <li
-          class="hover:text-white hover:bg-indigo-600 border-2 rounded-3xl py-2 px-8 border-indigo-400 cursor-pointer"
-        >
-          Soccer
-        </li>
-        <li
-          class="hover:text-white hover:bg-indigo-600 border-2 rounded-3xl py-2 px-8 border-indigo-400 cursor-pointer"
-        >
-          UFC
-        </li>
+    <main>
+      <ul class="league-selector">
+        <li class="selector-active">NFL</li>
+        <li>NBA</li>
+        <li>NCAAF</li>
+        <li>MLB</li>
+        <li>NHL</li>
+        <li>FIFA</li>
+        <li>UFC</li>
       </ul>
-      <ul id="leagues-list" class="grid grid-cols-8 gap-6 mx-auto my-8"></ul>
+      <div class="select-prompt">
+        <span class="select-text">Select League</span>
+        <button id="selector-btn" aria-expanded="false" aria-controls="menu-sm">
+          <img class="arrow-img" src="../images/arrow_right.png">
+        </button>
+      </div>
+      <ul class="league-selector-sm" aria-hidden="true" role="region">
+        <li class="selector-active">NFL</li>
+        <li>NBA</li>
+        <li>NCAAF</li>
+        <li>MLB</li>
+        <li>NHL</li>
+        <li>FIFA</li>
+        <li>UFC</li>
+      </ul>
+      <ul id="leagues-list"></ul>
     </main>
-    <footer
-      class="bg-gray-400 flex justify-around align-center border-t border-t-indigo-500 lg:visible sm:invisible"
-      style="height: 25vh; border-color: #484abb"
-    >
-      <ul class="text-black mt-10">
-        <li class="hover:underline"><a href="#">Home</a></li>
-        <li class="hover:underline">
-          <a href="./leagues/index.html">Leagues</a>
-        </li>
-        <li class="hover:underline">
-          <a href="./trending/index.html">Trending</a>
-        </li>
-        <li class="hover:underline"><a href="./saved/index.html">Saved</a></li>
+    
+    <footer>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="#">Leagues</a></li>
+        <li><a href="../trending/index.html">Trending</a></li>
+        <li><a href="../saved/index.html">Saved</a></li>
       </ul>
-      <ul class="text-black mt-10">
-        <li class="hover:underline">
-          <a href="https://www.prizepicks.com" target="_blank">PrizePicks</a>
-        </li>
-        <li class="hover:underline">
-          <a href="https://www.fanduel.com" target="_blank">FanDuel</a>
-        </li>
-        <li class="hover:underline">
-          <a href="https://www.draftkings.com" target="_blank">DraftKings</a>
-        </li>
-        <li class="hover:underline">
-          <a href="https://www.sleeper.com" target="_blank">Sleeper</a>
-        </li>
-        <li class="hover:underline">
-          <a href="https://www.getfliff.com" target="_blank">Fliff</a>
-        </li>
+      <ul>
+        <li><a href="https://www.prizepicks.com" target="_blank">PrizePicks</a></li>
+        <li><a href="https://www.fanduel.com" target="_blank">FanDuel</a></li>
+        <li><a href="https://www.draftkings.com" target="_blank">DraftKings</a></li>
+        <li><a href="https://sleeper.com" target="_blank">Sleeper</a></li>
       </ul>
+
     </footer>
   </body>
+  
   <script>
-    {
-      let leagues = fetch("../data/nfl.json")
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error("Network response was not ok");
-          }
-          return response.json(); // Parse the response body as JSON
-        })
-        .then((data) => {
-          const filtered = [];
-          for (e of data) {
-            filtered.push({
-              key: e.Key,
-              name: e.FullName,
-              url: e.WikipediaLogoURL,
-            });
-          }
-
-          let leaguesList = document.querySelector("#leagues-list");
-
-          for (let element of filtered) {
-            let li = document.createElement("li");
-            const li_classes = [
-              "flex",
-              "flex-col",
-              "content-center",
-              "justify-center",
-              "w-40",
-              "h-40",
-              "border",
-              "rounded-xl",
-              "cursor-pointer",
-              "hover:bg-gray-200",
-              ,
-            ];
-
-            for (let li_cls of li_classes) {
-              li.classList.add(li_cls);
-            }
-
-            let img = document.createElement("img");
-            img.classList.add("w-28");
-            img.classList.add("h-28");
-            img.classList.add("mx-auto");
-            img.src = element.url;
-
-            let span = document.createElement("span");
-            span.textContent = element.name;
-
-            let link = document.createElement("a");
-            link.href = "../team/index.html";
-            link.classList.add("text-center");
-            link.appendChild(img);
-            link.appendChild(span);
-            li.appendChild(link);
-            leaguesList.appendChild(li);
-          }
+    fetch("../data/nfl.json")
+      .then(response => {
+        if (!response.ok) throw new Error("Network response was not ok");
+        return response.json();
+      })
+      .then(data => {
+        const leaguesList = document.querySelector("#leagues-list");
+        data.forEach(e => {
+          const li = document.createElement("li");
+          const img = document.createElement("img");
+          img.src = e.WikipediaLogoURL;
+          img.classList.add("team-logo")
+          
+          const span = document.createElement("span");
+          span.textContent = e.FullName;
+          
+          const link = document.createElement("a");
+          link.href = "../team/index.html";
+          link.appendChild(img);
+          link.appendChild(span);
+          link.classList.add("team-link")
+          
+          li.appendChild(link);
+          li.classList.add("team-card")
+          leaguesList.appendChild(li);
         });
-    }
+      });
   </script>
+  <script>
+    // JavaScript to toggle the collapsible content
+    const collapseButton = document.getElementById("menu-btn");
+    const collapseContent = document.getElementById("menu-sm");
+
+    collapseButton.addEventListener("click", () => {
+      const isExpanded = collapseButton.getAttribute("aria-expanded") === "true";
+
+      // Toggle aria-expanded on button
+      collapseButton.setAttribute("aria-expanded", !isExpanded);
+
+      // Toggle aria-hidden on content
+      collapseContent.setAttribute("aria-hidden", isExpanded);
+      
+      // Toggle the .show class to reveal or hide content
+      collapseContent.classList.toggle("show");
+    });
+  </script>
+
+<script>
+  // JavaScript to toggle the collapsible content
+  const collapseSelector = document.querySelector("#selector-btn");
+  const collapseSelectorContent = document.querySelector(".league-selector-sm");
+  let arrow = document.querySelector(".arrow-img")
+  collapseSelector.addEventListener("click", () => {
+    const isExpanded = collapseSelector.getAttribute("aria-expanded") === "true";
+
+    // Toggle aria-expanded on button
+    collapseSelector.setAttribute("aria-expanded", !isExpanded);
+
+    // Toggle aria-hidden on content
+    collapseSelectorContent.setAttribute("aria-hidden", isExpanded);
+    if (arrow.classList.contains("open")) {
+        arrow.classList.remove("open");
+        arrow.classList.add("close");
+      } else {
+        arrow.classList.remove("close");
+        arrow.classList.add("open");
+      }
+    // Toggle the .show class to reveal or hide content
+    collapseSelectorContent.classList.toggle("show");
+  });
+</script>
 </html>

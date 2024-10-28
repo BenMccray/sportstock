@@ -12,8 +12,9 @@
     body {
         height: 100vh;
         margin:0;
-        background: rgb(134,134,134);
-        background: radial-gradient(circle, rgba(134,134,134,1) 0%, rgba(255,255,255,1) 100%);
+        background-color: var(--main-light-mode);
+        font-family: "Roboto";
+
     }
 
     #menu-lg {
@@ -76,19 +77,19 @@
         border: 2px solid transparent;
         margin:auto;
         height: 2rem
-      }
-    
-      .search-bar:focus {
+    }
+
+    .search-bar:focus {
         outline: 2px solid transparent;
         outline-offset: 2px;
         border: 2px solid rgb(93, 92, 92);
-      }
-      .search-bar::placeholder {
+    }
+    .search-bar::placeholder {
         color: rgb(60, 59, 59);
         font-size: large;
-      }
-    
-      .color-scheme-btn {
+    }
+
+    .color-scheme-btn {
         height: 2.25rem;
         width: 2.25rem;
         margin: auto 1.5rem auto 3rem;
@@ -96,15 +97,15 @@
         background-color: inherit;
         size: 1.5rem;
         padding: 0;
-      }
-    
-      .color-scheme-btn:hover {
+    }
+
+    .color-scheme-btn:hover {
         cursor: pointer;
-      }
+    }
     
-      .color-scheme-btn > svg {
+    .color-scheme-btn > svg {
         fill: #6366f1;
-      }
+    }
     main {
         display: flex;
         flex-direction: column;

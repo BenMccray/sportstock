@@ -1,0 +1,85 @@
+:root {
+    --main-light-mode: white;
+    --nav-light-mode: #f3f4f6;
+    --footer-light-mode: #9ca3af;
+    --main-dark-mode: rgb(48, 47, 47);
+    --nav-dark-mode: black;
+    --footer-dark-mode: rgb(42, 42, 42);
+}
+
+@media (min-width: 1008px) {
+
+    .league-selector-sm {
+        display: none;
+    }
+    .select-prompt {
+        display: none;
+    }
+
+    .league-selector {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .league-selector li {
+        list-style: none;
+        padding: .5rem 1rem;
+        background-color: white;
+        border: 1px solid rgb(110, 110, 110);
+        border-radius: 4rem;
+        font-weight: 500;
+    }
+
+    .league-selector li:hover {
+        cursor: pointer;
+    }
+
+    .league-selector li.selector-active {
+        background-color: rgb(151, 99, 248);
+        border: #f3f4f6;
+        color: white;
+    }
+
+    #leagues-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-right: 2%
+    }
+
+    .team-card {
+        list-style: none;
+        border: 1px solid rgb(95, 94, 94);
+        border-radius: 10px;
+        width: 200px;
+        padding: auto;
+        cursor: pointer;
+        margin: 1rem .5rem 1rem;
+        background: rgb(242,11,46);
+        background: linear-gradient(90deg, rgb(240, 119, 137) 0%, rgb(197, 197, 252) 53%, rgb(148, 222, 236) 100%);
+
+    }
+
+    .team-link {
+        text-decoration: none;
+        color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        align-items: center;
+    }
+    .team-link span {
+        text-align: center;
+        font-weight: 500;
+    }
+    .team-logo {
+        height: 10em;
+        width: 10em;
+    }
+
+}
