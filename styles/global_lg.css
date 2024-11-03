@@ -7,6 +7,20 @@
   --footer-dark-mode: rgb(42, 42, 42);
 }
 
+body.dark {
+  background-color: var(--main-dark-mode);
+  p, span, a, article, h1 {
+    color: white;
+  }
+}
+
+body.dark header {
+  background-color: var(--nav-dark-mode);
+  p, span, a, article, h1{
+    color: white;
+  }
+}
+
 @media (min-width: 1008px) {
   body {
     min-height: 100vh;
