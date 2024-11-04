@@ -7,7 +7,7 @@
     --footer-dark-mode: rgb(42, 42, 42);
 }
 
-@media (min-width: 1008px) {
+@media (min-width: 992px) {
 
     .league-selector-sm {
         display: none;

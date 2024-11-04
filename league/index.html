@@ -92,9 +92,9 @@
 
     <main>
       <ul class="league-selector">
-        <li class="selector-active">NFL</li>
-        <li>NBA</li>
-        <li>NCAAF</li>
+        <li class="selector-active"><button value="/sports/football/nfl/teams">NFL</button></li>
+        <li><button value="/sports/basketball/nba/teams">NBA</button></li>
+        <li><button value="/sports/football/ncaaf/teams">NCAAF</button></li>
         <li>MLB</li>
         <li>NHL</li>
         <li>FIFA</li>
@@ -138,34 +138,8 @@
     </footer>
   </body>
 
-  <script>
-    fetch("../data/nfl.json")
-      .then((response) => {
-        if (!response.ok) throw new Error("Network response was not ok");
-        return response.json();
-      })
-      .then((data) => {
-        const leaguesList = document.querySelector("#leagues-list");
-        data.forEach((e) => {
-          const li = document.createElement("li");
-          const img = document.createElement("img");
-          img.src = e.WikipediaLogoURL;
-          img.classList.add("team-logo");
-
-          const span = document.createElement("span");
-          span.textContent = e.FullName;
-
-          const link = document.createElement("a");
-          link.href = "../team/index.html";
-          link.appendChild(img);
-          link.appendChild(span);
-          link.classList.add("team-link");
-
-          li.appendChild(link);
-          li.classList.add("team-card");
-          leaguesList.appendChild(li);
-        });
-      });
+  <script src="../scripts/load_league_teams.js">
+    
   </script>
 
   <script>

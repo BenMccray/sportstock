@@ -10,19 +10,11 @@
     /> -->
     <link href="../styles/global_lg.css" rel="stylesheet" />
     <link href="../styles/global_sm.css" rel="stylesheet" />
+    <link href="../styles//trending_lg.css" rel="stylesheet"/>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
     </style>
-    <style>
-      #chart_div > div > div {
-        width: 100vw;
-        height: fit-content;
-      }
-      #chart_div text {
-        font-size: larger;
-        font-family: "Roboto";
-      }
-    </style>
+    
     <title>Home</title>
   </head>
 
@@ -143,12 +135,7 @@
     // Load the Visualization API and the corechart package.
     google.charts.load("current", { packages: ["corechart"] });
 
-    // Set a callback to run when the Google Visualization API is loaded.
-    google.charts.setOnLoadCallback(drawChart);
-
-    // Callback that creates and populates a data table,
-    // instantiates the pie chart, passes in the data and
-    // draws it.
+    
     let KEY = "8f5454aa84b6d4cc5968d292ac0cda25";
     let myHeaders = new Headers();
     myHeaders.append("x-rapidapi-key", KEY);
@@ -175,10 +162,14 @@
       })
       .then((data) => {
         for (e of data) {
+          console.log(e);
           filtered.push([e.Week, e.PassingYards]);
         }
 
         filtered.sort((a, b) => a[0] - b[0]);
+
+        // Set a callback to run when the Google Visualization API is loaded.
+        google.charts.setOnLoadCallback(drawChart);
       });
 
     function drawChart() {
@@ -186,11 +177,15 @@
 
       let data = new google.visualization.arrayToDataTable(filtered);
 
+
       // Set chart options
       let options = {
-        title: "Patrick Mahomes",
-        width: "100vw",
-        height: "fit-content",
+        title: "Patrick Mahomes - Passing Yards by Week",
+        width:  1000,
+        height: 600,
+        legend: {position: 'bottom'},
+
+
       };
 
       // Instantiate and draw our chart, passing in some options.

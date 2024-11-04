@@ -1,0 +1,19 @@
+:root {
+    --main-light-mode: white;
+    --nav-light-mode: #f3f4f6;
+    --footer-light-mode: #9ca3af;
+    --main-dark-mode: rgb(48, 47, 47);
+    --nav-dark-mode: black;
+    --footer-dark-mode: rgb(42, 42, 42);
+  }
+
+@media (min-width:  992px) {
+
+    #chart_div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+}
