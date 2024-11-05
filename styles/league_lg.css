@@ -1,11 +1,13 @@
 :root {
-    --main-light-mode: white;
-    --nav-light-mode: #f3f4f6;
-    --footer-light-mode: #9ca3af;
-    --main-dark-mode: rgb(48, 47, 47);
-    --nav-dark-mode: black;
-    --footer-dark-mode: rgb(42, 42, 42);
-}
+    --main-light-mode: #EDF2FE;
+    --nav-light-mode: #D0DFFF;
+    --footer-light-mode: #5184a6;
+    --main-dark-mode: #111725;
+    --nav-dark-mode: #1D2E61;
+    --footer-dark-mode: #292A2E;
+    --text-light: #3657C3;
+    --text-dark: #D5E2FF;
+  }
 
 @media (min-width: 992px) {
 
@@ -26,21 +28,33 @@
 
     .league-selector li {
         list-style: none;
-        padding: .5rem 1rem;
-        background-color: white;
-        border: 1px solid rgb(110, 110, 110);
+        
+        background-color: var(--footer-light-mode);
+        color: var(--text-light);
+        border: 1px solid transparent;
         border-radius: 4rem;
         font-weight: 500;
+        button {
+            all: inherit;
+            padding: .5rem 1rem;
+            border:none
+
+        }
     }
 
     .league-selector li:hover {
         cursor: pointer;
     }
 
-    .league-selector li.selector-active {
-        background-color: rgb(151, 99, 248);
-        border: #f3f4f6;
+    .league-selector button.selector-active {
+        background-color: var(--main-dark-mode);
+        /* border: var(--footer-dark-mode); */
         color: white;
+        button {
+            background-color: inherit;
+            all: inherit;
+            padding: .5rem 1rem;
+        }
     }
 
     #leagues-list {
@@ -52,20 +66,20 @@
 
     .team-card {
         list-style: none;
-        border: 1px solid rgb(95, 94, 94);
-        border-radius: 10px;
         width: 200px;
         padding: auto;
         cursor: pointer;
         margin: 1rem .5rem 1rem;
-        background: rgb(242,11,46);
-        background: linear-gradient(90deg, rgb(240, 119, 137) 0%, rgb(197, 197, 252) 53%, rgb(148, 222, 236) 100%);
+    }
 
+    .team-card:hover {
+        transform: scale(1.1, 1.1);
+        transition: transform linear .1s;
     }
 
     .team-link {
         text-decoration: none;
-        color: black;
+        color: var(--footer-dark-mode);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -76,6 +90,7 @@
     .team-link span {
         text-align: center;
         font-weight: 500;
+        font-size: large;
     }
     .team-logo {
         height: 10em;

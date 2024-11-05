@@ -1,13 +1,15 @@
 :root {
-  --main-light-mode: white;
-  --nav-light-mode: #f3f4f6;
-  --footer-light-mode: #9ca3af;
-  --main-dark-mode: rgb(48, 47, 47);
-  --nav-dark-mode: black;
-  --footer-dark-mode: rgb(42, 42, 42);
+  --main-light-mode: #EDF2FE;
+  --nav-light-mode: #D0DFFF;
+  --footer-light-mode: #5184a6;
+  --main-dark-mode: #111725;
+  --nav-dark-mode: #1D2E61;
+  --footer-dark-mode: #292A2E;
+  --text-light: #152244;
+  --text-dark: #D5E2FF;
 }
 
-@media (min-width: 399px) and (maxwidth: 768px) {
+@media (min-width: 399px) and (max-width: 768px) {
 
   body {
     height: 100vh;
@@ -43,12 +45,7 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out;
-    background: rgb(134, 134, 134);
-    background: radial-gradient(
-      circle,
-      rgba(134, 134, 134, 1) 0%,
-      rgba(255, 255, 255, 1) 100%
-    );
+    background-color: var(--nav-light-mode);
     z-index: 10;
   }
   #menu-sm.show {
@@ -57,7 +54,7 @@
 
   #menu-sm a {
     text-decoration: none;
-    color: black;
+    color: var(--text-light);
     font-family: "Roboto";
     font-weight: 600;
     padding: 15% 100%;
@@ -75,6 +72,7 @@
   .nav-sm {
     display: flex;
     justify-content: space-between;
+    background-color: var(--nav-light-mode);
   }
   .search-bar {
     padding: 0.25rem 3rem 0 1rem;
@@ -115,8 +113,10 @@
   main {
     display: flex;
     flex-direction: column;
+    background-color: var(--main-light-mode);
   }
   footer {
+    background-color: var(--footer-light-mode);
     display: none;
   }
 }

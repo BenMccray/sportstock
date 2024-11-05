@@ -1,17 +1,50 @@
 :root {
-    --main-light-mode: white;
-    --nav-light-mode: #f3f4f6;
-    --footer-light-mode: #9ca3af;
-    --main-dark-mode: rgb(48, 47, 47);
-    --nav-dark-mode: black;
-    --footer-dark-mode: rgb(42, 42, 42);
+    --main-light-mode: #a4c0d5;
+    --nav-light-mode: #739fbd;
+    --footer-light-mode: #5184a6;
+    --main-dark-mode: #335571;
+    --nav-dark-mode: #2e495e;
+    --footer-dark-mode: #1c2935;
+    --text-light: white;
+    --text-dark: black;
   }
 
 @media (min-width:  992px) {
 
+    form#add-new-modal {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 300px;
+        height: 400px;
+        border: solid 2px black;
+        border-radius: .5rem;
+        
+        z-index: 2;
+    }
+    form#add-new-modal input {
+        width: 75%;
+        height: 8%;
+        margin: 1%;
+    }
+
+    form#add-new-modal button {
+        width: 75%;
+        height: 8%;
+        margin: 1%;
+        background-color: rgb(156, 6, 156);
+        color: var(--nav-light-mode);
+        cursor: pointer;
+        border: none;
+        border-radius: 10px;
+    }
+
     .no-saved-notif {
         display: flex;
         flex-direction: column;
+        z-index: 1;
        
     }
     .no-saved-notif h1, span {
@@ -24,5 +57,9 @@
         align-items: center;
     }
 
+    
 
+    #add-new-btn {
+        display: none;
+    }
 }

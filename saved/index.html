@@ -93,6 +93,15 @@
       <script src="../scripts/nav-sm.js"></script>
     </header>
     <main>
+      <button type="button" class="add-new-btn" id="add-new-btn">+</button>
+      <form id="add-new-modal">
+        <span>Create new save</span>
+        <input type="text" id="name-input" placeholder="Enter name..." required/>
+        <input type="text" id="description-input" placeholder="Enter description..."/>
+        <button type="submit" id="submit-btn">Submit</button>
+      </form>
+
+
       <article class="no-saved-notif">
         <h1>Nothing Saved</h1>
         <br />

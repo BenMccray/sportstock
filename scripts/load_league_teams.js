@@ -23,6 +23,8 @@ function loadTeams(query) {
         };
       });
 }
+
+
 function buildCard(teamData) {
     const li = document.createElement("li");
     const img = document.createElement("img");
@@ -46,10 +48,15 @@ function buildCard(teamData) {
 
 (function() {
 
-    let selectors = document.querySelectorAll(".league-selector button");
+    
+    let small = window.matchMedia("(min-width: 399px) and (max-width: 768px)");
+    loadTeams(document.querySelector(`${small.matches ? ".league-selector-sm" : ".league-selector"} .selector-active`).value);
+
+    let selectors = document.querySelectorAll(`${small.matches ? ".league-selector-sm" : ".league-selector"} button`);
     selectors.forEach((select) => {
         select.addEventListener("click",  (e) => {            
-            console.log("clicked");
+            document.querySelector(`${small.matches ? ".league-selector-sm" : ".league-selector"} .selector-active`).classList.remove("selector-active");
+            e.target.classList.add("selector-active");
             loadTeams(e.target.value);
 
         });

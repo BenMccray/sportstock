@@ -1,10 +1,12 @@
 :root {
-  --main-light-mode: rgb(211, 210, 210);
-  --nav-light-mode: #f3f4f6;
-  --footer-light-mode: #9ca3af;
-  --main-dark-mode: rgb(48, 47, 47);
-  --nav-dark-mode: black;
-  --footer-dark-mode: rgb(42, 42, 42);
+  --main-light-mode: #EDF2FE;
+  --nav-light-mode: #D0DFFF;
+  --footer-light-mode: #5184a6;
+  --main-dark-mode: #111725;
+  --nav-dark-mode: #1D2E61;
+  --footer-dark-mode: #292A2E;
+  --text-light: #152244;
+  --text-dark: #D5E2FF;
 }
 
 
@@ -36,7 +38,7 @@
 
   nav {
     padding: 1rem;
-    color: black;
+    color: var(--text-light);
   }
 
   #menu-lg {
@@ -70,15 +72,15 @@
     padding: 0.5rem 0.75rem;
     font-weight: 500;
     text-decoration: none;
-    color: black;
+    color: var(--text-light);
   }
 
   .nav-link.active {
-    color: #5a5cf1;
+    color: #0C111C;
   }
 
   .nav-link:not(.active):hover {
-    color: #5f6670;
+    color: #17283f;
   }
 
   .qol-div {
@@ -91,8 +93,9 @@
   .search-bar {
     padding: 0.5rem 0.75rem;
     border-radius: 0.5rem;
-    background-color: #b0b4bb;
+    background-color: var(--main-light-mode);
     border: 2px solid transparent;
+    font-size: large;
   }
 
   .search-bar:focus {
@@ -101,7 +104,7 @@
     border: 2px solid rgb(93, 92, 92);
   }
   .search-bar::placeholder {
-    color: rgb(60, 59, 59);
+    color: var(--nav-dark-mode);
     font-size: large;
   }
 
@@ -149,7 +152,7 @@
   }
   footer a {
     text-decoration: none;
-    color: black;
+    color: white;
     font-family: Tahoma;
     font-weight: 500;
   }
@@ -160,14 +163,14 @@
     body {
       background-color: var(--main-dark-mode);
       p, span, a, article, h1 {
-        color: white;
+        color: var(--text-dark);
       }
     }
     
     body header {
       background-color: var(--nav-dark-mode);
       p, span, a, article, h1{
-        color: white;
+        color: var(--text-dark);
       }
     }
   }

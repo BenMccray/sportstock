@@ -26,7 +26,7 @@
           </div>
 
           <div class="qol-div">
-            <input class="search-bar" type="text" placeholder="Search..." />
+            <input class="search-bar" type="search" placeholder="Search..." />
             <button class="color-scheme-btn" id="dark-mode">
               <svg
                 viewBox="0 0 24 24"
@@ -92,13 +92,11 @@
 
     <main>
       <ul class="league-selector">
-        <li class="selector-active"><button value="/sports/football/nfl/teams">NFL</button></li>
+        <li><button class="selector-active" value="/sports/football/nfl/teams">NFL</button></li>
         <li><button value="/sports/basketball/nba/teams">NBA</button></li>
-        <li><button value="/sports/football/ncaaf/teams">NCAAF</button></li>
-        <li>MLB</li>
-        <li>NHL</li>
-        <li>FIFA</li>
-        <li>UFC</li>
+        <li><button value="/sports/baseball/mlb/teams">MLB</button></li>
+        <li><button value="/sports/hockey/nhl/teams">NHL</button></li>
+
       </ul>
       <div class="select-prompt">
         <span class="select-text">Select League</span>
@@ -107,13 +105,11 @@
         </button>
       </div>
       <ul class="league-selector-sm" aria-hidden="true" role="region">
-        <li class="selector-active">NFL</li>
-        <li>NBA</li>
-        <li>NCAAF</li>
-        <li>MLB</li>
-        <li>NHL</li>
-        <li>FIFA</li>
-        <li>UFC</li>
+        <li><button class="selector-active" value="/sports/football/nfl/teams">NFL</button></li>
+        <li><button value="/sports/basketball/nba/teams">NBA</button></li>
+        <li><button value="/sports/baseball/mlb/teams">MLB</button></li>
+        <li><button value="/sports/hockey/nhl/teams">NHL</button></li>
+
       </ul>
       <ul id="leagues-list"></ul>
     </main>
