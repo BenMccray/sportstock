@@ -1,12 +1,14 @@
-:root {
-  --main-light-mode: #EDF2FE;
-  --nav-light-mode: #D0DFFF;
-  --footer-light-mode: #5184a6;
-  --main-dark-mode: #111725;
-  --nav-dark-mode: #1D2E61;
-  --footer-dark-mode: #292A2E;
-  --text-light: #152244;
-  --text-dark: #D5E2FF;
+@media (min-width: 0px) {
+  :root {
+    --main-light-mode: #EDF2FE;
+    --nav-light-mode: #D0DFFF;
+    --footer-light-mode: #5184a6;
+    --main-dark-mode: #1945b3;
+    --nav-dark-mode: #1D2E61;
+    --footer-dark-mode: #292A2E;
+    --text-light: #152244;
+    --text-dark: #e4ecff;
+  }
 }
 
 @media (min-width: 399px) and (max-width: 768px) {

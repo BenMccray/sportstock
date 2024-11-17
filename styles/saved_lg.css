@@ -1,16 +1,22 @@
-:root {
-    --main-light-mode: #a4c0d5;
-    --nav-light-mode: #739fbd;
-    --footer-light-mode: #5184a6;
-    --main-dark-mode: #335571;
-    --nav-dark-mode: #2e495e;
-    --footer-dark-mode: #1c2935;
-    --text-light: white;
-    --text-dark: black;
-  }
+
 
 @media (min-width:  992px) {
 
+    #show-modal {
+        margin-top: 2vh;
+        width: 30%;
+        padding: 3% 2%;
+        border-radius: 6px;
+        text-align: center;
+        border:none;
+        background-color: var(--nav-light-mode);
+        font-family: "Roboto";
+        font-size: medium;
+    }
+    #show-modal:hover {
+        background-color: rgba(138, 169, 194, 0.473);
+        cursor: pointer;
+    }
     form#add-new-modal {
         display: flex;
         flex-direction: column;
@@ -21,8 +27,9 @@
         height: 400px;
         border: solid 2px black;
         border-radius: .5rem;
-        
+        background-color: var(--main-light-mode);
         z-index: 2;
+        visibility: collapse;
     }
     form#add-new-modal input {
         width: 75%;
@@ -45,6 +52,7 @@
         display: flex;
         flex-direction: column;
         z-index: 1;
+        align-items: center;
        
     }
     .no-saved-notif h1, span {

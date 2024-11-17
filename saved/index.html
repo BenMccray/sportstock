@@ -96,9 +96,15 @@
       <button type="button" class="add-new-btn" id="add-new-btn">+</button>
       <form id="add-new-modal">
         <span>Create new save</span>
-        <input type="text" id="name-input" placeholder="Enter name..." required/>
+        <input type="text" id="name-input" placeholder="Enter title..." required/>
         <input type="text" id="description-input" placeholder="Enter description..."/>
         <button type="submit" id="submit-btn">Submit</button>
+        <button type="button" id="cancel-btn">Cancel</button>
+        <script>
+          document.querySelector("#cancel-btn").addEventListener("click", () => {
+            document.querySelector("#add-new-modal").style.visibility = "collapse";
+          })
+        </script>
       </form>
 
 
@@ -106,6 +112,12 @@
         <h1>Nothing Saved</h1>
         <br />
         <span>Save teams or players to look back later</span>
+        <button type="button" id="show-modal">Add new</button>
+        <script>
+          document.querySelector("#show-modal").addEventListener("click", () => {
+            document.querySelector("#add-new-modal").style.visibility = "visible";
+          })
+        </script>
       </article>
       <div id="saved-list "></div>
     </main>

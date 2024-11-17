@@ -1,13 +1,4 @@
-:root {
-    --main-light-mode: #EDF2FE;
-    --nav-light-mode: #D0DFFF;
-    --footer-light-mode: #5184a6;
-    --main-dark-mode: #111725;
-    --nav-dark-mode: #1D2E61;
-    --footer-dark-mode: #292A2E;
-    --text-light: #3657C3;
-    --text-dark: #D5E2FF;
-  }
+
 
 @media (min-width:  992px) {
 
