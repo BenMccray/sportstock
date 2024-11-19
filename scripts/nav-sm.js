@@ -2,7 +2,6 @@
   // JavaScript to toggle the collapsible content
   const collapseButton = document.getElementById("menu-btn");
   const collapseContent = document.getElementById("menu-sm");
-  console.log(collapseButton);
 
   collapseButton.addEventListener("click", () => {
     const isExpanded = collapseButton.getAttribute("aria-expanded") === "true";

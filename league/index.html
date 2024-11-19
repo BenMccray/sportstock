@@ -11,7 +11,7 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
     </style>
-    <title>Home</title>
+    <title>Sports Stocks : Leagues</title>
   </head>
 
   <body>
@@ -27,7 +27,7 @@
 
           <div class="qol-div">
             <input class="search-bar" type="search" placeholder="Search..." />
-            <button class="color-scheme-btn" id="dark-mode">
+            <button class="color-scheme-btn" id="darkModeToggle">
               <svg
                 viewBox="0 0 24 24"
                 version="1.1"
@@ -63,7 +63,7 @@
           </button>
           <div class="qol-div-sm">
             <input class="search-bar" type="text" placeholder="Search..." />
-            <button class="color-scheme-btn" id="dark-mode">
+            <button class="color-scheme-btn" id="darkModeToggle">
               <svg
                 viewBox="0 0 24 24"
                 version="1.1"
@@ -88,6 +88,7 @@
         </div>
       </nav>
       <script src="../scripts/nav-sm.js"></script>
+      <script src="../scripts/darkmode.js"></script>
     </header>
 
     <main>
@@ -98,20 +99,9 @@
         <li><button value="/sports/hockey/nhl/teams">NHL</button></li>
 
       </ul>
-      <div class="select-prompt">
-        <span class="select-text">Select League</span>
-        <button id="selector-btn" aria-expanded="false" aria-controls="menu-sm">
-          <img class="arrow-img" src="../images/arrow_right.png" />
-        </button>
-      </div>
-      <ul class="league-selector-sm" aria-hidden="true" role="region">
-        <li><button class="selector-active" value="/sports/football/nfl/teams">NFL</button></li>
-        <li><button value="/sports/basketball/nba/teams">NBA</button></li>
-        <li><button value="/sports/baseball/mlb/teams">MLB</button></li>
-        <li><button value="/sports/hockey/nhl/teams">NHL</button></li>
-
-      </ul>
+      
       <ul id="leagues-list"></ul>
+      
     </main>
 
     <footer>
@@ -134,35 +124,7 @@
     </footer>
   </body>
 
-  <script src="../scripts/load_league_teams.js">
-    
-  </script>
-
-  <script>
-    // JavaScript to toggle the collapsible content
-    const collapseSelector = document.querySelector("#selector-btn");
-    const collapseSelectorContent = document.querySelector(
-      ".league-selector-sm"
-    );
-    let arrow = document.querySelector(".arrow-img");
-    collapseSelector.addEventListener("click", () => {
-      const isExpanded =
-        collapseSelector.getAttribute("aria-expanded") === "true";
-
-      // Toggle aria-expanded on button
-      collapseSelector.setAttribute("aria-expanded", !isExpanded);
-
-      // Toggle aria-hidden on content
-      collapseSelectorContent.setAttribute("aria-hidden", isExpanded);
-      if (arrow.classList.contains("open")) {
-        arrow.classList.remove("open");
-        arrow.classList.add("close");
-      } else {
-        arrow.classList.remove("close");
-        arrow.classList.add("open");
-      }
-      // Toggle the .show class to reveal or hide content
-      collapseSelectorContent.classList.toggle("show");
-    });
-  </script>
+  <script src="../scripts/load_league_teams.js"></script>
+  <!-- <script src="../scripts/load_team.js"></script> -->
+  
 </html>

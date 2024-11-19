@@ -1,11 +1,10 @@
-
-
 @media (min-width: 992px) {
   .main-desc-graph {
     margin-bottom: 0;
     border: 1 solid transparent;
-    border-radius: 1.5rem;
-    grid-column: 1;
+    width: 80%;
+    height: 80%;
+    position: relative;
   }
 
   .main-desc-text {
@@ -15,21 +14,27 @@
     align-items: center;
 
     text-align: center;
-    color: var(--text-light);
-    grid-column: 2;
-    grid-row: 1;
+    color: var(--text-dark);
 
     font-family: "Roboto";
+    position: absolute;
+    grid-column: 1/4;
+    grid-row: 2/3;
   }
 
   .main-desc-text span {
-    font-size: 1.25rem;
+    font-size: 2.5rem;
+  }
+
+  .main-desc-text h1 {
+    font-size: 4rem;
   }
   .main-desc {
     column-gap: 2.5rem;
     margin: 10rem 5rem 5rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .card-container {
@@ -126,11 +131,7 @@
     font-size: x-large;
   }
 
-  .shadow-drop-center {
-    -webkit-animation: shadow-drop-center 0.4s
-      cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-    animation: shadow-drop-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  }
+
 
   .text-focus-in {
     -webkit-animation: text-focus-in 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53)

@@ -1,13 +1,13 @@
 @media (min-width: 0px) {
   :root {
-    --main-light-mode: #EDF2FE;
-    --nav-light-mode: #D0DFFF;
-    --footer-light-mode: #5184a6;
-    --main-dark-mode: #1945b3;
-    --nav-dark-mode: #1D2E61;
-    --footer-dark-mode: #292A2E;
-    --text-light: #152244;
-    --text-dark: #e4ecff;
+    --main-light-mode: #ffffff;
+    --nav-light-mode: #ffffff;
+    --footer-light-mode: #ffffff;
+    --main-dark-mode: #000000;
+    --nav-dark-mode: #000000;
+    --footer-dark-mode: #000000;
+    --text-light: #000000;
+    --text-dark: #ffffff;
   }
 }
 

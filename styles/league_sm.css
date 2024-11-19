@@ -1,131 +1,91 @@
-:root {
-    --main-light-mode: #EDF2FE;
-    --nav-light-mode: #D0DFFF;
-    --footer-light-mode: #5184a6;
-    --main-dark-mode: #111725;
-    --nav-dark-mode: #1D2E61;
-    --footer-dark-mode: #292A2E;
-    --text-light: #3657C3;
-    --text-dark: #D5E2FF;
+@media (min-width: 399px) and (max-width: 768px) {
+  /* styles for tablet */
+  main {
+    align-items: center;
+  }
+  .league-selector {
+    display: none;
   }
 
-@media (min-width: 399px) and (max-width: 768px) {
-    /* styles for tablet */
-    main {
-        align-items: center;
-    }
-    .league-selector {
-        display: none;
-    }
+  .select-prompt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-weight: 700;
+  }
+  .league-selector {
+    max-height: 100px;
+    overflow: hidden;
+    display: flex;
+    position: absolute;
+    flex-wrap: wrap;
+    padding: 0;
+    justify-content: center;
+    transition: max-height 0.1s ease-in;
+    background-color: inherit;
+    margin-top: 3rem;
+  }
 
-    .select-prompt {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        font-weight: 700;
-    }
-    .league-selector-sm {
-        max-height: 0;
-        overflow: hidden;
-        display: flex;
-        position: absolute;
-        flex-wrap: wrap;
-        padding: 0;
-        justify-content: center;
-        transition: max-height 0.1s ease-in;
-        background-color: inherit;
-        margin-top: 3rem;
-    }
+  .league-selector li {
+    list-style: none;
 
-    .league-selector-sm.show {
-        max-height: 100px;
+    background-color: var(--footer-light-mode);
+    color: var(--text-light);
+    border: 1px solid transparent;
+    border-radius: 4rem;
+    font-weight: 500;
+    margin: 0.5rem 0.5rem;
+    button {
+      all: inherit;
+      padding: 0.5rem 1rem;
+      border: none;
     }
-    #selector-btn {
-        width: 50px;
-        height: 50px;
-        border: none;
-        background-color: inherit;
-    }
-    .arrow-img {
-        max-width: 40px;
-        max-height: 40px;
-        color: black;
-    }
-    .arrow-img.open {
-        transform: rotate(90deg);
-        transition: transform  0.2s ease-in;
+  }
 
-    }
-    .arrow-img.close {
-        transform: rotate(1);
-        transition: transform  0.2s ease-out;
+  .league-selector button.selector-active {
+    background-color: var(--main-dark-mode);
 
+    button {
+      all: inherit;
+      padding: 0.5rem 1rem;
     }
-    .league-selector-sm li {
-        list-style: none;
-        
-        background-color: var(--footer-light-mode);
-        color: var(--text-light);
-        border: 1px solid transparent;
-        border-radius: 4rem;
-        font-weight: 500;
-        margin: .5rem .5rem;
-        button {
-            all:inherit;
-            padding: .5rem 1rem;
-            border:none;
-            
-        }
-    }
+  }
 
-    .league-selector-sm button.selector-active {
-        
-        background-color: var(--main-dark-mode);
+  #leagues-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 3rem;
+    margin-right: 2%;
+    margin-left: 2%;
+    padding-left: 0;
+  }
 
-        button {
-            all: inherit;
-            padding: .5rem 1rem;
-        }
-        
-        
-    }
+  .team-card {
+    list-style: none;
 
-    #leagues-list {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        margin-top: 3rem;
-        margin-right: 2%;
-        margin-left: 2%;
-        padding-left: 0;
-    }
+    width: 1/2;
+    padding: auto;
+    cursor: pointer;
+    margin: 1rem 0.5rem 1rem;
+  }
 
-    .team-card {
-        list-style: none;
-
-        width: 1/2;
-        padding: auto;
-        cursor: pointer;
-        margin: 1rem .5rem 1rem;
-
-    }
-
-    .team-link {
-        text-decoration: none;
-        color: var(--footer-dark-mode);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        align-items: center;
-    }
-    .team-link span {
-        text-align: center;
-        font-weight: 500;
-    }
-    .team-logo {
-        height: 10em;
-        width: 10em;
-    }
+  .team-link {
+    text-decoration: none;
+    color: var(--footer-dark-mode);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    align-items: center;
+  }
+  .team-link span {
+    text-align: center;
+    font-weight: 500;
+  }
+  .team-logo {
+    height: 10em;
+    width: 10em;
+  }
 }
