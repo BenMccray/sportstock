@@ -1,5 +1,3 @@
-
-
 @media (min-width: 399px) and (max-width: 768px) {
   /* styles for screens with a minimum width of 399px */
 
@@ -64,7 +62,7 @@
       height: fit-content;
     }
   }
-  #card-saved {
+  #card-locker {
     background: rgb(212, 249, 192);
     background: linear-gradient(
       30deg,
@@ -74,7 +72,7 @@
     width: 100%;
     margin-bottom: 10%;
   }
-  #card-saved ul {
+  #card-locker ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -82,12 +80,12 @@
     color: #1d1d1dad;
   }
 
-  #card-saved li {
+  #card-locker li {
     list-style-image: url("../images/person_icon.png");
     opacity: 75%;
   }
 
-  #card-saved .line {
+  #card-locker .line {
     color: inherit;
     width: 150px;
     height: 10px;

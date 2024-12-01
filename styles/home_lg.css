@@ -82,7 +82,7 @@
     }
   }
 
-  #card-saved {
+  #card-locker {
     background: rgb(212, 249, 192);
     background: linear-gradient(
       30deg,
@@ -91,7 +91,7 @@
     );
   }
 
-  #card-saved ul {
+  #card-locker ul {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -99,12 +99,12 @@
     color: #1d1d1dad;
   }
 
-  #card-saved li {
+  #card-locker li {
     list-style-image: url("../images/person_icon.png");
     opacity: 75%;
   }
 
-  #card-saved .line {
+  #card-locker .line {
     color: inherit;
     width: 150px;
     height: 10px;
@@ -130,8 +130,6 @@
     font-weight: 500;
     font-size: x-large;
   }
-
-
 
   .text-focus-in {
     -webkit-animation: text-focus-in 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53)

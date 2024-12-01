@@ -22,7 +22,7 @@
             <a class="nav-link" href="../index.html">Home</a>
             <a class="nav-link active" href="#">Leagues</a>
             <a class="nav-link" href="../trending/index.html">Trending</a>
-            <a class="nav-link" href="../saved/index.html">Saved</a>
+            <a class="nav-link" href="../locker/index.html">Locker</a>
           </div>
 
           <div class="qol-div">
@@ -84,7 +84,7 @@
           <a href="../index.html">Home</a>
           <a href="#">Leagues</a>
           <a href="../trending/index.html">Trending</a>
-          <a href="../saved/index.html">Saved</a>
+          <a href="../locker/index.html">Locker</a>
         </div>
       </nav>
       <script src="../scripts/nav-sm.js"></script>
@@ -93,15 +93,46 @@
 
     <main>
       <ul class="league-selector">
-        <li><button class="selector-active" value="/sports/football/nfl/teams">NFL</button></li>
-        <li><button value="/sports/basketball/nba/teams">NBA</button></li>
-        <li><button value="/sports/baseball/mlb/teams">MLB</button></li>
-        <li><button value="/sports/hockey/nhl/teams">NHL</button></li>
-
+        <li>
+          <button
+            class="selector-active"
+            value="/sports/football/nfl/teams"
+            data-sport="football"
+            data-league="nfl"
+          >
+            NFL
+          </button>
+        </li>
+        <li>
+          <button
+            value="/sports/basketball/nba/teams"
+            data-sport="basketball"
+            data-league="nba"
+          >
+            NBA
+          </button>
+        </li>
+        <li>
+          <button
+            value="/sports/baseball/mlb/teams"
+            data-sport="baseball"
+            data-league="mlb"
+          >
+            MLB
+          </button>
+        </li>
+        <li>
+          <button
+            value="/sports/hockey/nhl/teams"
+            data-sport="hockey"
+            data-league="nhl"
+          >
+            NHL
+          </button>
+        </li>
       </ul>
-      
+
       <ul id="leagues-list"></ul>
-      
     </main>
 
     <footer>
@@ -109,7 +140,7 @@
         <li><a href="../index.html">Home</a></li>
         <li><a href="#">Leagues</a></li>
         <li><a href="../trending/index.html">Trending</a></li>
-        <li><a href="../saved/index.html">Saved</a></li>
+        <li><a href="../locker/index.html">Locker</a></li>
       </ul>
       <ul>
         <li>
@@ -126,5 +157,4 @@
 
   <script src="../scripts/load_league_teams.js"></script>
   <!-- <script src="../scripts/load_team.js"></script> -->
-  
 </html>

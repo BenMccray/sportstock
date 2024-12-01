@@ -12,9 +12,8 @@
     <link href="../styles/saved_lg.css" rel="stylesheet" />
     <link href="../styles/global_lg.css" rel="stylesheet" />
     <link href="../styles/global_sm.css" rel="stylesheet" />
-    
-    <title>Sports Stocks : Saved</title>
-    
+
+    <title>Sports Stocks : Locker</title>
   </head>
 
   <body>
@@ -25,7 +24,7 @@
             <a class="nav-link" href="../index.html">Home</a>
             <a class="nav-link" href="../league/index.html">Leagues</a>
             <a class="nav-link" href="../trending/index.html">Trending</a>
-            <a class="nav-link active" href="#">Saved</a>
+            <a class="nav-link active" href="#">Locker</a>
           </div>
 
           <div class="qol-div">
@@ -88,42 +87,20 @@
           <a href="../index.html">Home</a>
           <a href="../league/index.html">Leagues</a>
           <a href="../trending/index.html">Trending</a>
-          <a href="#">Saved</a>
+          <a href="#">Locker</a>
         </div>
       </nav>
       <script src="../scripts/nav-sm.js"></script>
       <script src="../scripts/darkmode.js"></script>
     </header>
     <main>
-      <form id="add-new-modal">
-        <span>Create new save</span>
-        <label for="name-input">Enter folder name:</label>
-        <input type="text" name="name-input" id="name-input" placeholder="eg. Wide receivers" required/>
-        <label for="description-input">Enter description:</label>
-        <input type="text" name="description-input" id="description-input" placeholder="eg. These guys rock!" required/>
-        <button type="button" id="submit-btn">Submit</button>
-        <button type="button" id="cancel-btn">Cancel</button>
-        <script>
-          document.querySelector("#cancel-btn").addEventListener("click", () => {
-            document.querySelector("#add-new-modal").style.visibility = "collapse";
-          })
-        </script>
-        
-      </form>
-      <button type="button" id="show-modal">Add new</button>
-      <article id="no-saved-notif" class="no-saved-notif">
-        <h1>Nothing Saved</h1>
+      <article id="no-locker-notif" class="no-locker-notif">
+        <h1>Nothing in your locker</h1>
         <br />
         <span>Save teams or players to look back later</span>
-        
-        <script>
-          document.querySelector("#show-modal").addEventListener("click", () => {
-            document.querySelector("#add-new-modal").style.visibility = "visible";
-          })
-        </script>
       </article>
-      <ul id="saved-list"></ul>
-      <script src="../scripts/add_saved.js"></script>
+      <ul id="locker-list"></ul>
+      <script src="../scripts/locker.js"></script>
     </main>
     <footer>
       <ul>
@@ -134,7 +111,7 @@
         <li>
           <a href="../trending/index.html">Trending</a>
         </li>
-        <li><a href="#">Saved</a></li>
+        <li><a href="#">Locker</a></li>
       </ul>
       <ul>
         <li>

@@ -22,7 +22,7 @@
   }
 
   nav {
-    padding: 1rem;
+    padding: 1rem 0;
     color: var(--text-light);
   }
 
@@ -143,18 +143,23 @@
   }
 
   .shadow-drop-center {
-    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35)
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
   }
-  
 }
 
-body.dark, body.dark header *, body.dark main, body.dark footer, body.dark footer ul, body.dark footer li, body.dark footer a {
+body.dark,
+body.dark header *,
+body.dark main,
+body.dark footer,
+body.dark footer ul,
+body.dark footer li,
+body.dark footer a {
   background-color: var(--nav-dark-mode);
   color: white;
 }
 
 body.dark nav .search-bar::placeholder {
-  color:white
+  color: white;
 }
 
 body.dark li .team-link {

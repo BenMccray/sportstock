@@ -1,4 +1,4 @@
-const base = 'https://site.api.espn.com/apis/site/v2';
+const base = "https://site.api.espn.com/apis/site/v2";
 function loadTeams(query) {
   // fetch the data from the API
   fetch(`${base}${query}`)
@@ -16,8 +16,8 @@ function loadTeams(query) {
       // get the leagues list, remove old league's teams, add newly
       // fetched teams to the list
       const leaguesList = document.querySelector("#leagues-list");
-      while(leaguesList.firstChild) {
-          leaguesList.removeChild(leaguesList.firstChild)
+      while (leaguesList.firstChild) {
+        leaguesList.removeChild(leaguesList.firstChild);
       }
       list.forEach((team) => {
         leaguesList.appendChild(buildCard(team.team));
@@ -28,37 +28,42 @@ function loadTeams(query) {
 
 function addEventListeners() {
   const items = document.querySelectorAll("#leagues-list .team-link");
-  items.forEach(item => {
+  items.forEach((item) => {
     item.addEventListener("click", () => {
       const teamId = item.id; // Get the team ID from the link's ID
-      setCookie('teamId', teamId, 30); // Set the cookie with the team ID
-      window.location.href = `../team/index.html?team=${item.getAttribute( 'data-team-name' )}`; // Redirect to the team pageleague page
+
+      const activeLeague = document.querySelector(
+        ".league-selector .selector-active"
+      );
+      sessionStorage.setItem("teamId", teamId);
+      sessionStorage.setItem("sport", activeLeague.getAttribute("data-sport"));
+      sessionStorage.setItem(
+        "league",
+        activeLeague.getAttribute("data-league")
+      );
+
+      window.location.href = `../team/index.html?team=${item.getAttribute(
+        "data-team-name"
+      )}`; // Redirect to the team pageleague page
       console.log(document.cookie); // Log the team ID to the console
     });
   });
 }
 
-function setCookie(name, value, timeSeconds) {
-  const expires = new Date();
-  expires.setTime( expires.getTime() + (timeSeconds * 1000) ); // Set the expiration time
-  document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`; // Set the cookie
-}
-
 /** Create the image element for the list item */
 const buildImg = (teamData) => {
-  
   const img = document.createElement("img");
   img.src = teamData.logos[0].href;
   img.classList.add("team-logo");
   img.alt = teamData.displayName;
   return img;
-}
+};
 
-/** Create the link to team page based on team id 
+/** Create the link to team page based on team id
  * @param {Object} teamData - team object
  * @param img - image element
  * @param span - span element
-*/
+ */
 const buildLink = (name, img, span, id) => {
   const link = document.createElement("a");
   link.href = "#";
@@ -66,10 +71,10 @@ const buildLink = (name, img, span, id) => {
   link.appendChild(span);
   link.classList.add("team-link");
   link.id = id;
-  name = name.split(' ').join("");
+  name = name.split(" ").join("");
   link.setAttribute("data-team-name", name);
   return link;
-}
+};
 
 /** Create the list item card for display
  * @param {*} teamData the team data object
@@ -83,26 +88,26 @@ function buildCard(teamData) {
   const link = buildLink(teamData.displayName, img, span, teamData.id);
   li.appendChild(link);
   li.classList.add("team-card");
-  return li
+  return li;
 }
-
 
 /** Initial anonymous function to update the active league
  *  in the selector items and re-display the teams list
  */
-(function() {
-  
+(function () {
   loadTeams(document.querySelector(".league-selector .selector-active").value);
 
   let selectors = document.querySelectorAll(".league-selector button");
   selectors.forEach((select) => {
-    select.addEventListener("click", (e) => {            
+    select.addEventListener("click", (e) => {
       e.preventDefault();
-      document.querySelector(".league-selector .selector-active").classList.remove("selector-active");
+      document
+        .querySelector(".league-selector .selector-active")
+        .classList.remove("selector-active");
       e.target.classList.add("selector-active");
-      loadTeams(e.target.value)
-    });
-  })
-  // Now that teams are loaded, add a listener to get team info for a query to display team info
 
+      loadTeams(e.target.value);
+    });
+  });
+  // Now that teams are loaded, add a listener to get team info for a query to display team info
 })();
