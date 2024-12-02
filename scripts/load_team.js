@@ -120,7 +120,7 @@ function buildTeamCard(teamName, teamLogo, teamRecord) {
   div.classList.add("team-info");
 
   const button = document.createElement("button");
-  button.textContent = "Save Team";
+  button.textContent = "Save to Locker";
   button.id = "save-btn";
   div.appendChild(h1);
   div.appendChild(span);
@@ -195,7 +195,10 @@ function createPlayerListItem(bundle) {
     playerId,
   } = bundle;
   // Create the player list item
-  const playerListItem = document.createElement("a");
+  const playerListItem = document.createElement("li");
+  playerListItem.setAttribute("data-player-name", displayName);
+
+  const playerLink = document.createElement("a");
   // Create the player icon image
   const playerIcon = document.createElement("img");
   playerIcon.src = playerIconURL;
@@ -222,15 +225,23 @@ function createPlayerListItem(bundle) {
 
   // Set the player list item attributes
   // playerListItem.setAttribute("data-player-category", playerCategory);
-  playerListItem.id = playerId;
+  playerLink.id = playerId;
   // placeholder of the espn player profile url
-  playerListItem.href = `https://www.espn.com/${localStorage.getItem(
+  playerLink.href = `https://www.espn.com/${sessionStorage.getItem(
     "league"
   )}/player/_/id/${playerId}`;
 
   // Append the player icon and text to the player list item
-  playerListItem.appendChild(playerIcon);
-  playerListItem.appendChild(playerText);
+  playerLink.appendChild(playerIcon);
+  playerLink.appendChild(playerText);
+  const saveBtn = document.createElement("button");
+  saveBtn.textContent = "Save to Locker";
+  saveBtn.id = "save-player-btn";
+  saveBtn.addEventListener("click", () => {
+    saveToLocker(undefined, undefined, bundle);
+  });
+  playerListItem.appendChild(playerLink);
+  playerListItem.appendChild(saveBtn);
   return playerListItem;
 }
 
@@ -242,20 +253,40 @@ function createPlayerListItem(bundle) {
  *
  * @param teamId
  */
-function saveTeam(teamData, rosterData) {
-  console.log(teamData, rosterData);
-  const teamStringified = JSON.stringify(teamData);
-  const rosterStringified = JSON.stringify(rosterData);
+function saveToLocker(
+  teamData = undefined,
+  rosterData = undefined,
+  playerItem = undefined
+) {
   let locker = JSON.parse(localStorage.getItem("locker")) || [];
 
   if (Array.isArray(locker)) {
-    locker.push([teamStringified, rosterStringified]);
+    if (playerItem) {
+      locker.push({
+        type: "player",
+        data: playerItem
+      });
+    } else {
+      locker.push({
+        type: "team",
+        teamData: teamData,
+        rosterData: rosterData
+      });
+    }
     localStorage.setItem("locker", JSON.stringify(locker));
   } else {
-    localStorage.setItem(
-      "locker",
-      JSON.stringify([[teamStringified, rosterStringified]])
-    );
+    // Initialize new locker if current one is invalid
+    const newItem = playerItem 
+      ? {
+          type: "player",
+          data: playerItem
+        }
+      : {
+          type: "team",
+          teamData: teamData,
+          rosterData: rosterData
+        };
+    localStorage.setItem("locker", JSON.stringify([newItem]));
   }
 }
 
@@ -277,6 +308,6 @@ function saveTeam(teamData, rosterData) {
   sessionStorage.setItem("cacheTeamId", teamId);
   sessionStorage.setItem("cacheLeague", league);
   document.querySelector("#save-btn").addEventListener("click", () => {
-    saveTeam(teamData, rosterData);
+    saveToLocker(teamData, rosterData);
   });
 })();

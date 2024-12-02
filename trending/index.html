@@ -28,25 +28,6 @@
             <a class="nav-link active" href="#">Trending</a>
             <a class="nav-link" href="../locker/index.html">Locker</a>
           </div>
-
-          <div class="qol-div">
-            <input class="search-bar" type="text" placeholder="Search..." />
-            <button class="color-scheme-btn" id="darkModeToggle">
-              <svg
-                viewBox="0 0 24 24"
-                version="1.1"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g stroke="none" stroke-width="1">
-                  <g>
-                    <path
-                      d="M12,22 C17.5228475,22 22,17.5228475 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 Z M12,20.5 L12,3.5 C16.6944204,3.5 20.5,7.30557963 20.5,12 C20.5,16.6944204 16.6944204,20.5 12,20.5 Z"
-                    ></path>
-                  </g>
-                </g>
-              </svg>
-            </button>
-          </div>
         </div>
 
         <div class="nav-sm">
@@ -65,24 +46,6 @@
               />
             </svg>
           </button>
-          <div class="qol-div-sm">
-            <input class="search-bar" type="text" placeholder="Search..." />
-            <button class="color-scheme-btn" id="darkModeToggle">
-              <svg
-                viewBox="0 0 24 24"
-                version="1.1"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g stroke="none" stroke-width="1">
-                  <g>
-                    <path
-                      d="M12,22 C17.5228475,22 22,17.5228475 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 Z M12,20.5 L12,3.5 C16.6944204,3.5 20.5,7.30557963 20.5,12 C20.5,16.6944204 16.6944204,20.5 12,20.5 Z"
-                    ></path>
-                  </g>
-                </g>
-              </svg>
-            </button>
-          </div>
         </div>
         <div id="menu-sm" aria-hidden="true" role="region">
           <a href="../index.html">Home</a>
@@ -92,7 +55,6 @@
         </div>
       </nav>
       <script src="../scripts/nav-sm.js"></script>
-      <script src="../scripts/darkmode.js"></script>
     </header>
 
     <main>
@@ -128,70 +90,5 @@
       </ul>
     </footer>
   </body>
-  <script
-    type="text/javascript"
-    src="https://www.gstatic.com/charts/loader.js"
-  ></script>
-  <script type="text/javascript">
-    // Load the Visualization API and the corechart package.
-    google.charts.load("current", { packages: ["corechart"] });
 
-    let KEY = "8f5454aa84b6d4cc5968d292ac0cda25";
-    let myHeaders = new Headers();
-    myHeaders.append("x-rapidapi-key", KEY);
-    myHeaders.append("x-rapidapi-host", "v1.american-football.api-sports.io");
-
-    var requestOptions = {
-      method: "GET",
-      headers: myHeaders,
-      redirect: "follow",
-    };
-
-    fetch("https://v1.american-football.api-sports.io/leagues", requestOptions)
-      .then((response) => response.text())
-      // .then((result) => console.log(result))
-      .catch((error) => console.log("error", error));
-
-    let filtered = [["Week", "Yards"]];
-    let leagues = fetch("../data/mahomes.json")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json(); // Parse the response body as JSON
-      })
-      .then((data) => {
-        for (e of data) {
-          console.log(e);
-          filtered.push([e.Week, e.PassingYards]);
-        }
-
-        filtered.sort((a, b) => a[0] - b[0]);
-
-        // Set a callback to run when the Google Visualization API is loaded.
-        google.charts.setOnLoadCallback(drawChart);
-      });
-
-    function drawChart() {
-      // Create the data table.
-
-      let data = new google.visualization.arrayToDataTable(filtered);
-
-      // Set chart options
-      let options = {
-        title: "Patrick Mahomes - Passing Yards by Week",
-        width: 1000,
-        height: 600,
-        legend: { position: "bottom" },
-      };
-
-      // Instantiate and draw our chart, passing in some options.
-      let chart = new google.visualization.LineChart(
-        document.getElementById("chart_div")
-      );
-      chart.draw(data, options);
-    }
-
-    /******  dc05cad9-672e-4dee-85b0-1f8e9c2e35eb  *******/
-  </script>
 </html>

@@ -19,6 +19,8 @@
 .team-record,
 .team-name {
   margin: 0;
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 .team-logo {
   width: 250px;
@@ -26,16 +28,17 @@
 #save-btn {
   /* position: relative; */
   border: 2px solid lightblue;
+  font-size: 1.2rem;
   padding: 0.5rem;
   height: fit-content;
   width: fit-content;
-  border-radius: 4px;
-  background-color: var(--main-light-mode);
+  border-radius: 6px;
   margin-top: 0.5em;
 }
 #save-btn:hover {
+  font-weight: bolder;
   border: 2px solid blue;
-  cursor: pointer;
+  color: blue;
 }
 .player-roster-header {
   text-align: center;
@@ -49,11 +52,10 @@
   padding: 0;
 }
 /* Player list item */
-#player-list a {
+#player-list li {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
   list-style: none;
   max-width: fit-content;
   cursor: pointer;
@@ -61,7 +63,7 @@
   color: black;
 }
 
-#player-list a:hover {
+#player-list li:hover {
   transform: scale(1.1, 1.1);
   transition: transform linear 0.1s;
 }
@@ -78,4 +80,24 @@
   width: 200px;
   padding: auto;
   margin: 1rem 0.5rem 0;
+}
+
+#save-player-btn {
+  border: 2px solid lightblue;
+  border-radius: 6px;
+  padding: 0.25rem 0.5rem;
+}
+
+#save-player-btn:hover {
+  font-weight: bolder;
+  border: 2px solid blue;
+  color: blue;
+}
+
+body.dark {
+  color: white;
+}
+
+body.dark #player-list li {
+  color: white;
 }
