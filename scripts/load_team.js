@@ -119,12 +119,16 @@ function buildTeamCard(teamName, teamLogo, teamRecord) {
   const div = document.createElement("div");
   div.classList.add("team-info");
 
-  const button = document.createElement("button");
-  button.textContent = "Save to Locker";
-  button.id = "save-btn";
+  const saveBtn = document.createElement("button");
+  saveBtn.textContent = "Save to Locker";
+  saveBtn.id = "save-btn";
+  const articleBtn = document.createElement("button");
+  articleBtn.textContent = "Find Articles";
+  articleBtn.id = "article-btn";
   div.appendChild(h1);
   div.appendChild(span);
-  div.appendChild(button);
+  div.appendChild(articleBtn);
+  div.appendChild(saveBtn);
 
   teamContainer.appendChild(img);
   teamContainer.appendChild(div);
@@ -227,9 +231,10 @@ function createPlayerListItem(bundle) {
   // playerListItem.setAttribute("data-player-category", playerCategory);
   playerLink.id = playerId;
   // placeholder of the espn player profile url
-  playerLink.href = `https://www.espn.com/${sessionStorage.getItem(
-    "league"
-  )}/player/_/id/${playerId}`;
+  playerLink.href = `./player/index.html`;
+  playerLink.addEventListener("click", () => {
+    sessionStorage.setItem("searchQuery", displayName);
+  });
 
   // Append the player icon and text to the player list item
   playerLink.appendChild(playerIcon);
@@ -237,9 +242,9 @@ function createPlayerListItem(bundle) {
   const saveBtn = document.createElement("button");
   saveBtn.textContent = "Save to Locker";
   saveBtn.id = "save-player-btn";
-  saveBtn.addEventListener("click", () => {
-    saveToLocker(undefined, undefined, bundle);
-  });
+  // saveBtn.addEventListener("click", () => {
+  //   saveToLocker(undefined, undefined, bundle);
+  // });
   playerListItem.appendChild(playerLink);
   playerListItem.appendChild(saveBtn);
   return playerListItem;
@@ -264,27 +269,27 @@ function saveToLocker(
     if (playerItem) {
       locker.push({
         type: "player",
-        data: playerItem
+        data: playerItem,
       });
     } else {
       locker.push({
         type: "team",
         teamData: teamData,
-        rosterData: rosterData
+        rosterData: rosterData,
       });
     }
     localStorage.setItem("locker", JSON.stringify(locker));
   } else {
     // Initialize new locker if current one is invalid
-    const newItem = playerItem 
+    const newItem = playerItem
       ? {
           type: "player",
-          data: playerItem
+          data: playerItem,
         }
       : {
           type: "team",
           teamData: teamData,
-          rosterData: rosterData
+          rosterData: rosterData,
         };
     localStorage.setItem("locker", JSON.stringify([newItem]));
   }

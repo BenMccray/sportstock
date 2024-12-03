@@ -1,0 +1,47 @@
+body {
+  font-family: "Roboto";
+  background-color: #1d1842;
+}
+
+header {
+  font-family: "Roboto";
+}
+
+#nav-sm {
+  transition: height ease-in-out 0.3s;
+  height: 0;
+  overflow: hidden;
+}
+.show {
+  height: 24rem;
+}
+footer {
+  height: 25vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--footer-light-mode);
+  margin-top: 10rem;
+  margin-bottom: 0;
+  width: 100vw;
+}
+footer ul {
+  list-style: none;
+  margin: 1.5rem 0;
+}
+footer li {
+  margin: 1.5rem 0;
+}
+footer a {
+  text-decoration: none;
+  color: var(--text-light);
+  font-family: Tahoma;
+  font-weight: 500;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+.shadow-drop-center {
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+}

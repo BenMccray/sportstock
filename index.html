@@ -3,9 +3,12 @@
   <head lang="en">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="styles/global_lg.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link href="styles/global.css" rel="stylesheet" />
     <link href="styles/home_lg.css" rel="stylesheet" />
-    <link href="styles/global_sm.css" rel="stylesheet" />
     <link href="styles/home_sm.css" rel="stylesheet" />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap");
@@ -14,42 +17,79 @@
     <title>Sports Stocks : Home</title>
   </head>
 
-  <body>
-    <header class="shadow-drop-center">
-      <nav>
-        <div id="menu-lg">
-          <div class="nav-links">
-            <a class="nav-link active" href="#">Home</a>
-            <a class="nav-link" href="./league/index.html">Leagues</a>
-            <a class="nav-link" href="./trending/index.html">Trending</a>
-            <a class="nav-link" href="./locker/index.html">Locker</a>
-          </div>
-
-        </div>
-
-        <div class="nav-sm">
-          <button id="menu-btn" aria-expanded="false" aria-controls="menu-sm">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </button>
-        </div>
-        <div id="menu-sm" aria-hidden="true" role="region">
-          <a href="#">Home</a>
-          <a href="./league/index.html">Leagues</a>
-          <a href="./trending/index.html">Trending</a>
-          <a href="./locker/index.html">Locker</a>
-        </div>
+  <body class="flex flex-col min-h-screen m-0">
+    <header
+      class="opacity-100 lg:shadow-drop-center sticky top-0 left-0 z-10 w-full font-bold text-xl"
+    >
+      <nav
+        class="m-0 text-white py-4 justify-around content-center flex-grow-1 hidden lg:flex"
+        id="nav-lg"
+      >
+        <a class="py-1 px-3 text-green-500 h-fit text-center" href="#">Home</a>
+        <a
+          class="py-1 px-3 h-fit text-center text-white hover:text-gray-500"
+          href="./league/index.html"
+          >Leagues</a
+        >
+        <a
+          class="py-1 px-3 h-fit text-center text-white hover:text-gray-500"
+          href="./trending/index.html"
+          >Trending</a
+        >
+        <a
+          class="py-1 px-3 h-fit text-center text-white hover:text-gray-500"
+          href="./locker/index.html"
+          >Locker</a
+        >
+      </nav>
+      <div
+        class="flex justify-between sticky lg:hidden h-20 w-20"
+        id="nav-sm-btn"
+      >
+        <button
+          class="sticky block text-white opacity-75 h-[45px] w-[45px] my-2 ml-2 fill-white"
+          id="nav-btn"
+          aria-expanded="false"
+          aria-controls="nav-sm"
+        >
+          <svg
+            class="h-full w-full"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+      <nav
+        class="lg:hidden h-full absolute mt-20 left-0 top-0 flex flex-col content-center rounded-xl"
+        id="nav-sm"
+        aria-hidden="true"
+        role="region"
+      >
+        <a class="font-bold text-white text-center py-5 px-20" href="#">Home</a>
+        <a
+          class="font-bold text-white text-center py-5 px-20"
+          href="./league/index.html"
+          >Leagues</a
+        >
+        <a
+          class="font-bold text-white text-center py-5 px-20"
+          href="./trending/index.html"
+          >Trending</a
+        >
+        <a
+          class="font-bold text-white text-center py-5 px-20"
+          href="./locker/index.html"
+          >Locker</a
+        >
       </nav>
       <script src="./scripts/nav-sm.js"></script>
     </header>
@@ -82,7 +122,7 @@
       </div>
     </main>
 
-    <footer class="shadow-drop-center">
+    <footer class="lg:shadow-drop-center lg:flex lg:justify-evenly hidden">
       <ul>
         <li><a href="#">Home</a></li>
         <li><a href="./league/index.html">Leagues</a></li>

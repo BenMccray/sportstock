@@ -61,7 +61,6 @@
               />
             </svg>
           </button>
-
         </div>
         <div id="menu-sm" aria-hidden="true" role="region">
           <a href="../index.html">Home</a>
@@ -73,14 +72,19 @@
       <script src="../scripts/nav-sm.js"></script>
     </header>
 
-    <main>
+    <main class="flex flex-col content-center">
       <div id="graph-container">
         <div id="graph"></div>
       </div>
-      <h2 class="self-center text-3xl font-bold  ">Player Roster</h2>
-      <input class="self-center py-2 px-3 border-2 border-gray-400 focus:border-blue-600 outline-none rounded-lg" type="text" id="player-search" placeholder="Search players..." />
+      <h2 class="self-center text-3xl font-bold">Player Roster</h2>
+      <input
+        class="self-center py-2 px-3 border-2 border-gray-400 focus:border-blue-600 outline-none rounded-lg"
+        type="text"
+        id="player-search"
+        placeholder="Search players..."
+      />
       <ul id="player-list"></ul>
-      <script src="../scripts/searchPlayer.js"></script>
+      <script src="../scripts/search_player.js"></script>
     </main>
     <footer
       class="bg-gray-400 flex justify-around align-center border-t border-t-indigo-500 lg:visible sm:invisible"
