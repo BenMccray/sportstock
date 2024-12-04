@@ -5,43 +5,34 @@ body {
 
 header {
   font-family: "Roboto";
+  background-color: none;
+}
+
+@media (min-width: 1024px) {
+  header {
+    background-color: #1d1842;
+  }
+  main {
+    margin-bottom: 20rem;
+  }
+}
+
+#mobile-topnav {
+  background-color: #1d1842;
 }
 
 #nav-sm {
-  transition: height ease-in-out 0.3s;
-  height: 0;
+  transition: height ease-in-out 0.35s;
   overflow: hidden;
+  background-color: #1d1842;
 }
-.show {
-  height: 24rem;
-}
-footer {
-  height: 25vh;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: var(--footer-light-mode);
-  margin-top: 10rem;
-  margin-bottom: 0;
-  width: 100vw;
-}
-footer ul {
-  list-style: none;
-  margin: 1.5rem 0;
-}
-footer li {
-  margin: 1.5rem 0;
-}
-footer a {
-  text-decoration: none;
-  color: var(--text-light);
-  font-family: Tahoma;
-  font-weight: 500;
-}
-footer a:hover {
-  text-decoration: underline;
-}
+
 
 .shadow-drop-center {
   box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+}
+
+#back-arrow:hover {
+  transition: transform ease-in-out .3s;
+  transform: scale(1.1, 1.1);
 }

@@ -1,10 +1,4 @@
 @media (min-width: 992px) {
-  .league-selector-sm {
-    display: none;
-  }
-  .select-prompt {
-    display: none;
-  }
 
   .league-selector {
     display: flex;
@@ -17,12 +11,11 @@
   .league-selector li {
     list-style: none;
 
-    background-color: var(--footer-light-mode);
-    color: var(--text-light);
-    border: 1px solid rgb(185, 185, 185);
+    background-color: #1d1842;
+    color: white;
+    outline: 2px solid #22c55e;
     border-radius: 4rem;
     font-weight: 500;
-    box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.25);
     button {
       all: inherit;
       padding: 0.5rem 1rem;
@@ -32,12 +25,12 @@
 
   .league-selector li:hover {
     cursor: pointer;
-    background-color: rgb(185, 185, 185);
+    transition: transform cubic-bezier(0.075, 0.82, 0.165, 1) 0.25s;
+    transform: scale(1.1, 1.1);
   }
 
   .league-selector button.selector-active {
-    background-color: #1945b3;
-    color: white;
+    color: #22c55e;
     button {
       background-color: inherit;
       all: inherit;
@@ -49,15 +42,18 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-right: 2%;
   }
 
   .team-card {
+    background-color: #3d34814d;
     list-style: none;
     width: 200px;
+    height: 250px;
     padding: auto;
     cursor: pointer;
     margin: 1rem 0.5rem 1rem;
+    border: 2px solid #22c55e;
+    border-radius: 9px;
   }
 
   .team-card:hover {
@@ -67,7 +63,7 @@
 
   .team-link {
     text-decoration: none;
-    color: var(--footer-dark-mode);
+    color: white;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

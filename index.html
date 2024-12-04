@@ -19,10 +19,10 @@
 
   <body class="flex flex-col min-h-screen m-0">
     <header
-      class="opacity-100 lg:shadow-drop-center sticky top-0 left-0 z-10 w-full font-bold text-xl"
+      class="opacity-100 lg:shadow-drop-center sticky top-0 left-0 z-10 lg:w-full font-bold text-xl"
     >
       <nav
-        class="m-0 text-white py-4 justify-around content-center flex-grow-1 hidden lg:flex"
+        class="m-0 text-white py-6 justify-around content-center flex-grow-1 hidden lg:flex"
         id="nav-lg"
       >
         <a class="py-1 px-3 text-green-500 h-fit text-center" href="#">Home</a>
@@ -42,55 +42,56 @@
           >Locker</a
         >
       </nav>
-      <div
-        class="flex justify-between sticky lg:hidden h-20 w-20"
-        id="nav-sm-btn"
-      >
-        <button
-          class="sticky block text-white opacity-75 h-[45px] w-[45px] my-2 ml-2 fill-white"
-          id="nav-btn"
-          aria-expanded="false"
-          aria-controls="nav-sm"
-        >
-          <svg
-            class="h-full w-full"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
+      <div class="flex flex-col justify-center items-center lg:hidden" id="mobile-topnav">
+        <div class="flex w-screen">
+          <button
+            class=" text-white opacity-75 m-2 flex justify-between lg:hidden h-16 w-16 z-10"
+            id="nav-sm-btn"
+            aria-expanded="false"
+            aria-controls="nav-sm"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </button>
-      </div>
-      <nav
-        class="lg:hidden h-full absolute mt-20 left-0 top-0 flex flex-col content-center rounded-xl"
+            <svg
+              class="h-full w-full"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+          <h3 class="text-white self-center">Sports News</h3>
+        </div>
+        <nav
+        class="lg:hidden h-0 w-64 left-0 flex flex-col justify-evenly items-center rounded-br-xl"
         id="nav-sm"
         aria-hidden="true"
         role="region"
-      >
-        <a class="font-bold text-white text-center py-5 px-20" href="#">Home</a>
-        <a
-          class="font-bold text-white text-center py-5 px-20"
-          href="./league/index.html"
-          >Leagues</a
         >
-        <a
-          class="font-bold text-white text-center py-5 px-20"
-          href="./trending/index.html"
-          >Trending</a
-        >
-        <a
-          class="font-bold text-white text-center py-5 px-20"
-          href="./locker/index.html"
-          >Locker</a
-        >
-      </nav>
+          <a class="font-bold text-white text-center py-7 px-20" href="#">Home</a>
+          <a
+            class="font-bold text-white text-center py-7 px-20"
+            href="./league/index.html"
+            >Leagues</a
+          >
+          <a
+            class="font-bold text-white text-center py-7 px-20"
+            href="./trending/index.html"
+            >Trending</a
+          >
+          <a
+            class="font-bold text-white text-center py-7 px-20"
+            href="./locker/index.html"
+            >Locker</a
+          >
+        </nav>
+      </div>
+      
       <script src="./scripts/nav-sm.js"></script>
     </header>
 
@@ -121,25 +122,6 @@
         </section>
       </div>
     </main>
-
-    <footer class="lg:shadow-drop-center lg:flex lg:justify-evenly hidden">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="./league/index.html">Leagues</a></li>
-        <li><a href="./trending/index.html">Trending</a></li>
-        <li><a href="./locker/index.html">Locker</a></li>
-      </ul>
-      <ul>
-        <li>
-          <a href="https://www.prizepicks.com" target="_blank">PrizePicks</a>
-        </li>
-        <li><a href="https://www.fanduel.com" target="_blank">FanDuel</a></li>
-        <li>
-          <a href="https://www.draftkings.com" target="_blank">DraftKings</a>
-        </li>
-        <li><a href="https://sleeper.com" target="_blank">Sleeper</a></li>
-      </ul>
-    </footer>
   </body>
   <script>
     let cards = document.querySelectorAll(".card-container section");

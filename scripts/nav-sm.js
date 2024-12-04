@@ -13,7 +13,10 @@
     collapseContent.setAttribute("aria-hidden", isExpanded);
 
     // Toggle the .show class to reveal or hide content
-    collapseContent.classList.toggle("show");
+    collapseContent.classList.toggle("h-96");
+    collapseContent.classList.toggle("h-0");
+    // collapseContent.classList.contains("h-0") ? setTimeout(() => collapseContent.classList.toggle("pt-20"), 499) : collapseContent.classList.toggle("pt-20");
+    
     // collapseContent.classList.toggle("max-h-96");
     // collapseContent.querySelectorAll("a").forEach((a) => {
     //   a.classList.toggle("content-hidden" && "content-show");

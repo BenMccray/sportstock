@@ -8,42 +8,48 @@ async function getNewsStories(searchQuery) {
   let fromDate = `${date.getFullYear()}-${date.getMonth()}-01}`;
   let currentDate = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
   try {
-    const response = await fetch(
-      `https://newsapi.org/v2/everything?searchIn=title,description&language=en&q=${searchQuery}&from=${fromDate}&to=${currentDate}&apiKey=${NEWS_API_KEY}`
-    );
+    const response = await fetch(`https://site.web.api.espn.com/apis/search/v2?query=${searchQuery.name}&limit=15`)
     const data = await response.json();
-    // if no results from newsapi, try gnews
-    if (data.totalResults === 0) {
+    return data;
+  } catch (error) {
+    try {
+      const response = await fetch(
+        `https://newsapi.org/v2/top-headlines?category=sports&country=us&q=+${encodeURIComponent(searchQuery.name)}&apiKey=${NEWS_API_KEY}`
+      );
+      const data = await response.json();
+      // if no results from newsapi, try gnews
+      if (data.totalResults === 0) {
+        try {
+          const gnewsResponse = await fetch(
+            `https://gnews.io/api/v4/top-headlines?category=sports&q="${searchQuery.name}"&lang=en&country=us&max=10&apikey=${GNEWS_API_KEY}`
+          );
+          const gnewsData = await gnewsResponse.json();
+          // if no results from gnews, then we're SOL and return nothing
+          if (gnewsData.totalArticles === 0) {
+            return undefined;
+          }
+          return gnewsData;
+        } catch (error) {
+          console.error("Error fetching news stories:", error);
+          return undefined;
+        }
+      }
+      return data;
+    } catch (error) {
       try {
         const gnewsResponse = await fetch(
-          `https://gnews.io/api/v4/search?q="${searchQuery}"&in=title,description&lang=en&country=us&max=10&apikey=${GNEWS_API_KEY}`
+          `https://gnews.io/api/v4/top-headlines?category=sports&q="${searchQuery.name}"&lang=en&country=us&max=10&apikey=${GNEWS_API_KEY}`
         );
         const gnewsData = await gnewsResponse.json();
         // if no results from gnews, then we're SOL and return nothing
         if (gnewsData.totalArticles === 0) {
-          return [];
+          return undefined;
         }
         return gnewsData;
       } catch (error) {
         console.error("Error fetching news stories:", error);
         return undefined;
       }
-    }
-    return data;
-  } catch (error) {
-    try {
-      const gnewsResponse = await fetch(
-        `https://gnews.io/api/v4/search?q="${searchQuery}"&in=title,description&lang=en&country=us&max=10&apikey=${GNEWS_API_KEY}`
-      );
-      const gnewsData = await gnewsResponse.json();
-      // if no results from gnews, then we're SOL and return nothing
-      if (gnewsData.totalArticles === 0) {
-        return undefined;
-      }
-      return gnewsData;
-    } catch (error) {
-      console.error("Error fetching news stories:", error);
-      return undefined;
     }
   }
 }
@@ -53,10 +59,10 @@ function displayNewsStories(newsStories) {
   const newsList = document.getElementById("news-list");
   newsStories.forEach((story) => {
     // Grab the needed data for each story
-    const title = story.title;
-    const description = story.description;
-    const url = story.url;
-    const imageSrc = story.urlToImage || story.image;
+    const title = story.title || story.displayName;
+    const description = story.description || "";
+    const url = story.url || story.link.web;
+    const imageSrc = story.urlToImage || story.image || story.images[0].url;
 
     // Create a news item element
     const newsListItem = document.createElement("li");
@@ -78,22 +84,20 @@ function displayNewsStories(newsStories) {
       "border-green-400",
       "border-4",
       "rounded-lg",
-      "w-50",
-      "mx-auto",
-      "my-2",
       "hover:border-green-700",
-      "sm:w-full",
-      "sm:mx-1",
-      "sm:my-2",
+      "lg:w-full",
+      "w-3/4",
+      "my-2",
+      "mx-auto",
       "p-4",
       "text-white",
       // text color
     ];
-    const newsItemLinkClasses = ["flex", "flex-row"];
+    const newsItemLinkClasses = ["flex", "lg:flex-row", "flex-col"];
     const newsTextContainerClasses = ["flex", "flex-col", "m-6"];
     const newsItemTitleClasses = ["text-lg", "font-bold"];
     const newsItemDescriptionClasses = ["text-sm"];
-    const newsItemImageClasses = ["w-40", "h-40", "rounded-lg"];
+    const newsItemImageClasses = ["w-600", "h-40", "rounded-lg"];
 
     newsListItem.classList.add(...newsListItemClasses);
     newsItemLink.classList.add(...newsItemLinkClasses);
@@ -116,15 +120,43 @@ function displayNewsStories(newsStories) {
 
 function displayNoStories() {
   const noStories = document.createElement("p");
+  const classes = ["text-center", "text-4xl", "my-16", "text-white"]
+  const backClasses = ["flex", "justify-center", "text-white", "items-center"]
+  const backArrow = document.createElement("button");
+  backArrow.id = "back-arrow"
+  backArrow.addEventListener("click", () => history.back())
+  const arrow = document.createElement("img");
+  arrow.classList.add("filter", "brightness-0", "invert")
+  const goBack = document.createElement("span")
+  arrow.src = "../../images/arrow_left.png";
+  arrow.alt = "go back";
+  goBack.textContent = "Return to last page";
+  backArrow.appendChild(arrow);
+  backArrow.appendChild(goBack);
+  noStories.classList.add(...classes)
+  backArrow.classList.add(...backClasses)
   noStories.textContent = "No news stories";
-  document.querySelector("#news-list").appendChild(noStories);
+  const list = document.querySelector("#news-list")
+  list.appendChild(noStories);
+  list.appendChild(backArrow);
+  
 }
 
 (async function () {
-  const searchQuery = sessionStorage.getItem("searchQuery");
+  const searchQuery = JSON.parse(sessionStorage.getItem("searchQuery"));
+  console.log(searchQuery)
   const newsStories = await getNewsStories(searchQuery);
   // display news stories in player page
-  newsStories ? displayNewsStories(newsStories.articles) : displayNoStories();
+  console.log(newsStories)
+  if (newsStories.resultTypes) {
+    console.log(searchQuery.name.split(" ")[1])
+    let articles = newsStories.results[1].contents.filter(article => article.displayName.includes(searchQuery.name) 
+                                                                  || (searchQuery.teamId && article.displayName.includes(searchQuery.name.split(" ")[1])));
+    
+    newsStories.articles = articles
+  }
+  console.log(newsStories.articles)
+  newsStories !== undefined && newsStories.articles.length > 0 ? displayNewsStories(newsStories.articles) : displayNoStories();
 })();
 
 /**

@@ -3,45 +3,8 @@
   main {
     align-items: center;
   }
-  .league-selector {
-    display: none;
-  }
 
-  .select-prompt {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Haettenschweiler, "Arial Narrow Bold", sans-serif;
-    font-weight: 700;
-  }
-  .league-selector {
-    max-height: 100px;
-    overflow: hidden;
-    display: flex;
-    position: absolute;
-    flex-wrap: wrap;
-    padding: 0;
-    justify-content: center;
-    transition: max-height 0.1s ease-in;
-    background-color: inherit;
-    margin-top: 3rem;
-  }
 
-  .league-selector li {
-    list-style: none;
-
-    background-color: var(--footer-light-mode);
-    color: var(--text-light);
-    border: 1px solid transparent;
-    border-radius: 4rem;
-    font-weight: 500;
-    margin: 0.5rem 0.5rem;
-    button {
-      all: inherit;
-      padding: 0.5rem 1rem;
-      border: none;
-    }
-  }
 
   .league-selector button.selector-active {
     background-color: var(--main-dark-mode);
@@ -62,8 +25,10 @@
   }
 
   .team-card {
+    background-color: #3d34814d;
     list-style: none;
-
+    border: 2px solid #22c55e;
+    border-radius: 9px;
     width: 1/2;
     padding: auto;
     cursor: pointer;
@@ -72,7 +37,7 @@
 
   .team-link {
     text-decoration: none;
-    color: var(--footer-dark-mode);
+    color: white;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

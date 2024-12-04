@@ -3,9 +3,12 @@
   <head lang="en">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="../styles/global_lg.css" rel="stylesheet" />
-    <link href="../styles/global_sm.css" rel="stylesheet" />
-    <link href="../styles/league_lg.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link href="../styles/global.css" rel="stylesheet" />
+    <link href="../styles/league.css" rel="stylesheet" />
     <link href="../styles/league_sm.css" rel="stylesheet" />
 
     <style>
@@ -14,23 +17,41 @@
     <title>Sports Stocks : Leagues</title>
   </head>
 
-  <body>
-    <header>
-      <nav>
-        <div id="menu-lg">
-          <div class="nav-links">
-            <a class="nav-link" href="../index.html">Home</a>
-            <a class="nav-link active" href="#">Leagues</a>
-            <a class="nav-link" href="../trending/index.html">Trending</a>
-            <a class="nav-link" href="../locker/index.html">Locker</a>
-          </div>
-
-          
-        </div>
-
-        <div class="nav-sm">
-          <button id="menu-btn" aria-expanded="false" aria-controls="menu-sm">
+  <body class="flex flex-col min-h-screen m-0">
+    <header
+      class="opacity-100 lg:shadow-drop-center sticky top-0 left-0 z-10 lg:w-full font-bold text-xl"
+    >
+      <nav
+        class="m-0 text-white py-6 justify-around content-center flex-grow-1 hidden lg:flex"
+        id="nav-lg"
+      >
+        <a class="py-1 px-3 text-white h-fit text-center hover:text-gray-500" href="../index.html">Home</a>
+        <a
+          class="py-1 px-3 h-fit text-center text-green-500 hover:text-gray-500"
+          href="#"
+          >Leagues</a
+        >
+        <a
+          class="py-1 px-3 h-fit text-center text-white hover:text-gray-500"
+          href="../trending/index.html"
+          >Trending</a
+        >
+        <a
+          class="py-1 px-3 h-fit text-center text-white hover:text-gray-500"
+          href="../locker/index.html"
+          >Locker</a
+        >
+      </nav>
+      <div class="flex flex-col justify-center items-center lg:hidden" id="mobile-topnav">
+        <div class="flex w-screen">
+          <button
+            class=" text-white opacity-75 m-2 flex justify-between lg:hidden h-16 w-16 z-10"
+            id="nav-sm-btn"
+            aria-expanded="false"
+            aria-controls="nav-sm"
+          >
             <svg
+              class="h-full w-full"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -44,23 +65,41 @@
               />
             </svg>
           </button>
-          
+          <h3 class="text-white self-center">Sports News</h3>
         </div>
-        <div id="menu-sm" aria-hidden="true" role="region">
-          <a href="../index.html">Home</a>
-          <a href="#">Leagues</a>
-          <a href="../trending/index.html">Trending</a>
-          <a href="../locker/index.html">Locker</a>
-        </div>
-      </nav>
+        <nav
+        class="lg:hidden h-0 w-64 left-0 flex flex-col justify-evenly items-center rounded-br-xl"
+        id="nav-sm"
+        aria-hidden="true"
+        role="region"
+        >
+          <a class="font-bold text-white text-center py-7 px-20" href="../index.html">Home</a>
+          <a
+            class="font-bold text-green-500 text-center py-7 px-20"
+            href="#"
+            >Leagues</a
+          >
+          <a
+            class="font-bold text-white text-center py-7 px-20"
+            href="../trending/index.html"
+            >Trending</a
+          >
+          <a
+            class="font-bold text-white text-center py-7 px-20"
+            href="../locker/index.html"
+            >Locker</a
+          >
+        </nav>
+      </div>
+      
       <script src="../scripts/nav-sm.js"></script>
     </header>
 
     <main>
-      <ul class="league-selector">
+      <ul id="league-selectors" class="bg-transparent flex justify-evenly">
         <li>
           <button
-            class="selector-active"
+            class="border-4 border-green-500 rounded-xl px-4 py-2 text-white font-semibold selector-active"
             value="/sports/football/nfl/teams"
             data-sport="football"
             data-league="nfl"
@@ -70,6 +109,7 @@
         </li>
         <li>
           <button
+            class="border-4 border-green-500 rounded-xl px-4 py-2 text-white font-semibold"
             value="/sports/basketball/nba/teams"
             data-sport="basketball"
             data-league="nba"
@@ -79,6 +119,7 @@
         </li>
         <li>
           <button
+            class="border-4 border-green-500 rounded-xl px-4 py-2 text-white font-semibold"
             value="/sports/baseball/mlb/teams"
             data-sport="baseball"
             data-league="mlb"
@@ -88,6 +129,7 @@
         </li>
         <li>
           <button
+            class="border-4 border-green-500 rounded-xl px-4 py-2 text-white font-semibold"
             value="/sports/hockey/nhl/teams"
             data-sport="hockey"
             data-league="nhl"
@@ -99,26 +141,6 @@
 
       <ul id="leagues-list"></ul>
     </main>
-
-    <footer>
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="#">Leagues</a></li>
-        <li><a href="../trending/index.html">Trending</a></li>
-        <li><a href="../locker/index.html">Locker</a></li>
-      </ul>
-      <ul>
-        <li>
-          <a href="https://www.prizepicks.com" target="_blank">PrizePicks</a>
-        </li>
-        <li><a href="https://www.fanduel.com" target="_blank">FanDuel</a></li>
-        <li>
-          <a href="https://www.draftkings.com" target="_blank">DraftKings</a>
-        </li>
-        <li><a href="https://sleeper.com" target="_blank">Sleeper</a></li>
-      </ul>
-    </footer>
-  </body>
 
   <script src="../scripts/load_league_teams.js"></script>
   <!-- <script src="../scripts/load_team.js"></script> -->

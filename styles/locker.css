@@ -1,0 +1,71 @@
+
+  .no-locker-notif {
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    align-items: center;
+    color: white;
+  }
+  .no-locker-notif h1,
+  span {
+    text-align: center;
+  }
+  #export-all, #delete-all, .btncss {
+    :hover {
+      transition: transform cubic-bezier(0.075, 0.82, 0.165, 1) .3s;
+      transform: scale(1.1, 1.1);
+    }
+  }
+
+  #locker-list {
+    width: 84vw;
+    display:flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+  }
+
+  
+#confirm-modal, #edit-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0); /* Start scaled down */
+  
+  opacity: 0; /* Start invisible */
+  z-index: 1000; /* Ensure it's above other content */
+  background-color: #1d1842;
+}
+#confirm-modal.show + .backdrop, #edit-modal.show + .backdrop {
+  display: block;
+}
+#confirm-modal.show, #edit-modal.show {
+  transform: translate(-50%, -50%) scale(1); /* Scale to full size */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Transition for scaling and opacity */
+  opacity: 1; /* Make it visible */
+}
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 999; /* Ensure it's below the modals but above other content */
+  display: none; /* Hidden by default */
+}
+form button {
+  color: white;
+  border: 2px solid #22c55e;
+  flex-grow: 1;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  height: fit-content;
+  min-width: 80%;
+  border-radius: 6px;
+  transition:transform ease-in-out .3s;
+}
+
+form button:hover {
+  transform: scale(1.1, 1.1);
+}

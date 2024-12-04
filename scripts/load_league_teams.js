@@ -33,7 +33,7 @@ function addEventListeners() {
       const teamId = item.id; // Get the team ID from the link's ID
 
       const activeLeague = document.querySelector(
-        ".league-selector .selector-active"
+        "#league-selectors .selector-active"
       );
       sessionStorage.setItem("teamId", teamId);
       sessionStorage.setItem("sport", activeLeague.getAttribute("data-sport"));
@@ -95,14 +95,14 @@ function buildCard(teamData) {
  *  in the selector items and re-display the teams list
  */
 (function () {
-  loadTeams(document.querySelector(".league-selector .selector-active").value);
+  loadTeams(document.querySelector(".selector-active").value);
 
-  let selectors = document.querySelectorAll(".league-selector button");
+  let selectors = document.querySelectorAll("#league-selectors button");
   selectors.forEach((select) => {
     select.addEventListener("click", (e) => {
       e.preventDefault();
       document
-        .querySelector(".league-selector .selector-active")
+        .querySelector(".selector-active")
         .classList.remove("selector-active");
       e.target.classList.add("selector-active");
 
