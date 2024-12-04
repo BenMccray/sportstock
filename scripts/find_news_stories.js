@@ -10,8 +10,16 @@ async function getNewsStories(searchQuery) {
   try {
     const response = await fetch(`https://site.web.api.espn.com/apis/search/v2?query=${searchQuery.name}&limit=100`)
     const data = await response.json();
-    console.log("data", data)
-    return data;
+    const gnewsResponse = await fetch(
+      `https://gnews.io/api/v4/top-headlines?category=sports&q="${searchQuery.name}"&lang=en&country=us&max=10&apikey=${GNEWS_API_KEY}`
+    );
+    const gnewsData = await gnewsResponse.json();
+    // if no results from gnews, then we're SOL and return nothing
+    if (gnewsData.totalArticles === 0) {
+      return data;
+    }
+    console.log("data", { ...data, ...gnewsData })
+    return { ...data, ...gnewsData };
 
   } catch (error) {
     try {
@@ -151,11 +159,12 @@ function displayNoStories() {
   // display news stories in player page
   console.log(newsStories)
   if (newsStories.resultTypes) {
+    let gnewsArticles = newsStories.articles;
     console.log(searchQuery.name.split(" ")[1])
     let articles = newsStories.results[1].contents.filter(article => article.displayName.includes(searchQuery.name));
     console.log(searchQuery.name)
     let other = newsStories.results[1].contents.filter(article => (searchQuery.teamId !== null && article.displayName.includes(searchQuery.name.split(" ")[1])));
-    articles = [...articles, ...other];
+    articles = [...articles, ...other, ...gnewsArticles.slice(0, 15)];
     console.log("articles,", articles);
     console.log(other)
 
