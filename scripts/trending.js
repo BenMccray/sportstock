@@ -1,8 +1,8 @@
 
 async function getLeaders(indices, categories) {
   const [first, second] = indices;
-  let firstLeadPlace = Math.min(Math.floor(Math.random() * (categories[first].leaders.length + 1)), categories[first].leaders.length);
-  let secondLeadPlace = Math.min(Math.floor(Math.random() * (categories[second].leaders.length + 1)), categories[second].leaders.length);
+  let firstLeadPlace = Math.min(Math.floor(Math.random() * (categories[first].leaders.length + 1)), categories[first].leaders.length - 1);
+  let secondLeadPlace = Math.min(Math.floor(Math.random() * (categories[second].leaders.length + 1)), categories[second].leaders.length - 1);
 
   let firstLeader = categories[first].leaders[firstLeadPlace].athlete.$ref;
   let secondLeader = categories[second].leaders[secondLeadPlace].athlete.$ref;
@@ -12,7 +12,7 @@ async function getLeaders(indices, categories) {
     try {
       console.log(secondLeadPlace, categories[second].leaders)
 
-      secondLeadPlace = Math.min(Math.floor(Math.random() * (categories[second].leaders.length + 1)), categories[second].leaders.length);
+      secondLeadPlace = Math.min(Math.floor(Math.random() * (categories[second].leaders.length + 1)), categories[second].leaders.length - 1);
       secondLeader = categories[second].leaders[secondLeadPlace].athlete.$ref;
     } catch (err) {
       continue;
