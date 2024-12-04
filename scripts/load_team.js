@@ -40,6 +40,7 @@ async function identifyTeam(teamId, sport, league, currentYear) {
 
     const teamResponse = await fetch(teamEndpoint);
     let teamData = await teamResponse.json();
+    teamData.record.$ref.replace("http", 'https')
     const recordResponse = await fetch(teamData.record.$ref);
     let record = await recordResponse.json();
     teamData = {
@@ -86,12 +87,12 @@ async function loadTeamGraph(teamData) {
     buildTeamCard(teamName, teamLogo, teamRecord, teamId);
     return;
   }
-  
-    sessionStorage.setItem(
-      "teamCardCache",
-      JSON.stringify([teamName, teamLogo, teamRecord])
-    );
-    buildTeamCard(teamName, teamLogo, teamRecord, teamId);
+
+  sessionStorage.setItem(
+    "teamCardCache",
+    JSON.stringify([teamName, teamLogo, teamRecord])
+  );
+  buildTeamCard(teamName, teamLogo, teamRecord, teamId);
 
 }
 
@@ -124,7 +125,7 @@ function buildTeamCard(teamName, teamLogo, teamRecord, teamId) {
   articleBtn.textContent = "Find Articles";
   articleBtn.id = "article-btn";
   articleBtn.addEventListener("click", () => {
-    sessionStorage.setItem("searchQuery", JSON.stringify({name: teamName, teamId: teamId}));
+    sessionStorage.setItem("searchQuery", JSON.stringify({ name: teamName, teamId: teamId }));
     window.location.href = "./news/index.html"
   });
   div.appendChild(h1);
@@ -222,9 +223,8 @@ function createPlayerListItem(bundle) {
 
   // Create the player info
   const playerInfo = document.createElement("span");
-  playerInfo.textContent = `${playerPosition} ${
-    playerJerseyNumber === undefined ? "" : "| #" + playerJerseyNumber
-  }`;
+  playerInfo.textContent = `${playerPosition} ${playerJerseyNumber === undefined ? "" : "| #" + playerJerseyNumber
+    }`;
   playerInfo.classList.add("player-info");
 
   // Append the player name and info to the player text
@@ -237,7 +237,7 @@ function createPlayerListItem(bundle) {
   // placeholder of the espn player profile url
   playerLink.href = `./news/index.html`;
   playerLink.addEventListener("click", () => {
-    sessionStorage.setItem("searchQuery", JSON.stringify({name: displayName, playerId: playerId}));
+    sessionStorage.setItem("searchQuery", JSON.stringify({ name: displayName, playerId: playerId }));
   });
 
   // Append the player icon and text to the player list item
@@ -269,27 +269,27 @@ function saveToLocker(
 ) {
   let locker = JSON.parse(localStorage.getItem("locker")) || [];
 
-    if (playerItem) {
-      console.log
-      if (!locker.filter(item => item.type === "player").find((item) => item.data.playerId === playerItem.playerId)) {
-        locker.push({
-          type: "player",
-          data: playerItem,
-        });
-      }
-    } else {
-      console.log(teamData)
-      if (!locker.filter(item => item.type === "team").find((item) => item.teamData.teamName === teamData.teamName)) {
-        locker.push({
-          type: "team",
-          teamData: teamData,
-          rosterData: rosterData,
-        });
-      }
+  if (playerItem) {
+    console.log
+    if (!locker.filter(item => item.type === "player").find((item) => item.data.playerId === playerItem.playerId)) {
+      locker.push({
+        type: "player",
+        data: playerItem,
+      });
     }
-    localStorage.setItem("locker", JSON.stringify(locker));
-    console.log(locker)
-  
+  } else {
+    console.log(teamData)
+    if (!locker.filter(item => item.type === "team").find((item) => item.teamData.teamName === teamData.teamName)) {
+      locker.push({
+        type: "team",
+        teamData: teamData,
+        rosterData: rosterData,
+      });
+    }
+  }
+  localStorage.setItem("locker", JSON.stringify(locker));
+  console.log(locker)
+
 }
 
 (async function () {
@@ -309,5 +309,5 @@ function saveToLocker(
   sessionStorage.setItem("rosterData", JSON.stringify(rosterData));
   sessionStorage.setItem("cacheTeamId", JSON.stringify(teamId));
   sessionStorage.setItem("cacheLeague", JSON.stringify(league));
-  
+
 })();
