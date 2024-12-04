@@ -1,4 +1,4 @@
-@media (min-width: 399px) and (max-width: 768px) {
+@media (min-width: 299px) and (max-width: 768px) {
 
   /* styles for tablet */
   main {
@@ -26,14 +26,12 @@
   }
 
   .team-card {
-    display: flex;
-    flex-direction: column;
+
     background-color: #3d34814d;
     list-style: none;
     border: 2px solid #22c55e;
     border-radius: 9px;
     width: 1/2;
-    height: auto;
     padding: auto;
     cursor: pointer;
     margin: 1rem 0.5rem 1rem;

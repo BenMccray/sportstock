@@ -1,12 +1,36 @@
-#graph-container {
-  display: flex;
-  justify-content: center;
+@media (min-width: 992px) {
+  #graph-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  #graph {
+    align-content: center;
+    display: flex;
+    padding: 1rem;
+    margin: 5rem 0;
+  }
 }
-#graph {
-  align-content: center;
-  display: flex;
-  padding: 1rem;
-  margin: 5rem 0;
+
+@media (min-width: 299px) and (max-width: 768px) {
+  #graph {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto
+  }
+
+  #graph-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .team-info {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+  }
 }
 
 .team-info {
@@ -23,9 +47,11 @@
   font-size: 1.5rem;
   color: white;
 }
+
 .team-logo {
   width: 250px;
 }
+
 #save-btn,
 #article-btn {
   /* position: relative; */
@@ -38,12 +64,14 @@
   border-radius: 6px;
   margin-top: 0.5em;
 }
+
 #save-btn:hover,
 #article-btn:hover {
   font-weight: bolder;
   border: 2px solid #22c55e;
   color: #22c55e;
 }
+
 .player-roster-header {
   text-align: center;
   color: white;
@@ -54,9 +82,11 @@
   border: 2px solid #22c55e;
   color: #22c55e;
 }
+
 #player-search::placeholder {
   color: #22c55e;
 }
+
 #player-list {
   display: flex;
   flex-direction: row;
@@ -65,6 +95,7 @@
   justify-content: center;
   padding: 0;
 }
+
 /* Player list item */
 #player-list li {
   display: flex;
@@ -113,6 +144,7 @@
     width: 45%;
     height: fit-content;
   }
+
   .team-record {
     font-weight: bold;
     font-size: large;
