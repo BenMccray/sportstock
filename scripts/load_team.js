@@ -40,7 +40,8 @@ async function identifyTeam(teamId, sport, league, currentYear) {
 
     const teamResponse = await fetch(teamEndpoint);
     let teamData = await teamResponse.json();
-    teamData.record.$ref.replace("http", 'https')
+    teamData.record.$ref = teamData.record.$ref.replace("http", 'https')
+    console.log(teamData.record.$ref)
     const recordResponse = await fetch(teamData.record.$ref);
     let record = await recordResponse.json();
     teamData = {
