@@ -5,7 +5,7 @@ async function getLeaders(indices, categories) {
   let secondLeadPlace = Math.min(Math.floor(Math.random() * (categories[second].leaders.length + 1)), categories[second].leaders.length - 1);
 
   let firstLeader = categories[first].leaders[firstLeadPlace].athlete.$ref;
-  let secondLeader = categories[second].leaders[secondLeadPlace].athlete.$ref;
+  let secondLeader = categories[second].leaders[secondLeadPlace].athlete !== undefined ? categories[second].leaders[secondLeadPlace].athlete.$ref : firstLeader;
   firstLeader = firstLeader.replace("http", 'https');
 
   do {
@@ -13,7 +13,7 @@ async function getLeaders(indices, categories) {
       console.log(secondLeadPlace, categories[second].leaders)
 
       secondLeadPlace = Math.min(Math.floor(Math.random() * (categories[second].leaders.length + 1)), categories[second].leaders.length - 1);
-      secondLeader = categories[second].leaders[secondLeadPlace].athlete.$ref;
+      secondLeader = categories[second].leaders[secondLeadPlace].athlete !== undefined ? categories[second].leaders[secondLeadPlace].athlete.$ref : firstLeader;
     } catch (err) {
       continue;
     }
