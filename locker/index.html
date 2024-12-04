@@ -1,138 +1,94 @@
 <!DOCTYPE html>
-<html>
-  <head lang="en">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-    <link href="../styles/global.css" rel="stylesheet" />
+<html lang="en">
 
-    <link href="../styles/locker.css" rel="stylesheet"/>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="../styles/global.css" rel="stylesheet" />
 
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-    </style>
-    <title>Sports News : Locker</title>
-  </head>
+  <link href="../styles/locker.css" rel="stylesheet" />
 
-  <body class="flex flex-col min-h-screen m-0">
-    <header
-      class="opacity-100 lg:shadow-drop-center sticky top-0 left-0 z-10 lg:w-full font-bold text-xl"
-    >
-      <nav
-        class="m-0 text-white py-6 justify-around content-center flex-grow-1 hidden lg:flex"
-        id="nav-lg"
-      >
-        <a class="py-1 px-3 text-white h-fit text-center hover:text-gray-500" href="../index.html">Home</a>
-        <a
-          class="py-1 px-3 h-fit text-center text-white hover:text-gray-500"
-          href="../league/index.html"
-          >Leagues</a
-        >
-        <a
-          class="py-1 px-3 h-fit text-center text-white hover:text-gray-500"
-          href="../trending/index.html"
-          >Trending</a
-        >
-        <a
-          class="py-1 px-3 h-fit text-center text-green-500"
-          href="#"
-          >Locker</a
-        >
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+  </style>
+  <title>Sports News : Locker</title>
+</head>
+
+<body class="flex flex-col min-h-screen m-0">
+  <header class="opacity-100 lg:shadow-drop-center sticky top-0 left-0 z-10 lg:w-full font-bold text-xl">
+    <nav class="m-0 text-white py-6 justify-around content-center flex-grow-1 hidden lg:flex" id="nav-lg">
+      <a class="py-1 px-3 text-white h-fit text-center hover:text-gray-500" href="../index.html">Home</a>
+      <a class="py-1 px-3 h-fit text-center text-white hover:text-gray-500" href="../league/index.html">Leagues</a>
+      <a class="py-1 px-3 h-fit text-center text-white hover:text-gray-500" href="../trending/index.html">Trending</a>
+      <a class="py-1 px-3 h-fit text-center text-green-500" href="#">Locker</a>
+    </nav>
+    <div class="flex flex-col justify-center items-center lg:hidden" id="mobile-topnav">
+      <div class="flex w-screen">
+        <button class=" text-white opacity-75 m-2 flex justify-between lg:hidden h-16 w-16 z-10" id="nav-sm-btn"
+          aria-expanded="false" aria-controls="nav-sm">
+          <svg class="h-full w-full" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        <h3 class="text-white self-center">Sports News</h3>
+      </div>
+      <nav class="lg:hidden h-0 w-64 left-0 flex flex-col justify-evenly items-center rounded-br-xl" id="nav-sm"
+        aria-hidden="true" role="navigation">
+        <a class="font-bold text-white text-center py-7 px-20" href="../index.html">Home</a>
+        <a class="font-bold text-white text-center py-7 px-20" href="../league/index.html">Leagues</a>
+        <a class="font-bold text-white text-center py-7 px-20" href="../trending/index.html">Trending</a>
+        <a class="font-bold text-green-500 text-center py-7 px-20" href="#">Locker</a>
       </nav>
-      <div class="flex flex-col justify-center items-center lg:hidden" id="mobile-topnav">
-        <div class="flex w-screen">
-          <button
-            class=" text-white opacity-75 m-2 flex justify-between lg:hidden h-16 w-16 z-10"
-            id="nav-sm-btn"
-            aria-expanded="false"
-            aria-controls="nav-sm"
-          >
-            <svg
-              class="h-full w-full"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </button>
-          <h3 class="text-white self-center">Sports News</h3>
-        </div>
-        <nav
-        class="lg:hidden h-0 w-64 left-0 flex flex-col justify-evenly items-center rounded-br-xl"
-        id="nav-sm"
-        aria-hidden="true"
-        role="region"
-        >
-          <a class="font-bold text-white text-center py-7 px-20" href="../index.html">Home</a>
-          <a
-            class="font-bold text-white text-center py-7 px-20"
-            href="../league/index.html"
-            >Leagues</a
-          >
-          <a
-            class="font-bold text-white text-center py-7 px-20"
-            href="../trending/index.html"
-            >Trending</a
-          >
-          <a
-            class="font-bold text-green-500 text-center py-7 px-20"
-            href="#"
-            >Locker</a
-          >
-        </nav>
-      </div>
-      
-      <script src="../scripts/nav-sm.js"></script>
-    </header>
-    <main>
-      <article id="no-locker-notif" class="no-locker-notif">
-        <h1 class="text-3xl font-bold">Nothing in your locker</h1>
-        <br />
-        <span class="text-lg">Save teams or players to look back later</span>
-      </article>
-      <div class="backdrop"></div>
-      <div id="confirm-modal" class=" border-2 border-green-500 text-white rounded-xl h-56 w-80 flex flex-col justify-center gap-4 items-center">
-        <p class="text-center font-semibold text-xl">Are you sure you want to delete your locker?</p>
-        <form class="flex justify-center gap-4">
-          <button id="confirm-delete">Yes</button>
-          <button id="cancel-delete">Cancel</button>
-        </form>
-      </div>
-      <div id="edit-modal" class=" border-2 border-green-500 text-white rounded-xl h-72 w-96 flex flex-col justify-center gap-4 items-center">
-        <form class="flex flex-col justify-center gap-4">
-          <label for="change-name" class="text-center font-semibold text-xl">Enter New Name</label>
-          <input class="bg-transparent border-2 border-green-500 rounded-xl px-4 py-2 outline-none" name="change-name" id="change-name" type="text"/>
-          <label for="change-description" class="text-center font-semibold text-xl">Enter New Description</label>
-          <input class="bg-transparent border-2 border-green-500 rounded-xl px-4 py-2 outline-none" name="change-description" id="change-description" type="text"/>
-          <div class="flex justify-center gap-2">
-            <button class="hover:text-green-500" id="confirm-edit">Submit</button>
-            <button class="hover:text-green-500" id="cancel-edit">Cancel</button>
-          </div>
-        </form>
-      </div>
-      <section id=options class="grow shrink m-10 justify-center items-center gap-8 hidden">
-        <label class="text-white text-center lg:inline lg:text-lg hidden" for="delete-all">Delete Locker</label>
-        <button id="delete-all" name="delete-all" class="h-12 w-12">
-          <img src="../images/delete.png" alt="delete entire locker">
-        </button>
-        <button id="export-all" class="h-12 w-12">
-          <img src="../images/export.png" alt="export entire locker" />
-        </button>
-        <label class="text-white text-center lg:inline lg:text-lg hidden" for="export-all">Export Locker</label>
-      </section>
+    </div>
 
-      <ul class="mx-auto"  id="locker-list"></ul>
-      <script src="../scripts/locker.js"></script>
-    </main>
-  </body>
+    <script src="../scripts/nav-sm.js"></script>
+  </header>
+  <main>
+    <article id="no-locker-notif" class="no-locker-notif">
+      <h1 class="text-3xl font-bold">Nothing in your locker</h1>
+      <br />
+      <span class="text-lg">Save teams or players to look back later</span>
+    </article>
+    <div class="backdrop"></div>
+    <div id="confirm-modal"
+      class=" border-2 border-green-500 text-white rounded-xl h-56 w-80 flex flex-col justify-center gap-4 items-center">
+      <p class="text-center font-semibold text-xl">Are you sure you want to delete your locker?</p>
+      <form class="flex justify-center gap-4">
+        <button id="confirm-delete">Yes</button>
+        <button id="cancel-delete">Cancel</button>
+      </form>
+    </div>
+    <div id="edit-modal"
+      class=" border-2 border-green-500 text-white rounded-xl h-72 w-96 flex flex-col justify-center gap-4 items-center">
+      <form class="flex flex-col justify-center gap-4">
+        <label for="change-name" class="text-center font-semibold text-xl">Enter New Name</label>
+        <input class="bg-transparent border-2 border-green-500 rounded-xl px-4 py-2 outline-none" name="change-name"
+          id="change-name" type="text" />
+        <label for="change-description" class="text-center font-semibold text-xl">Enter New Description</label>
+        <input class="bg-transparent border-2 border-green-500 rounded-xl px-4 py-2 outline-none"
+          name="change-description" id="change-description" type="text" />
+        <div class="flex justify-center gap-2">
+          <button class="hover:text-green-500" id="confirm-edit">Submit</button>
+          <button class="hover:text-green-500" id="cancel-edit">Cancel</button>
+        </div>
+      </form>
+    </div>
+    <section id=options class="grow shrink m-10 justify-center items-center gap-8 hidden">
+      <label class="text-white text-center lg:inline lg:text-lg hidden" for="delete-all">Delete Locker</label>
+      <button id="delete-all" name="delete-all" class="h-12 w-12">
+        <img src="../images/delete.png" alt="delete entire locker">
+      </button>
+      <button id="export-all" class="h-12 w-12">
+        <img src="../images/export.png" alt="export entire locker" />
+      </button>
+      <label class="text-white text-center lg:inline lg:text-lg hidden" for="export-all">Export Locker</label>
+    </section>
+
+    <ul class="mx-auto" id="locker-list"></ul>
+    <script src="../scripts/locker.js"></script>
+  </main>
+</body>
+
 </html>
