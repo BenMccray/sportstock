@@ -48,18 +48,18 @@
 
   <main>
     <div class="card-container">
-      <div class="shadow-drop-center" id="card-leagues">
+      <div class="shadow-drop-center card" id="card-leagues">
         <img src="images/National_Football_League_logo.webp" alt="NFL logo" />
         <div class="magic-cover">
           <span>Leagues</span>
         </div>
       </div>
-      <div class="shadow-drop-center" id="card-trending">
+      <div class="shadow-drop-center card" id="card-trending">
         <img src="images/trending_card_img.png"
           alt="Trending stat photo credit: Jordan Fortin Belanger at behance.net" />
         <div class="magic-cover"><span>Trending</span></div>
       </div>
-      <div class="shadow-drop-center" id="card-locker">
+      <div class="shadow-drop-center card" id="card-locker">
         <ul class="pulsate-fwd">
           <li>
             <div class="line"></div>
@@ -83,7 +83,7 @@
   </main>
 </body>
 <script>
-  let cards = document.querySelectorAll(".card-container div");
+  let cards = document.querySelectorAll(".card-container .card");
   console.log(cards);
   cards.forEach((element) => {
     element.addEventListener(
@@ -103,7 +103,7 @@
   let screenWidth = window.innerWidth;
 
   if (screenWidth < 768) {
-    let cards = document.querySelectorAll(".card-container div");
+    let cards = document.querySelectorAll(".card-container .card");
     cards.forEach((element) => {
       element.addEventListener("click", () => {
         element

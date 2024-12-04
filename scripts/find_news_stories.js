@@ -8,9 +8,11 @@ async function getNewsStories(searchQuery) {
   let fromDate = `${date.getFullYear()}-${date.getMonth()}-01}`;
   let currentDate = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
   try {
-    const response = await fetch(`https://site.web.api.espn.com/apis/search/v2?query=${searchQuery.name}&limit=15`)
+    const response = await fetch(`https://site.web.api.espn.com/apis/search/v2?query=${searchQuery.name}&limit=100`)
     const data = await response.json();
+    console.log("data", data)
     return data;
+
   } catch (error) {
     try {
       const response = await fetch(
@@ -139,7 +141,7 @@ function displayNoStories() {
   const list = document.querySelector("#news-list")
   list.appendChild(noStories);
   list.appendChild(backArrow);
-  
+
 }
 
 (async function () {
@@ -150,9 +152,13 @@ function displayNoStories() {
   console.log(newsStories)
   if (newsStories.resultTypes) {
     console.log(searchQuery.name.split(" ")[1])
-    let articles = newsStories.results[1].contents.filter(article => article.displayName.includes(searchQuery.name) 
-                                                                  || (searchQuery.teamId && article.displayName.includes(searchQuery.name.split(" ")[1])));
-    
+    let articles = newsStories.results[1].contents.filter(article => article.displayName.includes(searchQuery.name));
+    console.log(searchQuery.name)
+    let other = newsStories.results[1].contents.filter(article => (searchQuery.teamId !== null && article.displayName.includes(searchQuery.name.split(" ")[1])));
+    articles = [...articles, ...other];
+    console.log("articles,", articles);
+    console.log(other)
+
     newsStories.articles = articles
   }
   console.log(newsStories.articles)

@@ -25,7 +25,8 @@
     margin: 0 1.5rem;
     width: 90%;
   }
-  .card-container section {
+
+  .card-container div.card {
     border-radius: 15px;
     height: fit-content;
     display: flex;
@@ -42,19 +43,19 @@
   #card-leagues {
     display: flex;
     background: rgb(242, 11, 46);
-    background: linear-gradient(
-      90deg,
-      rgba(242, 11, 46, 1) 0%,
-      rgba(97, 97, 221, 1) 53%,
-      rgba(0, 212, 255, 1) 100%
-    );
+    background: linear-gradient(90deg,
+        rgba(242, 11, 46, 1) 0%,
+        rgba(97, 97, 221, 1) 53%,
+        rgba(0, 212, 255, 1) 100%);
     justify-content: center;
+
     img {
       border-radius: inherit;
       width: 70%;
       height: fit-content;
     }
   }
+
   #card-trending {
     img {
       border-radius: inherit;
@@ -62,16 +63,16 @@
       height: fit-content;
     }
   }
+
   #card-locker {
     background: rgb(212, 249, 192);
-    background: linear-gradient(
-      30deg,
-      rgba(212, 249, 192, 1) 0%,
-      rgba(4, 159, 16, 1) 100%
-    );
+    background: linear-gradient(30deg,
+        rgba(212, 249, 192, 1) 0%,
+        rgba(4, 159, 16, 1) 100%);
     width: 100%;
     margin-bottom: 10%;
   }
+
   #card-locker ul {
     display: flex;
     flex-direction: column;
@@ -105,118 +106,138 @@
     border-radius: inherit;
     width: 100%;
   }
+
   .magic-cover span {
     color: white;
     font-family: "Roboto";
     font-weight: 500;
     font-size: x-large;
   }
+
   .shadow-drop-center {
-    -webkit-animation: shadow-drop-center 0.4s
-      cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    -webkit-animation: shadow-drop-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     animation: shadow-drop-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
+
   .text-focus-in {
-    -webkit-animation: text-focus-in 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53)
-      both;
+    -webkit-animation: text-focus-in 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
     animation: text-focus-in 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
   }
+
   .text-blur-out {
-    -webkit-animation: text-blur-out 0.25s cubic-bezier(0.55, 0.085, 0.68, 0.53)
-      both;
+    -webkit-animation: text-blur-out 0.25s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
     animation: text-blur-out 0.25s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
   }
+
   .pulsate-fwd {
     -webkit-animation: pulsate-fwd 3s ease-in-out infinite both;
     animation: pulsate-fwd 3s ease-in-out infinite both;
   }
+
   @-webkit-keyframes text-focus-in {
     0% {
       -webkit-filter: blur(12px);
       filter: blur(12px);
       opacity: 0;
     }
+
     100% {
       -webkit-filter: blur(0px);
       filter: blur(0px);
       opacity: 1;
     }
   }
+
   @keyframes text-focus-in {
     0% {
       -webkit-filter: blur(12px);
       filter: blur(12px);
       opacity: 0;
     }
+
     100% {
       -webkit-filter: blur(0px);
       filter: blur(0px);
       opacity: 1;
     }
   }
+
   @-webkit-keyframes text-blur-out {
     0% {
       -webkit-filter: blur(0.01);
       filter: blur(0.01);
     }
+
     100% {
       -webkit-filter: blur(12px) opacity(0%);
       filter: blur(12px) opacity(0%);
     }
   }
+
   @keyframes text-blur-out {
     0% {
       -webkit-filter: blur(0.01);
       filter: blur(0.01);
     }
+
     100% {
       -webkit-filter: blur(12px) opacity(0%);
       filter: blur(12px) opacity(0%);
     }
   }
+
   @-webkit-keyframes shadow-drop-center {
     0% {
       -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
       box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
     }
+
     100% {
       -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
       box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
     }
   }
+
   @keyframes shadow-drop-center {
     0% {
       -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
       box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
     }
+
     100% {
       -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
       box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
     }
   }
+
   @-webkit-keyframes pulsate-fwd {
     0% {
       -webkit-transform: scale(1);
       transform: scale(1);
     }
+
     50% {
       -webkit-transform: scale(1.05);
       transform: scale(1.05);
     }
+
     100% {
       -webkit-transform: scale(1);
       transform: scale(1);
     }
   }
+
   @keyframes pulsate-fwd {
     0% {
       -webkit-transform: scale(1);
       transform: scale(1);
     }
+
     50% {
       -webkit-transform: scale(1.05);
       transform: scale(1.05);
     }
+
     100% {
       -webkit-transform: scale(1);
       transform: scale(1);
