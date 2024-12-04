@@ -6,6 +6,8 @@ async function getLeaders(indices, categories) {
 
   let firstLeader = categories[first].leaders[firstLeadPlace].athlete.$ref;
   let secondLeader = categories[second].leaders[secondLeadPlace].athlete.$ref;
+  firstLeader = firstLeader.replace("http", 'https');
+
   do {
     try {
       console.log(secondLeadPlace, categories[second].leaders)
@@ -15,7 +17,8 @@ async function getLeaders(indices, categories) {
     } catch (err) {
       continue;
     }
-  } while (firstLeader === secondLeader)
+  } while (firstLeader === secondLeader);
+  secondLeader = secondLeader.replace("http", 'https');
   const firstResp = await fetch(firstLeader);
   const firstData = await firstResp.json();
   const secondResp = await fetch(secondLeader);
